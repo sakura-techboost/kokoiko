@@ -1,5 +1,7 @@
-@extends('layouts.app')
-
+{{-- 共通ヘッダー読み込み --}}
+@extends('layouts.header')
+{{-- ページタイトル埋め込み --}}
+@section('title','ユーザー登録')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

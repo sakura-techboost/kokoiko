@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-
+require('./content');  // 10月8日
 window.Vue = require('vue');
 
 /**

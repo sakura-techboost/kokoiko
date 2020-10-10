@@ -18,5 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//content.blade.phpを表示するルーティング
+Route::get('contents/content', 'ContentsController@content')->name("contents.content");
+//create.blade.php(アカウント登録画面）を表示するルーティング
+Route::get('profile/create', 'ProfileController@create')->name("profile.create");
+//login.blade.php(ログイン画面）を表示するルーティング
+Route::get('profile/login', 'ProfileController@login')->name("profile.login");
+Route::get('contents/show', 'ContentsController@show');
 
-Route::get('/content', 'ContentsController@content');
+
