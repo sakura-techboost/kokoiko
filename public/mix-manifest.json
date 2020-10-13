@@ -2,6 +2,8 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/rayouts.css": "/css/rayouts.css",
+    "/css/testrayouts.css": "/css/testrayouts.css",
     "/js/content.js": "/js/content.js",
-    "/js/popper.js": "/js/popper.js"
+    "/js/popper.js": "/js/popper.js",
+    "/js/testcontent.js": "/js/testcontent.js"
 }

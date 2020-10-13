@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar li {
+  height: 100%;
+}
+
+.navbar li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar li:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.header {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  box-shadow: none;
+  background-color: #FC466B;
+  position: fixed;
+  height: 60px !important;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#sidebarMenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  width: 200px;
+  transform: translateX(-200px);
+  transition: transform 200ms ease-in-out;
+  background-color: #afeeee;
+}
+
+.sidebarMenuInner {
+  margin-top: 40px;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarMenuInner li {
+  list-style: none;
+  color: #808080;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarMenuInner li span {
+  display: block;
+  font-size: 14px;
+  color: rgba(128, 128, 128, 0.5);
+}
+
+.sidebarMenuInner li a {
+  color: #808080;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input[type=checkbox]:checked ~ #sidebarMenu {
+  transform: translateX(0);
+}
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  display: none;
+}
+
+.sidebarIconToggle {
+  position: fixed;
+  margin-top: 39px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 2;
+  top: 5px;
+  left: 15px;
+  height: 22px;
+  width: 22px;
+}
+
+.spinner {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #808080;
+}
+
+.horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+.diagonal.part-1 {
+  position: relative;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  float: left;
+}
+
+.diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  margin-top: 3px;
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+  transition: all 0.3s;
+  box-sizing: border-box;
+  transform: rotate(-135deg);
+  margin-top: -9px;
+}
+
+.navigation {
+  margin-top: 51px;
+}
+
+.navigation li {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+
+.fa-heart:hover {
+  color: #ff1493;
+}
+
+.fa-star:hover {
+  color: #ffa500;
+}
+
+.fa-heart-broken:hover {
+  color: #191970;
+}
+
+.fa-user-edit:hover {
+  color: #00ff7f;
+}
+
+.card-body {
+  text-align: left;
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+
+.card-title,
+.card-subtitle,
+.card-text {
+  padding: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+.search-bar li {
+  border-style: none solid none none;
+  border-color: none lightgray none none;
+  border-right-width: thin;
+}
+
+#eighth > a {
+  transition: all 0.5s ease-in-out;
+}
+
+#eighth:hover a {
+  text-shadow: 0 0 10px white, 0 0 13px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 17px rgba(255, 255, 255, 0.4), 0 0 19px rgba(255, 255, 255, 0.5), 0 0 21px rgba(255, 255, 255, 0.4), 0 0 23px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2), 0 0 27px rgba(255, 255, 255, 0.1);
+}
+
+#eighthGreen > a {
+  transition: all 0.5s ease-in-out;
+}
+
+#eighthGreen:hover a {
+  text-shadow: 0 0 10px lightgreen, 0 0 13px rgba(144, 238, 144, 0.8), 0 0 15px rgba(144, 238, 144, 0.6), 0 0 17px rgba(144, 238, 144, 0.4), 0 0 19px rgba(144, 238, 144, 0.5), 0 0 21px rgba(144, 238, 144, 0.4), 0 0 23px rgba(144, 238, 144, 0.3), 0 0 25px rgba(144, 238, 144, 0.2), 0 0 27px rgba(144, 238, 144, 0.1);
+}
+
+#eighthPink > a {
+  transition: all 0.5s ease-in-out;
+}
+
+#eighthPink:hover a {
+  text-shadow: 0 0 10px hotpink, 0 0 13px rgba(255, 105, 180, 0.8), 0 0 15px rgba(255, 105, 180, 0.6), 0 0 17px rgba(255, 105, 180, 0.4), 0 0 19px rgba(255, 105, 180, 0.5), 0 0 21px rgba(255, 105, 180, 0.4), 0 0 23px rgba(255, 105, 180, 0.3), 0 0 25px rgba(255, 105, 180, 0.2), 0 0 27px rgba(255, 105, 180, 0.1);
+}
+
+#eighthYellow > a {
+  transition: all 0.5s ease-in-out;
+}
+
+#eighthYellow:hover a {
+  text-shadow: 0 0 10px gold, 0 0 13px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.6), 0 0 17px rgba(255, 215, 0, 0.4), 0 0 19px rgba(255, 215, 0, 0.5), 0 0 21px rgba(255, 215, 0, 0.4), 0 0 23px rgba(255, 215, 0, 0.3), 0 0 25px rgba(255, 215, 0, 0.2), 0 0 27px rgba(255, 215, 0, 0.1);
+}
+
+#eighthBlue > a {
+  transition: all 0.5s ease-in-out;
+}
+
+#eighthBlue:hover a {
+  text-shadow: 0 0 10px steelblue, 0 0 13px rgba(70, 130, 180, 0.8), 0 0 15px rgba(70, 130, 180, 0.6), 0 0 17px rgba(70, 130, 180, 0.4), 0 0 19px rgba(70, 130, 180, 0.5), 0 0 21px rgba(70, 130, 180, 0.4), 0 0 23px rgba(70, 130, 180, 0.3), 0 0 25px rgba(70, 130, 180, 0.2), 0 0 27px rgba(70, 130, 180, 0.1);
+}
+
+.btn-social-giza a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.btn-social-giza .fa-stack-1x {
+  color: white;
+  font-size: 18px;
+}
+
+.btn-social-giza .fa-stack-2x {
+  transition: 0.3s;
+}
+
+.btn-social-giza .btn-social-giza-map .fa-stack-2x {
+  color: #00fa9a;
+}
+
+.btn-social-giza .btn-social-giza-phone .fa-stack-2x {
+  color: #00ffff;
+}
+
+.btn-social-giza .btn-social-giza-camera .fa-stack-2x {
+  color: #ee82ee;
+}
+
+.btn-social-giza .btn-social-giza-folder .fa-stack-2x {
+  color: #ffa500;
+}
+
+.btn-social-giza .btn-social-giza-star .fa-stack-2x {
+  color: #ffff00;
+}
+
+.btn-social-giza .btn-social-giza-open .fa-stack-2x {
+  color: #9400d3;
+}
+
+.btn-social-giza .btn-social-giza-lock .fa-stack-2x {
+  color: #9400d3;
+  display: none;
+}
+
+.btn-social-giza a:hover .fa-stack-2x {
+  transform: rotate(60deg);
+}
+
+.cameraicon {
+  text-align: right;
+}
+
+.filelabel {
+  border: 2px solid darkgray;
+  border-radius: 10px;
+  color: midnightblue;
+  display: inline-block;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  line-height: 75px;
+  font-size: 50px;
+}
+
+.filelabel:hover {
+  opacity: 0.5;
+  border: 2px solid midnightblue;
+  cursor: pointer;
+}
+
+#filesend {
+  display: none;
+  /* 本来のファイル選択フォームは非表示に */
+}
+
