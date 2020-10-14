@@ -1,0 +1,16 @@
+@media (min-width: 992px){
+  #sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    background-color: #afeeee;
+  }
+  .spinner {
+      display: none;
+  }
+  input[type="checkbox"]:not(:checked) ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+}

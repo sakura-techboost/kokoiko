@@ -69,4 +69,5 @@
           
         </main>
       </div>
+      @yield('js')
     </body>

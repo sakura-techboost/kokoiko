@@ -608,7 +608,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("//$(document).ready(function () {\n//$(document).on('show.bs.modal', '.modal', e => {\n//const $currentModal = $(e.currentTarget);\n//var zIndex = 1040 + (10 * $('.modal:visible').length);\n//$currentModal.css('z-index', zIndex);\n//setTimeout(function() {\n//$('.modal-backdrop')\n//.not('.modal-stack')\n//.css('z-index', zIndex - 1)\n//.addClass('modal-stack');\n//}, 0);\n//});\n//});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvY29udGVudC5qcz9lMzY1Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0U7QUFDRTtBQUNBO0FBQ0E7QUFDQTtBQUNFO0FBQ0U7QUFDQTtBQUNBO0FBQ0o7QUFDRjtBQUNGIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL2pzL2NvbnRlbnQuanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyQoZG9jdW1lbnQpLnJlYWR5KGZ1bmN0aW9uICgpIHtcbiAgLy8kKGRvY3VtZW50KS5vbignc2hvdy5icy5tb2RhbCcsICcubW9kYWwnLCBlID0+IHtcbiAgICAvL2NvbnN0ICRjdXJyZW50TW9kYWwgPSAkKGUuY3VycmVudFRhcmdldCk7XG4gICAgLy92YXIgekluZGV4ID0gMTA0MCArICgxMCAqICQoJy5tb2RhbDp2aXNpYmxlJykubGVuZ3RoKTtcbiAgICAvLyRjdXJyZW50TW9kYWwuY3NzKCd6LWluZGV4JywgekluZGV4KTtcbiAgICAvL3NldFRpbWVvdXQoZnVuY3Rpb24oKSB7XG4gICAgICAvLyQoJy5tb2RhbC1iYWNrZHJvcCcpXG4gICAgICAgIC8vLm5vdCgnLm1vZGFsLXN0YWNrJylcbiAgICAgICAgLy8uY3NzKCd6LWluZGV4JywgekluZGV4IC0gMSlcbiAgICAgICAgLy8uYWRkQ2xhc3MoJ21vZGFsLXN0YWNrJyk7XG4gICAgLy99LCAwKTtcbiAgLy99KTtcbi8vfSk7Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/content.js\n");
+eval("//ポップオーバーを動作させる\n$(document).ready(function () {\n  $(document).on('show.bs.modal', '.modal', function (e) {\n    var $currentModal = $(e.currentTarget);\n    var zIndex = 1040 + 10 * $('.modal:visible').length;\n    $currentModal.css('z-index', zIndex);\n    setTimeout(function () {\n      $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');\n    }, 0);\n  });\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvY29udGVudC5qcz9lMzY1Il0sIm5hbWVzIjpbIiQiLCJkb2N1bWVudCIsInJlYWR5Iiwib24iLCJlIiwiJGN1cnJlbnRNb2RhbCIsImN1cnJlbnRUYXJnZXQiLCJ6SW5kZXgiLCJsZW5ndGgiLCJjc3MiLCJzZXRUaW1lb3V0Iiwibm90IiwiYWRkQ2xhc3MiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0FBLENBQUMsQ0FBQ0MsUUFBRCxDQUFELENBQVlDLEtBQVosQ0FBa0IsWUFBWTtBQUM1QkYsR0FBQyxDQUFDQyxRQUFELENBQUQsQ0FBWUUsRUFBWixDQUFlLGVBQWYsRUFBZ0MsUUFBaEMsRUFBMEMsVUFBQUMsQ0FBQyxFQUFJO0FBQzdDLFFBQU1DLGFBQWEsR0FBR0wsQ0FBQyxDQUFDSSxDQUFDLENBQUNFLGFBQUgsQ0FBdkI7QUFDQSxRQUFJQyxNQUFNLEdBQUcsT0FBUSxLQUFLUCxDQUFDLENBQUMsZ0JBQUQsQ0FBRCxDQUFvQlEsTUFBOUM7QUFDQUgsaUJBQWEsQ0FBQ0ksR0FBZCxDQUFrQixTQUFsQixFQUE2QkYsTUFBN0I7QUFDQUcsY0FBVSxDQUFDLFlBQVc7QUFDcEJWLE9BQUMsQ0FBQyxpQkFBRCxDQUFELENBQ0dXLEdBREgsQ0FDTyxjQURQLEVBRUdGLEdBRkgsQ0FFTyxTQUZQLEVBRWtCRixNQUFNLEdBQUcsQ0FGM0IsRUFHR0ssUUFISCxDQUdZLGFBSFo7QUFJRCxLQUxTLEVBS1AsQ0FMTyxDQUFWO0FBTUQsR0FWRDtBQVdELENBWkQiLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvY29udGVudC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8v44Od44OD44OX44Kq44O844OQ44O844KS5YuV5L2c44GV44Gb44KLXG4kKGRvY3VtZW50KS5yZWFkeShmdW5jdGlvbiAoKSB7XG4gICQoZG9jdW1lbnQpLm9uKCdzaG93LmJzLm1vZGFsJywgJy5tb2RhbCcsIGUgPT4ge1xuICAgIGNvbnN0ICRjdXJyZW50TW9kYWwgPSAkKGUuY3VycmVudFRhcmdldCk7XG4gICAgdmFyIHpJbmRleCA9IDEwNDAgKyAoMTAgKiAkKCcubW9kYWw6dmlzaWJsZScpLmxlbmd0aCk7XG4gICAgJGN1cnJlbnRNb2RhbC5jc3MoJ3otaW5kZXgnLCB6SW5kZXgpO1xuICAgIHNldFRpbWVvdXQoZnVuY3Rpb24oKSB7XG4gICAgICAkKCcubW9kYWwtYmFja2Ryb3AnKVxuICAgICAgICAubm90KCcubW9kYWwtc3RhY2snKVxuICAgICAgICAuY3NzKCd6LWluZGV4JywgekluZGV4IC0gMSlcbiAgICAgICAgLmFkZENsYXNzKCdtb2RhbC1zdGFjaycpO1xuICAgIH0sIDApO1xuICB9KTtcbn0pOyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/content.js\n");
 
 /***/ }),
 
@@ -619,7 +619,7 @@ eval("//$(document).ready(function () {\n//$(document).on('show.bs.modal', '.mod
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3Jlc291cmNlcy9qcy90ZXN0Y29udGVudC5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/testcontent.js\n");
+eval("$(function () {\n  $('[data-toggle=\"popover\"]').popover();\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvanMvdGVzdGNvbnRlbnQuanM/N2QyYyJdLCJuYW1lcyI6WyIkIiwicG9wb3ZlciJdLCJtYXBwaW5ncyI6IkFBQUFBLENBQUMsQ0FBQyxZQUFZO0FBQ1pBLEdBQUMsQ0FBQyx5QkFBRCxDQUFELENBQTZCQyxPQUE3QjtBQUNELENBRkEsQ0FBRCIsImZpbGUiOiIuL3Jlc291cmNlcy9qcy90ZXN0Y29udGVudC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIiQoZnVuY3Rpb24gKCkge1xuICAkKCdbZGF0YS10b2dnbGU9XCJwb3BvdmVyXCJdJykucG9wb3ZlcigpXG59KSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/js/testcontent.js\n");
 
 /***/ }),
 
@@ -631,6 +631,17 @@ eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset
 /***/ (function(module, exports) {
 
 eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9hcHAuc2Nzcz8wZTE1Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL3Nhc3MvYXBwLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyByZW1vdmVkIGJ5IGV4dHJhY3QtdGV4dC13ZWJwYWNrLXBsdWdpbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/sass/app.scss\n");
+
+/***/ }),
+
+/***/ "./resources/sass/mediaqueries.scss":
+/*!******************************************!*\
+  !*** ./resources/sass/mediaqueries.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvc2Fzcy9tZWRpYXF1ZXJpZXMuc2Nzcz8zOGQ5Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL3Nhc3MvbWVkaWFxdWVyaWVzLnNjc3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyByZW1vdmVkIGJ5IGV4dHJhY3QtdGV4dC13ZWJwYWNrLXBsdWdpbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/sass/mediaqueries.scss\n");
 
 /***/ }),
 
@@ -657,16 +668,17 @@ eval("// removed by extract-text-webpack-plugin//# sourceURL=[module]\n//# sourc
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/rayouts.scss ./resources/sass/testrayouts.scss ***!
-  \*****************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/rayouts.scss ./resources/sass/testrayouts.scss ./resources/sass/mediaqueries.scss ***!
+  \****************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/ec2-user/environment/kokoiko/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /home/ec2-user/environment/kokoiko/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/ec2-user/environment/kokoiko/resources/sass/rayouts.scss */"./resources/sass/rayouts.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/kokoiko/resources/sass/testrayouts.scss */"./resources/sass/testrayouts.scss");
+__webpack_require__(/*! /home/ec2-user/environment/kokoiko/resources/sass/testrayouts.scss */"./resources/sass/testrayouts.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/kokoiko/resources/sass/mediaqueries.scss */"./resources/sass/mediaqueries.scss");
 
 
 /***/ })
