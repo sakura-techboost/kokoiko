@@ -11,20 +11,24 @@
           <form>{{-- 新規登録フォーム --}}
           　@csrf
             <div class="form-group mb-2">
-              <label class="col-form-label sr-only" for="Q_Place">名称</label>
-              <input type="text" class="form-control" id="Q_Place" placeholder="名称">
+              <label class="col-form-label sr-only" for="name">名称</label>
+              <input type="text" class="form-control" id="name" placeholder="名称">
             </div>
             <div class="form-group mb-2">
-              <label class="col-form-label sr-only" for="Q_Overview">概要</label>
-              <textarea class="form-control" id="Q_Overview" placeholder="どんなところ？"></textarea>
+              <label class="col-form-label sr-only" for="url">HP</label>
+              <input type="url" class="form-control" id="url" placeholder="ホームページ">
+            </div>
+            <div class="form-group mb-2">
+              <label class="col-form-label sr-only" for="overview">概要</label>
+              <textarea class="form-control" id="overview" placeholder="どんなところ？"></textarea>
               <small class="form-text">※タグ付けをすると検索できます</small>
             </div>
             <div class="form-group mb-2">
-              <label class="col-form-label" for="Q_SaveFolder">登録先</label>
-              <select class="form-control" id="Q_SaveFolder">
-                <option>お気に入り</option>
-                <option>行ってみたい</option>
-                <option>いまいち</option>
+              <label class="col-form-label" for="placetype_id">登録先</label>
+              <select class="form-control" id="placetype_id">
+                <option value="1">お気に入り</option>
+                <option value="2">行ってみたい</option>
+                <option value="3">いまいち</option>
               </select>
             </div>
             {{-- モーダルツールバー --}}
@@ -48,71 +52,71 @@
                     <div class="modal-body">
                       <form>
                         <div class="form-group row"> {{-- 住所入力 --}}
-                        　　<label class="col-md-3 col-form-label text-md-right" for="inputAddress01">郵便番号</label>
-                        　　<div class="col-md-7">
-                        　　    <input type="text" name="zip1" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /> - <input type="text" name="zip2" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /><br>
-                        　　</div>
-                        　　<label class="col-md-3 col-form-label text-md-right" for="inputAddress02 inputAddress03">住所</label>
-                      　　<div class="col-md-5">
-                        　　<select class="form-control" name="address1" id="inputAddress02">
-                        　　    <option value="">-- 都道府県 --</option>
-                        　　    <option value="北海道">北海道</option>
-                              <option value="青森県">青森県</option>
-                              <option value="岩手県">岩手県</option>
-                              <option value="宮城県">宮城県</option>
-                              <option value="秋田県">秋田県</option>
-                              <option value="山形県">山形県</option>
-                              <option value="福島県">福島県</option>
-                              <option value="茨城県">茨城県</option>
-                              <option value="栃木県">栃木県</option>
-                              <option value="群馬県">群馬県</option>
-                              <option value="埼玉県">埼玉県</option>
-                              <option value="千葉県">千葉県</option>
-                              <option value="東京都">東京都</option>
-                              <option value="神奈川県">神奈川県</option>
-                              <option value="新潟県">新潟県</option>
-                              <option value="富山県">富山県</option>
-                              <option value="石川県">石川県</option>
-                              <option value="福井県">福井県</option>
-                              <option value="山梨県">山梨県</option>
-                              <option value="長野県">長野県</option>
-                              <option value="岐阜県">岐阜県</option>
-                              <option value="静岡県">静岡県</option>
-                              <option value="愛知県">愛知県</option>
-                              <option value="三重県">三重県</option>
-                              <option value="滋賀県">滋賀県</option>
-                              <option value="京都府">京都府</option>
-                              <option value="大阪府">大阪府</option>
-                              <option value="兵庫県">兵庫県</option>
-                              <option value="奈良県">奈良県</option>
-                              <option value="和歌山県">和歌山県</option>
-                              <option value="鳥取県">鳥取県</option>
-                              <option value="島根県">島根県</option>
-                              <option value="岡山県">岡山県</option>
-                              <option value="広島県">広島県</option>
-                              <option value="山口県">山口県</option>
-                              <option value="徳島県">徳島県</option>
-                              <option value="香川県">香川県</option>
-                              <option value="愛媛県">愛媛県</option>
-                              <option value="高知県">高知県</option>
-                              <option value="福岡県">福岡県</option>
-                              <option value="佐賀県">佐賀県</option>
-                              <option value="長崎県">長崎県</option>
-                              <option value="熊本県">熊本県</option>
-                              <option value="大分県">大分県</option>
-                              <option value="宮崎県">宮崎県</option>
-                              <option value="鹿児島県">鹿児島県</option>
-                              <option value="沖縄県">沖縄県</option>
+                          <label class="col-md-3 col-form-label text-md-right" for="inputAddress01">郵便番号</label>
+                          <div class="col-md-7">
+                      　　    <input type="text" name="zip1" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /> - <input type="text" name="zip2" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /><br>
+                          </div>
+                          <label class="col-md-3 col-form-label text-md-right" for="pref_id city_id">住所</label>
+                          <div class="col-md-5">
+                            <select class="form-control" name="address1" id="pref_id">
+                        　　    <option value="">-- 選択してください --</option>
+                              <option value="01">北海道</option>
+                              <option value="02">青森県</option>
+                              <option value="03">岩手県</option>
+                              <option value="04">宮城県</option>
+                              <option value="05">秋田県</option>
+                              <option value="06">山形県</option>
+                              <option value="07">福島県</option>
+                              <option value="08">茨城県</option>
+                              <option value="09">栃木県</option>
+                              <option value="10">群馬県</option>
+                              <option value="11">埼玉県</option>
+                              <option value="12">千葉県</option>
+                              <option value="13">東京都</option>
+                              <option value="14">神奈川県</option>
+                              <option value="15">新潟県</option>
+                              <option value="16">富山県</option>
+                              <option value="17">石川県</option>
+                              <option value="18">福井県</option>
+                              <option value="19">山梨県</option>
+                              <option value="20">長野県</option>
+                              <option value="21">岐阜県</option>
+                              <option value="22">静岡県</option>
+                              <option value="23">愛知県</option>
+                              <option value="24">三重県</option>
+                              <option value="25">滋賀県</option>
+                              <option value="26">京都府</option>
+                              <option value="27">大阪府</option>
+                              <option value="28">兵庫県</option>
+                              <option value="29">奈良県</option>
+                              <option value="30">和歌山県</option>
+                              <option value="31">鳥取県</option>
+                              <option value="32">島根県</option>
+                              <option value="33">岡山県</option>
+                              <option value="34">広島県</option>
+                              <option value="35">山口県</option>
+                              <option value="36">徳島県</option>
+                              <option value="37">香川県</option>
+                              <option value="38">愛媛県</option>
+                              <option value="39">高知県</option>
+                              <option value="40">福岡県</option>
+                              <option value="41">佐賀県</option>
+                              <option value="42">長崎県</option>
+                              <option value="43">熊本県</option>
+                              <option value="44">大分県</option>
+                              <option value="45">宮崎県</option>
+                              <option value="46">鹿児島県</option>
+                              <option value="47">沖縄県</option>
                         　　　</select>
-                        　　<input type="text" name="address2" class="form-control" id="inputAddress03" placeholder="市区町村">
-                      　　</div>
-                    　　</div>
-                    　　<div class="form-group row">
-                      　　<label class="col-md-3 col-form-label text-md-right" for="Q_Address">番地等</label>
-              　　    　　    <div class="col-md-5">
-                  　　　　　　　　    <input type="text" class="form-control" id="Q_Address">
+                            <input type="text" name="address2" class="form-control" id="city_id" placeholder="市区町村">
+                          </div>
+                      　</div>
+                      　<div class="form-group row">
+                      　   <label class="col-md-3 col-form-label text-md-right" for="address">番地等</label>
+                          <div class="col-md-5">
+                      　　    <input type="text" class="form-control" id="address">
                       　　　</div>
-                    　　</div>
+                      　</div>
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -122,17 +126,17 @@
                 </div>
               </div>
               <!--以下電話番号-->
-              <a data-toggle="modal" href="#addPhoneNunber" class="btn-social-giza-phone" title="電話番号入力">
+              <a data-toggle="modal" href="#phone" class="btn-social-giza-phone" title="電話番号入力">
                 <span class="fa-stack">
                 <i class="fas fa-certificate fa-stack-2x"></i>
                 <i class="fas fa-phone fa-stack-1x"></i>
                 </span>
               </a>
-              <div class="modal fade" id="addPhoneNunber" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addPhoneNunber" aria-hidden="true">
+              <div class="modal fade" id="phone" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addPhoneNunber" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="addPhoneNunber">電話番号登録</h5>
+                      <h5 class="modal-title" id="phone">電話番号登録</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -140,9 +144,9 @@
                     <div class="modal-body">
                       <form>
                         <div class="form-group row">
-                      　　<label class="col-md-3 col-form-label text-md-right" for="Q_PhoneNumber">電話番号</label>
+                      　　<label class="col-md-3 col-form-label text-md-right" for="phone">電話番号</label>
                       　　<div class="col-md-5">
-                        　　　　  <input type="text" class="form-control" id="Q_PhoneNumber">
+                        　　  <input type="text" class="form-control" id="phone">
                       　　</div>
                       　</div>
                       </form>
@@ -176,7 +180,7 @@
                             {{-- 画像アップロード(アイコン部分） --}}
                   　　    　   <div class="filelabel" title="ファイル選択">
                       　　      <i class="fas fa-camera"></i>
-                          　　</div>
+                          　</div>
                             {{-- 画像アップロード(フォーム部分)※非表示 --}}
                           　<input type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
                           </label>
@@ -234,17 +238,17 @@
                 </div>
               </div>
               <!--以下関心度-->
-              <a data-toggle="modal" href="#addAttention" class="btn-social-giza-star" title="関心度">
+              <a data-toggle="modal" href="#attention" class="btn-social-giza-star" title="関心度">
                 <span class="fa-stack">
                 <i class="fas fa-certificate fa-stack-2x"></i>
                 <i class="fas fa-star-half-alt fa-stack-1x"></i>
                 </span>
               </a>
-              <div class="modal fade" id="addAttention" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addAttention" aria-hidden="true">
+              <div class="modal fade" id="attention" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="attention" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="addAttention">関心度選択</h5>
+                      <h5 class="modal-title" id="attention">関心度選択</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -252,14 +256,14 @@
                     <div class="modal-body">
                       <form>
                         <div class="form-group row">
-                          <label class="col-md-3 col-form-label text-md-right" for="Q_Attention">関心度</label>
+                          <label class="col-md-3 col-form-label text-md-right" for="attention_id">関心度</label>
                           <div class="col-md-5">
-                            <select class="form-control text-warning" id="Q_Attention">
-                              <option>★★★★★</option>
-                              <option>★★★★☆</option>
-                              <option>★★★☆☆</option>
-                              <option>★★☆☆☆</option>
-                              <option>★☆☆☆☆</option>
+                            <select class="form-control text-warning" id="attention_id">
+                              <option value="1">★★★★★</option>
+                              <option value="2">★★★★☆</option>
+                              <option value="3">★★★☆☆</option>
+                              <option value="4">★★☆☆☆</option>
+                              <option value="5">★☆☆☆☆</option>
                             </select>
                           </div>
                         </div>

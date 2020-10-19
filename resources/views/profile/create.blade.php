@@ -15,30 +15,23 @@
             <form>
               {{-- 名前入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="userName">名前</label>
+                <label class="col-md-3 col-form-label text-md-right" for="name">名前</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="userName">
+                  <input type="text" class="form-control" id="name">
                 </div>
               </div>
               {{-- ふりがな入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="userKanaName">ふりがな</label>
+                <label class="col-md-3 col-form-label text-md-right" for="kana">ふりがな</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="userKanaName">
+                  <input type="text" class="form-control" id="kana">
                 </div>
               </div>
               {{-- ニックネーム入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="userNickname">ニックネーム(表示名)</label>
+                <label class="col-md-3 col-form-label text-md-right" for="nickname">ニックネーム(表示名)</label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="userNickname">
-                </div>
-              </div>
-              {{-- 電話番号入力欄 --}}
-              <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="phoneNumber">電話番号</label>
-                <div class="col-md-5">
-                  <input type="text" class="form-control" id="phoneNumber">
+                  <input type="text" class="form-control" id="nickname">
                 </div>
               </div>
               {{-- メールアドレス入力欄 --}}

@@ -26,6 +26,8 @@ Route::get('profile/create', 'ProfileController@create')->name("profile.create")
 Route::get('profile/login', 'ProfileController@login')->name("profile.login");
 Route::get('contents/show', 'ContentsController@show');
 
-//ctestCntent.blade.phpを表示するルーティング
+//testCntent.blade.phpを表示するルーティング
 Route::get('contents/testContent', 'ContentsController@testContent')->name("contents.testContent");
+//createCntent.blade.phpを表示するルーティング
+Route::get('contents/createContent', 'ContentsController@createContent')->name("contents.createContent");
 

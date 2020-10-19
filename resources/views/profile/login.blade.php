@@ -13,6 +13,7 @@
           </div>
           <div class="card-body">
             <form>
+              @csrf
               {{-- メールアドレス入力欄 --}}
               <div class="form-group row">
                 <label class="col-md-3 col-form-label text-md-right" for="email">メールアドレス(ID)</label>

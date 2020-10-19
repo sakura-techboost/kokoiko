@@ -88,6 +88,10 @@ class ContentsController extends Controller
     return view('contents.testContent', ['prefs' => self::$prefs]);
   }
   
+  public function createContent() {
+    return view('contents.createContent');
+  }
+  
   public function show() {
     return view('contents.show');
   }
