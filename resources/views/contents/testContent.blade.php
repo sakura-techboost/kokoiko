@@ -1,9 +1,9 @@
 {{-- 共通ヘッダー読み込み --}}
-@extends('layouts.testheader')
+@extends('layouts.header')
 {{-- ページタイトル埋め込み --}}
 @section('title','マイページ')
 
-@section('testContent')
+@section('content')
 
   <div class="maincontents">
     <div class="navigation">
@@ -204,5 +204,5 @@
 @endsection
 
 @section('js')
-      <script src="{{ secure_asset('js/testcontent.js') }}" defer></script>
+      <script src="{{ secure_asset('js/content.js') }}" defer></script>
 @endsection
