@@ -13,7 +13,9 @@ $(function () {
     $('.address .city_id').text(textCity);
     $('.address .address').text(textAddress);
     //モーダルを閉じる
-    $('#addAddress').modal('hide');
+    //$('#addAddress').modal('hide');
+    //画面全体のリロードを止める
+    return false;
   });
   
   //電話番号登録
