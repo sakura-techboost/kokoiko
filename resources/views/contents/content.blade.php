@@ -33,28 +33,56 @@
         {{-- タブの中身 --}}  
       <div class="tab-content">
         <div class="tab-pane fade" id="all">
-          <a class="card mb-3 btn" href="#">
-            <div class="row no-gutters">
-              <div class="col-4 mx-auto">
-              　<img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-              </div>
-              <div class="col-8">
-                <div class="card-body">
-                  <div class="row line1 h-20">
-                    <h5 class="card-title d-inline-block col-6">タイトル</h5>
-                    <h5 class="card-subtitle d-inline-block col-6">★★★★★</h5>
-                  </div>
-                  <div class="row line2 h-15">
-                    <p class="card-text city d-inline-block col-6">都道府県</p>
-                    <p class="card-text category d-inline-block col-6">カテゴリ</p>
-                  </div>
-                  <div class="row line3 h-65">
-                    <p class="card-text summary d-block col-12">概要</p>
-                  </div>
+          <div class="card-deck">
+            <div class="card">
+              <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+              <div class="card-body">
+                <div class="row line1 h-20">
+                  <h5 class="card-title d-inline-block col-6">タイトル</h5>
+                  <h5 class="card-subtitle d-inline-block col-6">★★★★★</h5>
+                </div>
+                <div class="row line2 h-15">
+                  <p class="card-text city d-inline-block col-6">都道府県</p>
+                  <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                </div>
+                <div class="row line3 h-65">
+                  <p class="card-text summary d-block col-12">概要</p>
                 </div>
               </div>
             </div>
-          </a>
+            <div class="card">
+              <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+              <div class="card-body">
+                <div class="row line1 h-20">
+                  <h5 class="card-title d-inline-block col-6">タイトル</h5>
+                  <h5 class="card-subtitle d-inline-block col-6">★★★★★</h5>
+                </div>
+                <div class="row line2 h-15">
+                  <p class="card-text city d-inline-block col-6">都道府県</p>
+                  <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                </div>
+                <div class="row line3 h-65">
+                  <p class="card-text summary d-block col-12">概要</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+              <div class="card-body">
+                <div class="row line1 h-20">
+                  <h5 class="card-title d-inline-block col-6">タイトル</h5>
+                  <h5 class="card-subtitle d-inline-block col-6">★★★★★</h5>
+                </div>
+                <div class="row line2 h-15">
+                  <p class="card-text city d-inline-block col-6">都道府県</p>
+                  <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                </div>
+                <div class="row line3 h-65">
+                  <p class="card-text summary d-block col-12">概要</p>
+                </div>
+              </div>
+            </div>
+          </div>  
         </div>
           
     　  <div class="tab-pane fade show active" id="favorite">

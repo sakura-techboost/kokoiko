@@ -104,7 +104,7 @@ eval("$(function () {\n  //header.blade.php内のエリアから検索部分の�
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/kokoiko/resources/js/content.js */"./resources/js/content.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/dev/kokoiko/resources/js/content.js */"./resources/js/content.js");
 
 
 /***/ })
