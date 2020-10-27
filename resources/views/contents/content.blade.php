@@ -33,9 +33,9 @@
         {{-- タブの中身 --}}  
       <div class="tab-content">
         <div class="tab-pane fade" id="all">
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-            <div class="col mb-4">
-              <div class="card" style="width: 20rem;">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
                 <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                 <div class="card-body">
                   <div class="row line1 h-20">
@@ -52,8 +52,8 @@
                 </div>
               </div>
             </div>
-            <div class="col mx-auto">
-              <div class="card" style="width: 20rem;">
+            <div class="col-md-6">
+              <div class="card">
                 <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                 <div class="card-body">
                   <div class="row line1 h-20">
@@ -70,8 +70,8 @@
                 </div>
               </div>
             </div>
-            <div class="col mx-auto">
-              <div class="card" style="width: 20rem;">
+            <div class="col-md-6">
+              <div class="card">
                 <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                 <div class="card-body">
                   <div class="row line1 h-20">
@@ -88,8 +88,8 @@
                 </div>
               </div>
             </div>
-            <div class="col mx-auto">
-              <div class="card" style="width: 20rem;">
+            <div class="col-md-6">
+              <div class="card">
                 <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                 <div class="card-body">
                   <div class="row line1 h-20">
