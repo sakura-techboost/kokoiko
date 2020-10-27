@@ -35,7 +35,7 @@
         <div class="tab-pane fade" id="all">
           <div class="row">
             <div class="col-md-6">
-              <div class="card mb-3" style="max-width: 540px">
+              <div class="card mb-3 mx-auto" style="max-width: 540px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
@@ -59,7 +59,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card mb-3" style="max-width: 540px">
+              <div class="card mb-3 mx-auto" style="max-width: 540px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
@@ -83,7 +83,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card mb-3" style="max-width: 540px">
+              <div class="card mb-3 mx-auto" style="max-width: 540px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
@@ -107,7 +107,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="card mb-3" style="max-width: 540px">
+              <div class="card mb-3 mx-auto" style="max-width: 540px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
