@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Exception;
+Use Log;
 
 class ContentsController extends Controller
 {
@@ -89,6 +91,7 @@ class ContentsController extends Controller
   }
   
   public function createContent() {
+
     return view('contents.createContent');
   }
   
