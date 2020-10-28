@@ -34,101 +34,116 @@
       <div class="tab-content">
         <div class="tab-pane fade" id="all">
           <div class="row">
-            <div class="col-lg-6">
-              <div class="card mb-3 mx-auto" style="min-width: 318px">
+            <div class="col-lg-12">
+              <div class="card mb-3 mx-auto mt-3">
                 <div class="row no-gutters card-header">
                   <p class="d-inline-block col-6">タイトル</p>
                   <p class="d-inline-block col-6" align="right">★★★★★</p>
                 </div>
-                <div class="row no-gutters">
-                  <div class="col-sm-4 my-auto mx-auto">
-                    <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                  </div>
-                  <div class="col-sm-8">
-                    <div class="card-body">
-                      
-                      <div class="row line2 h-15">
-                        <p class="card-text city d-inline-block col-6">都道府県</p>
-                        <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                <ul class="list-group list-group-flush" >
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row no-gutters">
+                      <div class="col-sm-4 my-auto mx-auto">
+                        <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                       </div>
-                      <div class="row line3 h-65">
-                        <p class="card-text summary d-block col-12">概要</p>
-                      </div>   
+                      <div class="col-sm-8">
+                        <div class="card-body p-0">
+                          <p class="card-text summary" style="border-top: thin solid #d3d3d3">概要</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </li>
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row">
+                      <p class="card-text city d-inline-block col-6" style="border-right: thin solid #d3d3d3">都道府県</p>
+                      <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="card mb-3 mx-auto" style="min-width: 318px">
-                <div class="row no-gutters">
-                  <div class="col-md-4 my-auto">
-                    <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <div class="row line1 h-20">
-                        <h5 class="card-title d-inline-block col-6">タイトル</h5>
-                        <p class="card-subtitle d-inline-block col-6">★★★★★</p>
-                      </div>
-                      <div class="row line2 h-15">
-                        <p class="card-text city d-inline-block col-6">都道府県</p>
-                        <p class="card-text category d-inline-block col-6">カテゴリ</p>
-                      </div>
-                      <div class="row line3 h-65">
-                        <p class="card-text summary d-block col-12">概要</p>
-                      </div>   
-                    </div>
-                  </div>
+            <div class="col-lg-12">
+              <div class="card mb-3 mx-auto">
+                <div class="row no-gutters card-header">
+                  <p class="d-inline-block col-6">タイトル</p>
+                  <p class="d-inline-block col-6" align="right">★★★★★</p>
                 </div>
+                <ul class="list-group list-group-flush" >
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row no-gutters">
+                      <div class="col-sm-4 my-auto mx-auto">
+                        <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="card-body p-0">
+                          <p class="card-text summary" style="border-top: thin solid #d3d3d3">概要</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row">
+                      <p class="card-text city d-inline-block col-6" style="border-right: thin solid #d3d3d3">都道府県</p>
+                      <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="card mb-3 mx-auto" style="min-width: 318px">
-                <div class="row no-gutters">
-                  <div class="col-md-4 my-auto">
-                    <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <div class="row line1 h-20">
-                        <h5 class="card-title d-inline-block col-6">タイトル</h5>
-                        <p class="card-subtitle d-inline-block col-6">★★★★★</p>
-                      </div>
-                      <div class="row line2 h-15">
-                        <p class="card-text city d-inline-block col-6">都道府県</p>
-                        <p class="card-text category d-inline-block col-6">カテゴリ</p>
-                      </div>
-                      <div class="row line3 h-65">
-                        <p class="card-text summary d-block col-12">概要</p>
-                      </div>   
-                    </div>
-                  </div>
+            <div class="col-lg-12">
+              <div class="card mb-3 mx-auto">
+                <div class="row no-gutters card-header">
+                  <p class="d-inline-block col-6">タイトル</p>
+                  <p class="d-inline-block col-6" align="right">★★★★★</p>
                 </div>
+                <ul class="list-group list-group-flush" >
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row no-gutters">
+                      <div class="col-sm-4 my-auto mx-auto">
+                        <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="card-body p-0">
+                          <p class="card-text summary" style="border-top: thin solid #d3d3d3">概要</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row">
+                      <p class="card-text city d-inline-block col-6" style="border-right: thin solid #d3d3d3">都道府県</p>
+                      <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="card mb-3 mx-auto" style="min-width: 318px">
-                <div class="row no-gutters">
-                  <div class="col-md-4 my-auto">
-                    <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <div class="row line1 h-20">
-                        <h5 class="card-title d-inline-block col-6">タイトル</h5>
-                        <p class="card-subtitle d-inline-block col-6">★★★★★</p>
-                      </div>
-                      <div class="row line2 h-15">
-                        <p class="card-text city d-inline-block col-6">都道府県</p>
-                        <p class="card-text category d-inline-block col-6">カテゴリ</p>
-                      </div>
-                      <div class="row line3 h-65">
-                        <p class="card-text summary d-block col-12">概要</p>
-                      </div>   
-                    </div>
-                  </div>
+            <div class="col-lg-12">
+              <div class="card mb-3 mx-auto">
+                <div class="row no-gutters card-header">
+                  <p class="d-inline-block col-6">タイトル</p>
+                  <p class="d-inline-block col-6" align="right">★★★★★</p>
                 </div>
+                <ul class="list-group list-group-flush" >
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row no-gutters">
+                      <div class="col-sm-4 my-auto mx-auto">
+                        <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="card-body p-0">
+                          <p class="card-text summary" style="border-top: thin solid #d3d3d3">概要</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item w-100 p-0">
+                    <div class="row">
+                      <p class="card-text city d-inline-block col-6" style="border-right: thin solid #d3d3d3">都道府県</p>
+                      <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>  
