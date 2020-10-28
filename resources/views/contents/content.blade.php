@@ -34,8 +34,8 @@
       <div class="tab-content">
         <div class="tab-pane fade" id="all">
           <div class="row">
-            <div class="col-md-6">
-              <div class="card mb-3 mx-auto">
+            <div class="col-lg-6">
+              <div class="card mb-3 mx-auto" style="min-width: 318px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
@@ -58,8 +58,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="card mb-3 mx-auto">
+            <div class="col-lg-6">
+              <div class="card mb-3 mx-auto" style="min-width: 318px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
@@ -82,8 +82,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="card mb-3 mx-auto">
+            <div class="col-lg-6">
+              <div class="card mb-3 mx-auto" style="min-width: 318px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
@@ -106,8 +106,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="card mb-3 mx-auto">
+            <div class="col-lg-6">
+              <div class="card mb-3 mx-auto" style="min-width: 318px">
                 <div class="row no-gutters">
                   <div class="col-md-4 my-auto">
                     <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
