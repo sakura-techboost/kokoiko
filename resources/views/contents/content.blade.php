@@ -32,13 +32,13 @@
       </ul>
         {{-- タブの中身 --}}  
       <div class="tab-content">
-        <div class="tab-pane fade" id="all">
+        <div class="tab-pane fade show active" id="all">
           <div class="row">
             <div class="col-lg-12">
               <div class="card mb-3 mx-auto mt-3">
-                <div class="row no-gutters card-header">
-                  <p class="d-inline-block col-6">タイトル</p>
-                  <p class="d-inline-block col-6" align="right">★★★★★</p>
+                <div class="row no-gutters card-header py-1 px-4">
+                  <p class="d-inline-block col-6">タイトル<br><small>★★★★★</small></p>
+                  <p class="d-inline-block col-6 align-self-center" align="right"><i class="fas fa-ellipsis-h"></i></p>
                 </div>
                 <ul class="list-group list-group-flush" >
                   <li class="list-group-item w-100 p-0">
@@ -55,8 +55,15 @@
                   </li>
                   <li class="list-group-item w-100 p-0">
                     <div class="row">
-                      <p class="card-text city d-inline-block col-6" style="border-right: thin solid #d3d3d3">都道府県</p>
-                      <p class="card-text category d-inline-block col-6">カテゴリ</p>
+                      <p class="card-text city d-inline-block col-4 p-1" style="border-right: thin solid #d3d3d3">
+                        <span style="font-size: small">都道府県</span>
+                      </p>
+                      <p class="card-text city d-inline-block col-4 p-1" style="border-right: thin solid #d3d3d3">
+                        <span style="font-size: small">市区町村</span>
+                      </p>
+                      <p class="card-text category d-inline-block col-4 p-1">
+                        <span style="font-size: small">カテゴリ</span>
+                      </p>
                     </div>
                   </li>
                 </ul>
@@ -149,7 +156,7 @@
           </div>  
         </div>
           
-    　  <div class="tab-pane fade show active" id="favorite">
+    　  <div class="tab-pane fade" id="favorite">
           <a class="card mb-3 btn" href="#">
             <div class="row no-gutters">
               <div class="col-4 mx-auto">
