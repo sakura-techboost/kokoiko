@@ -38,7 +38,11 @@
               <div class="card mb-3 mx-auto mt-3">
                 <div class="row no-gutters card-header py-1 px-4">
                   <p class="d-inline-block col-6">タイトル<br><small>★★★★★</small></p>
-                  <p class="d-inline-block col-6 align-self-center" align="right"><i class="fas fa-ellipsis-h"></i></p>
+                  <p class="d-inline-block col-6 align-self-center" align="right">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#content-menu">
+                     <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                  </p>
                 </div>
                 <ul class="list-group list-group-flush" >
                   <li class="list-group-item w-100 p-0">
