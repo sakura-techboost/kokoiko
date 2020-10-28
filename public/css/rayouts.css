@@ -167,6 +167,16 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   color: #00ff7f;
 }
 
+.card-img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.embed-responsive .card-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .card-body {
   text-align: left;
 }

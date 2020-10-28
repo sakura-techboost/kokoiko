@@ -143,6 +143,13 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .fa-user-edit:hover{
     color:#00ff7f;
 }
+.card-img{
+  max-width: 300px;
+  max-height: 300px;
+}
+.embed-responsive .card-img {
+  object-fit: cover;
+}
 .card-body{
     text-align:left;
 }

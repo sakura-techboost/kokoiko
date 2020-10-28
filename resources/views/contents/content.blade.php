@@ -41,10 +41,10 @@
                   <p class="d-inline-block col-6" align="right">★★★★★</p>
                 </div>
                 <div class="row no-gutters">
-                  <div class="col-md-4 my-auto">
-                    <img class="card-img" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                  <div class="col-sm-4 my-auto mx-auto">
+                    <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-sm-8">
                     <div class="card-body">
                       
                       <div class="row line2 h-15">
