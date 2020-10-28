@@ -20,7 +20,7 @@
               <label class="col-md-3 col-form-label text-md-right" for="pref_id city_id">住所</label>
               <div class="col-md-5">
                 <select class="form-control" name="address1" id="pref_id">
-            　　    <option value="">-- 選択してください --</option>
+                  <option value="">-- 選択してください --</option>
                   <option value="01">北海道</option>
                   <option value="02">青森県</option>
                   <option value="03">岩手県</option>
