@@ -66,7 +66,7 @@
                   </li>
                   <li class="nav-item">
                     <!--以下電話番号-->
-                    <a data-toggle="modal" href="#phone" class="btn-social-giza-phone" title="電話番号入力">
+                    <a data-toggle="modal" href="#addPhone" class="btn-social-giza-phone" title="電話番号入力">
                       <span class="fa-stack">
                       <i class="fas fa-certificate fa-stack-2x"></i>
                       <i class="fas fa-phone fa-stack-1x"></i>
@@ -93,7 +93,7 @@
                   </li>
                   <li class="nav-item">
                     <!--以下関心度-->
-                    <a data-toggle="modal" href="#attention" class="btn-social-giza-star" title="関心度">
+                    <a data-toggle="modal" href="#addAttention" class="btn-social-giza-star" title="関心度">
                       <span class="fa-stack">
                       <i class="fas fa-certificate fa-stack-2x"></i>
                       <i class="fas fa-star-half-alt fa-stack-1x"></i>
