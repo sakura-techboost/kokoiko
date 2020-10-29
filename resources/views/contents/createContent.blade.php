@@ -36,20 +36,39 @@
                 </select>
               </div>
               <!-- オプション入力フォーム -->
+              <!-- 住所情報 -->
               <div class="form-group mb-2 address">
                 <span class="pref_id"></span><span class="city_id"></span><span class="address"></span>
+                <label class="col-form-label d-none" for="pref_id city_id">住所</label>
+                <select class="form-control d-none" name="address1" id="pref_id">
+                  <option></option>
+                </select>
+                <input type="text" name="address2" class="form-control d-none" id="city_id" placeholder="市区町村">
+                <label class="col-form-label d-none" for="address">番地等</label>
+                <input type="text" class="form-control d-none" id="address">
               </div>
+              <!-- 電話番号情報 -->
               <div class="form-group mb-2 phone"> 
                 <span></span>
                 <label class="col-form-label d-none" for="phone">電話番号</label>
                 <input type="text" class="form-control d-none" id="phone">
               </div>
               
+              <!-- カテゴリー情報 -->
               <div class="form-group mb-2 category"> 
                 <span></span>
+                <label class="col-form-label d-none" for="category_id">カテゴリー</label>
+                <select class="form-control d-none" id="category_id">
+                  <option></option>
+                </select>
               </div>
+              <!-- 関心度情報 -->
               <div class="form-group mb-2 attention"> 
                 <span></span>
+                <label class="col-form-label" for="attention_id">関心度</label>
+                <select class="form-control text-warning" id="attention_id">
+                  <option></option>
+                </select>
               </div>
               
               {{-- モーダルツールバー(モーダル部分はmodal.blade.phpに記述) --}}

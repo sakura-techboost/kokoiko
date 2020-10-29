@@ -12,15 +12,15 @@
         </div>
         <form id="address-form">
           <div class="modal-body">
-            <div class="form-group row"> {{-- 住所入力 --}}
+            <div class="form-group row"> 
+              {{-- 住所入力 --}}
               <label class="col-md-3 col-form-label text-md-right" for="inputAddress01">郵便番号</label>
               <div class="col-md-7">
-          　　    <input type="text" name="zip1" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /> - <input type="text" name="zip2" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /><br>
+                <input type="text" name="zip1" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /> - <input type="text" name="zip2" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /><br>
               </div>
-              <label class="col-md-3 col-form-label text-md-right" for="pref_id city_id">住所</label>
+              <label class="col-md-3 col-form-label text-md-right" for="form_pref_id form_city_id">住所</label>
               <div class="col-md-5">
-                <select class="form-control" name="address1" id="pref_id">
-                  <option value="">-- 選択してください --</option>
+                <select class="form-control" name="address1" id="form_pref_id">
                   <option value="01">北海道</option>
                   <option value="02">青森県</option>
                   <option value="03">岩手県</option>
@@ -69,14 +69,14 @@
                   <option value="46">鹿児島県</option>
                   <option value="47">沖縄県</option>
             　　　</select>
-                <input type="text" name="address2" class="form-control" id="city_id" placeholder="市区町村">
+                <input type="text" name="address2" class="form-control" id="form_city_id" placeholder="市区町村">
               </div>
-          　</div>
-          　<div class="form-group row">
-          　   <label class="col-md-3 col-form-label text-md-right" for="address">番地等</label>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label text-md-right" for="form_address">番地等</label>
               <div class="col-md-5">
-          　　    <input type="text" class="form-control" id="address">
-          　　　</div>
+                <input type="text" class="form-control" id="form_address">
+              </div>
           　</div>
           </div>
           <div class="modal-footer">
@@ -87,7 +87,7 @@
     </div>
   </div>
   <!-- 電話番号登録フォーム -->
-  <div class="modal fade" id="addPhone" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addPhoneNunber" aria-hidden="true">
+  <div class="modal fade" id="addPhone" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addPhone" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -99,9 +99,9 @@
         <form id="phone-form">
           <div class="modal-body">
             <div class="form-group row">
-          　　<label class="col-md-3 col-form-label text-md-right" for="phone">電話番号</label>
+          　　<label class="col-md-3 col-form-label text-md-right" for="form_phone">電話番号</label>
           　　<div class="col-md-5">
-            　　  <input type="text" class="form-control" id="phone">
+            　　  <input type="text" class="form-control" id="form_phone">
           　　</div>
           　</div>
           </div>
@@ -140,10 +140,10 @@
                 </div>
               </div>
             </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">登録</button>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">登録</button>
         </div>
       </div>
     </div>
@@ -161,16 +161,16 @@
         <form id="category-form">
           <div class="modal-body">
             <div class="form-group row">
-          　　<label class="col-md-3 col-form-label text-md-right" for="category_id">カテゴリー</label>
-          　　<div class="col-md-5">
-            　　  <select class="form-control" id="category_id">
-              　　<option>グルメ</option>
-              　　<option>ファッション</option>
-            　　　　  <option>雑貨</option>
-              　　　<option>観光スポット</option>
-      　　    　　</select>
-        　　　　</div>
-        　　　</div>
+              <label class="col-md-3 col-form-label text-md-right" for="form_category_id">カテゴリー</label>
+              <div class="col-md-5">
+                <select class="form-control" id="form_category_id">
+                  <option value="01">グルメ</option>
+                  <option value="02">ファッション</option>
+                  <option value="03">雑貨</option>
+                  <option value="04">観光スポット</option>
+                </select>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">登録</button>
@@ -192,9 +192,9 @@
         <form id="attention_form">
           <div class="modal-body">
             <div class="form-group row">
-              <label class="col-md-3 col-form-label text-md-right" for="attention_id">関心度</label>
+              <label class="col-md-3 col-form-label text-md-right" for="form_attention_id">関心度</label>
               <div class="col-md-5">
-                <select class="form-control text-warning" id="attention_id">
+                <select class="form-control text-warning" id="form_attention_id">
                   <option value="1">★★★★★</option>
                   <option value="2">★★★★☆</option>
                   <option value="3">★★★☆☆</option>
@@ -243,7 +243,9 @@
                 <option>雑貨</option>
               </select>
             </div>
-            <button type="button" class="btn btn-primary">検索</button>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">検索</button>
+            </div>
           </form>
       　</div>
     　</div>
