@@ -305,3 +305,17 @@ p{
    display: none;  /* 本来のファイル選択フォームは非表示に */
 }
 
+
+//記事詳細画面(show.blade.php)
+/* カルーセルのインジケータのカスタマイズ */
+
+.carousel-indicators li{
+  background:rgba(180,180,180,0.5);
+  height:1px;
+  width:20px;
+  border-radius: 10px;
+}
+.carousel-indicators:active{
+  background-color: #808080;
+}
+

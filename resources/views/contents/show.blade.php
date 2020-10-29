@@ -60,7 +60,7 @@
               </div>
             </li>
             <li class="list-group-item w-100 p-0">
-              <div class="row">
+              <div class="row　no-gutters">
                 <p class="card-text city d-inline-block col-4 p-1" style="border-right: thin solid #d3d3d3">
                   <span style="font-size: small">都道府県</span>
                 </p>
