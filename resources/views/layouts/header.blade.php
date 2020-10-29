@@ -52,7 +52,11 @@
           {{-- ログインしていれば登録ボタンとユーザーメニューをドロップダウンで表示 --}}
           @auth
           　<!-- 登録ボタン -->
-          　<li class="nav-item" id="eighth"><a href="{{ route('contents.createContent') }}" data-target="#new" ><i class="fas fa-plus" title="登録"></i>登録</a></li>
+          　<li class="nav-item" id="eighth">
+              <a href="{{ route('contents.createContent') }}" class="nav-link">
+                <i class="fas fa-plus" title="登録"></i>登録
+              </a>
+            </li>
             <li class="nav-item dropdown" id="eighth">
               <a href="#" class="nav-link">
                 <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-md-inline pl-1">〇〇さん</span>

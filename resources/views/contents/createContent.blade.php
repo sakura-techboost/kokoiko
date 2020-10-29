@@ -1,9 +1,9 @@
 {{-- 共通ヘッダー読み込み --}}
-@extends('layouts.testheader')
+@extends('layouts.header')
 {{-- ページタイトル埋め込み --}}
 @section('title','新規投稿')
 
-@section('testContent')
+@section('content')
 　<div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12">
