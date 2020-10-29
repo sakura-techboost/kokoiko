@@ -58,10 +58,10 @@
               </a>
             </li>
             <li class="nav-item dropdown" id="eighth">
-              <a href="#" class="nav-link">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-md-inline pl-1">〇〇さん</span>
               </a>
-              <div class="dropdown-menu">
+              <div class="dropdown-menu dropdown-menu-right">
                 <a href="#" class="dropdown-item">プロフィール</a>
                 <a href="#" class="dropdown-item">リスト</a>
                 <a href="#" class="dropdown-item">お問い合わせ</a>
@@ -87,12 +87,24 @@
               <ul class="sidebarMenuInner">
                 {{-- ログインしていなければトップページへのリンクを表示 --}}
               @guest
-                <li id="eighth"><a href="#" title="トップページへ">kokoiko<span>Our favorite places</span></a></li>
+                <li id="eighth">
+                  <a href="#" title="トップページへ">
+                    kokoiko<span>Our favorite places</span>
+                  </a>
+                </li>
               @endguest
   　　        {{-- ログインしていればトップページとマイページへのリンクを表示 --}}
-  　　          @auth
-  　　            <li id="eighth"><a href="#" title="トップページへ">kokoiko<span>Our favorite places</span></a></li>
-                <li class="nav-item" id="eighth"><a href="#" class="nav-link"><i class="fas fa-home" title="マイページへ"></i><span class="d-none d-md-inline pl-1">マイページ</span></a></li>
+              @auth
+                <li id="eighth">
+                  <a href="#" title="トップページへ">
+                    kokoiko<span>Our favorite places</span>
+                  </a>
+                </li>
+                <li class="nav-item" id="eighth">
+                  <a href="#" title="マイページへ">
+                    <i class="fas fa-home"></i><span class="d-none d-md-inline">マイページ</span>
+                  </a>
+                </li>
               @endauth
                 <li id="eighth">
                   <a href=#><i class="fas fa-users" title="他のユーザー記事"></i>みんなの投稿</a>
