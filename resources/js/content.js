@@ -50,6 +50,8 @@ $(function () {
     $('.category option').text(selectCategory);
     //モーダルを閉じる
     $('#addCategories').modal('hide');
+    //画面全体のリロードを止める
+    return false;
   });
   
     //関心度登録
@@ -64,6 +66,19 @@ $(function () {
     $('.attention option').text(selectAttention);
     //モーダルを閉じる
     $('#addAttention').modal('hide');
+    //画面全体のリロードを止める
+    return false;
   });
   
+
+  //記事詳細画面(show.blade.php)
+
+  //カルーセル内のアイコンの色を変える
+  $(function () {
+    const iconColor = "#000";
+  
+    $('.carousel-control-prev-icon').css("background-image", `url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='${encodeURIComponent(iconColor)}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")`);
+    $(".carousel-control-next-icon").css("background-image", `url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='${encodeURIComponent(iconColor)}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")`);
+  });
+
 })

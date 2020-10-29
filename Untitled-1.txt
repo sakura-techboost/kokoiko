@@ -3,7 +3,6 @@ sudo chmod 644 package-lock.json
 sudo chmod 644 public/js/app.js
 sudo chmod 644 public/js/content.js
 sudo chmod 644 public/js/popper.js
-sudo chmod 644 public/js/testcontent.js
 sudo chmod 644 storage/app/.gitignore
 sudo chmod 644 storage/app/public/.gitignore
 sudo chmod 644 storage/framework/.gitignore
