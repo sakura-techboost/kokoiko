@@ -35,36 +35,38 @@
   </head>
   <body>
     <div id="app">
-      <nav class="navbar navbar-expand navbar-light bg-warning p-0 fixed-top">
-        <ul class="navbar-nav ml-auto mr-3">
-        {{-- ログインしてなければログイン画面へのリンクを表示 --}}
-        @guest
-          <li class="nav-item" id="eighth"><a href="{{ route('register') }}" class="nav-link"><i class="fas fa-user-plus" title="新規登録"></i><span class="d-none d-md-inline pl-1">新規登録</span></a></li>
-          <li class="nav-item" id="eighth"><a href="{{ route('login') }}" class="nav-link"><i class="fas fa-user-circle" title="ログイン"></i><span class="d-none d-md-inline px-1">ログイン</span></a></li>
-        @endguest
-        
-        {{-- ログインしていれば登録ボタンとユーザーメニューをドロップダウンで表示 --}}
-        @auth
-        　<!-- 登録ボタン -->
-        　<li class="nav-item" id="eighth">
-            <a href="{{ route('contents.createContent') }}" class="nav-link">
-              <i class="fas fa-plus" title="登録"></i>登録
-            </a>
-          </li>
-          <li class="nav-item dropdown" id="eighth">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown">
-              <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-md-inline pl-1">〇〇さん</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a href="#" class="dropdown-item">プロフィール</a>
-              <a href="#" class="dropdown-item">リスト</a>
-              <a href="#" class="dropdown-item">お問い合わせ</a>
-              <a href="#" class="dropdown-item">ログアウト</a>
-            </div>
-          </li>
-        @endauth
-        </ul>
-      </nav>
+      <div class="conteiner">
+        <nav class="navbar navbar-expand navbar-light bg-warning p-0 fixed-top">
+          <ul class="navbar-nav ml-auto mr-3">
+          {{-- ログインしてなければログイン画面へのリンクを表示 --}}
+          @guest
+            <li class="nav-item" id="eighth"><a href="{{ route('register') }}" class="nav-link"><i class="fas fa-user-plus" title="新規登録"></i><span class="d-none d-md-inline pl-1">新規登録</span></a></li>
+            <li class="nav-item" id="eighth"><a href="{{ route('login') }}" class="nav-link"><i class="fas fa-user-circle" title="ログイン"></i><span class="d-none d-md-inline px-1">ログイン</span></a></li>
+          @endguest
+          
+          {{-- ログインしていれば登録ボタンとユーザーメニューをドロップダウンで表示 --}}
+          @auth
+          　<!-- 登録ボタン -->
+          　<li class="nav-item" id="eighth">
+              <a href="{{ route('contents.createContent') }}" class="nav-link">
+                <i class="fas fa-plus" title="登録"></i>登録
+              </a>
+            </li>
+            <li class="nav-item dropdown" id="eighth">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-md-inline pl-1">〇〇さん</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a href="#" class="dropdown-item">プロフィール</a>
+                <a href="#" class="dropdown-item">リスト</a>
+                <a href="#" class="dropdown-item">お問い合わせ</a>
+                <a href="#" class="dropdown-item">ログアウト</a>
+              </div>
+            </li>
+          @endauth
+          </ul>
+        </nav>
+      </div>
       <div class="conteiner">
         <div class="row  justify-content-center">
           <div class="col-md-3">
