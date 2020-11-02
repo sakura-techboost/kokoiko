@@ -37,7 +37,7 @@
     <div id="app">
       <div class="conteiner">
         <nav class="navbar navbar-expand navbar-light bg-warning p-0 fixed-top">
-          <ul class="navbar-nav ml-auto mr-3">
+          <ul class="navbar-nav ml-auto mr-3 mr-md-5">
           {{-- ログインしてなければログイン画面へのリンクを表示 --}}
           @guest
             <li class="nav-item" id="eighth"><a href="{{ route('register') }}" class="nav-link"><i class="fas fa-user-plus" title="新規登録"></i><span class="d-none d-md-inline pl-1">新規登録</span></a></li>
