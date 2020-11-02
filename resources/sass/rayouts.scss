@@ -11,6 +11,7 @@
 #sidebarMenu {
     height: 100%;//高さを固定
     position: fixed;//位置を固定
+    left: 0;//左側に寄せる
     width: 200px;//表示幅の設定
     transform: translateX(-200px);//メニューボタンのチェックと連動しサイドバーをX軸方向に表示幅分隠す
     transition: transform 200ms ease-in-out;//サイドバーの出し入れを緩やかにする

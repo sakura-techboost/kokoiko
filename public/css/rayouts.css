@@ -11,6 +11,7 @@
 #sidebarMenu {
   height: 100%;
   position: fixed;
+  left: 0;
   width: 200px;
   transform: translateX(-200px);
   transition: transform 200ms ease-in-out;

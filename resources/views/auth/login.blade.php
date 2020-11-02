@@ -6,7 +6,7 @@
 @section('content')
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-12">
+      <div class="col-lg-12">
         <div class="card mt-5">
           <div class="card-header">
             ログイン
@@ -16,8 +16,8 @@
               @csrf
               {{-- メールアドレス入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="email">メールアドレス(ID)</label>
-                <div class="col-md-5">
+                <label class="col-lg-3 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
+                <div class="col-lg-5">
                   <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                   @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -29,8 +29,8 @@
               
               {{-- パスワード入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="password">パスワード</label>
-                <div class="col-md-5">
+                <label class="col-lg-3 col-form-label text-lg-right" for="password">パスワード</label>
+                <div class="col-lg-5">
                   <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                   @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -41,7 +41,7 @@
               </div>
               <!-- ログインを維持する機能 -->
               <div class="form-group row">
-                <div class="col-md-6 offset-md-4">
+                <div class="col-lg-6 offset-lg-4">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                     <label class="form-check-label" for="remember">
