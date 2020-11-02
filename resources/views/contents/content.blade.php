@@ -9,24 +9,24 @@
     <div class="navigation">
       {{-- お気に入り・行ってみたい・いまいちのタブ形式ナビゲーション --}}
       <ul class="nav nav-tabs bg-white">
-        　　<li class="nav-item" id="eighthGreen">
+        <li class="nav-item" id="eighthGreen">
         　<a href="#all" class="nav-link active" data-toggle="tab" >
             <i class="fas fa-user-edit" title="マイ記事一覧"></i><span class="d-none d-lg-inline pl-1">マイ記事一覧</span>
         　</a>
         </li>
         <li class="nav-item" id="eighthPink">
           <a href="#favorite" class="nav-link" data-toggle="tab">
-              <i class="fas fa-heart faa-tada animated-hover"　title="お気に入り"></i><span class="d-none d-lg-inline pl-1">お気に入り</span>
+            <i class="fas fa-heart faa-tada animated-hover"　title="お気に入り"></i><span class="d-none d-lg-inline pl-1">お気に入り</span>
           </a>
         </li>
         <li class="nav-item" id="eighthYellow">
           <a href="#someday" class="nav-link" data-toggle="tab">
-              <i class="fas fa-star faa-tada animated-hover" title="行ってみたい"></i><span class="d-none d-lg-inline pl-1">行ってみたい</span>
+            <i class="fas fa-star faa-tada animated-hover" title="行ってみたい"></i><span class="d-none d-lg-inline pl-1">行ってみたい</span>
           </a>
         </li>
         <li class="nav-item" id="eighthBlue">
           <a href="#disliked" class="nav-link" data-toggle="tab" >
-              <i class="fas fa-heart-broken faa-tada animated-hover" title="いまいち"></i><span class="d-none d-lg-inline pl-1">いまいち</span>
+            <i class="fas fa-heart-broken faa-tada animated-hover" title="いまいち"></i><span class="d-none d-lg-inline pl-1">いまいち</span>
           </a>
         </li>
       </ul>

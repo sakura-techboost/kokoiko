@@ -4,6 +4,9 @@
 .navbar{
     z-index: 50;//ヘッダーのfixed-topクラスによるz-index値を下げてサイドバーのメニューボタンとの表示レイヤー調整をする
 }
+.navbar li{
+  height:100%;
+}
 //サイドバー部分
 #sidebarMenu {
     height: 100%;//高さを固定
@@ -25,8 +28,9 @@
     cursor: pointer;//カーソルを載せた際ポインター表示になるよう設定
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);//メニューに仕切り線を入れる
 }
-.sidebarMenuInner li span{　//ロゴのサブタイトル部分
-    display: block;//改行・文字サイズの統一
+.sidebarMenuInner li span{
+  //ロゴのサブタイトル部分
+    display: block;
     font-size: 14px;
     color: rgba(128, 128, 128, 0.50);
 }

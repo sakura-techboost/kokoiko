@@ -1,3 +1,18 @@
+/**文字サイズの指定
+ *PCを基準に画面幅720px以下で文字サイズが80%になるよう設定
+ */
+
+@media screen and (min-width: 721px) {
+  html {
+      font-size: 100%;
+  }
+}
+@media screen and (max-width: 720px) {
+  html {
+      font-size: 80%;
+  }
+}
+
 @media (min-width: 992px){
   //header.blade.php　サイドバーメニューに関して
   //992px以上ではデフォルトでサイドバーメニューが表示されるようにする
