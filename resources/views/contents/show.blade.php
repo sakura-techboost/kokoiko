@@ -113,7 +113,7 @@
         </div> 
       </div>
 
-      <!-- 近くのスポットを地図とともに表示 -->
+        <!-- 近くのスポットを地図とともに表示 -->
       <div class="col-lg-12 mb-5">
         <h3 class="mt-5">この近くのスポットを見る</h3>
         <p　class="m-3">1~20件表示/全50件</p>
@@ -133,10 +133,10 @@
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
-                        <div class="col-sm-4 my-auto mx-auto">
+                        <div class="colm-4 my-auto mx-auto">
                           <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-8">
                           <div class="card-body p-0">
                             <p class="card-text summary">概要</p>
                           </div>
@@ -157,10 +157,10 @@
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
-                        <div class="col-sm-4 my-auto mx-auto">
+                        <div class="col-4 my-auto mx-auto">
                           <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-8">
                           <div class="card-body p-0">
                             <p class="card-text summary">概要</p>
                           </div>
@@ -181,10 +181,10 @@
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
-                        <div class="col-sm-4 my-auto mx-auto">
+                        <div class="col-4 my-auto mx-auto">
                           <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-8">
                           <div class="card-body p-0">
                             <p class="card-text summary">概要</p>
                           </div>
@@ -205,10 +205,10 @@
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
-                        <div class="col-sm-4 my-auto mx-auto">
+                        <div class="col-4 my-auto mx-auto">
                           <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-8">
                           <div class="card-body p-0">
                             <p class="card-text summary">概要</p>
                           </div>

@@ -37,11 +37,6 @@
     <div id="app">
       <div class="container">
         <div class="navbar navbar-expand navbar-light bg-warning p-0 fixed-top">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item" id="eighth">
-              
-            </li>
-          </ul>
           <ul class="navbar-nav ml-auto">
           {{-- ログインしてなければログイン画面へのリンクを表示 --}}
           @guest
@@ -84,7 +79,7 @@
               <div class="spinner diagonal part-2"></div>
             </label>
             <div id="sidebarMenu" class="sidebarMenu">
-              <ul class="sidebarMenuInner">
+              <ul class="sidebarMenuInner p-0">
                 {{-- ログインしていなければトップページへのリンクを表示 --}}
               @guest
                 <li id="eighth">

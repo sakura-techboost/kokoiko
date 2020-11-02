@@ -1,58 +1,37 @@
 //header.blade.php
-.container{
-    margin: 0 auto;
-    padding: 0;
-}
-html, body {
-    overflow-x: hidden;
-    height: 100%;
-}
+
 //ヘッダー部分
-.navbar li{
-    height:100%;
-}
-.navbar li:hover{
-    background-color:rgba(255,255,255,0.2);
-}
-.navbar li:active{
-    background-color:rgba(255,255,255,0.5);
-}
 .navbar{
-    z-index: 51;
+    z-index: 50;//ヘッダーのfixed-topクラスによるz-index値を下げてサイドバーのメニューボタンとの表示レイヤー調整をする
 }
 //サイドバー部分
 #sidebarMenu {
-    height: 100%;
-    position: fixed;
-    left: 0;
-    width: 200px;
-    transform: translateX(-200px);
-    transition: transform 200ms ease-in-out;
+    height: 100%;//高さを固定
+    position: fixed;//位置を固定
+    width: 200px;//表示幅の設定
+    transform: translateX(-200px);//メニューボタンのチェックと連動しサイドバーをX軸方向に表示幅分隠す
+    transition: transform 200ms ease-in-out;//サイドバーの出し入れを緩やかにする
     background-color: #afeeee;
-    z-index: 49;
+    z-index: 49;//ナビゲーションバーよりも下に表示する
 }
 .sidebarMenuInner{
-    margin-top:40px;
-    padding:0;
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    margin-top:40px;//ヘッダーのナビゲーションバーの幅分下に表示
 }
 .sidebarMenuInner li{
-    list-style: none;
+    list-style: none;//リストのマーカーを削除
     color: #808080;
-    text-transform: uppercase;
     font-weight: bold;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 10px 20px;//メニューの上下左右のバランスを調整
+    cursor: pointer;//カーソルを載せた際ポインター表示になるよう設定
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);//メニューに仕切り線を入れる
 }
-.sidebarMenuInner li span{
-    display: block;
+.sidebarMenuInner li span{　//ロゴのサブタイトル部分
+    display: block;//改行・文字サイズの統一
     font-size: 14px;
     color: rgba(128, 128, 128, 0.50);
 }
 .sidebarMenuInner li a{
     color: #808080;
-    text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
@@ -72,7 +51,7 @@ input[type=checkbox] {
     transition: all 0.3s;
     box-sizing: border-box;
     cursor: pointer;
-    z-index: 52;
+    z-index: 51;//ヘッダーよりも上に表示する
     left: 15px;
     width: 22px;
 }
@@ -321,17 +300,15 @@ p{
 
 //スクロールバー
 .lg-nav{
-  height:50vw;
-  max-height: 395px;
-  overflow-y: scroll;
+  max-height: 395px;//地図の最大表示時の高さに合わせる
+  overflow-y: scroll;//y軸方向ににスクロールバーを表示
 }
 .md-nav{
-  height: 162px;
-  overflow-x: scroll;
-  white-space: nowrap;
-  display: inline-block;
-  width:100%;
+  height: 162px;//カードの縦サイズに合わせる
+  overflow-x: scroll;//x軸方向にスクロールバーを表示
+  white-space: nowrap;//折り返し・改行を無くす
+  display: inline-block;//カードが横に並ぶようにする
 }
 .md-nav li{
-  display: inline-block;
+  display: inline-block;//カードが横に並ぶようにする
 }

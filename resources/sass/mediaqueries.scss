@@ -1,17 +1,12 @@
 @media (min-width: 992px){
-  //header.blade.php
-  #sidebarMenu {
-    height: 100%;
-    position: fixed;
-    left: 0;
-    width: 250px;
-    background-color: #afeeee;
-  }
+  //header.blade.php　サイドバーメニューに関して
+  //992px以上ではデフォルトでサイドバーメニューが表示されるようにする
+
   .spinner {
-      display: none;
+      display: none;//メニューボタンを非表示にする
   }
   input[type="checkbox"]:not(:checked) ~ #sidebarMenu {
-    transform: translateX(0);
+    transform: translateX(0);//メニューボタンを非表示にするため、チェックされていない場合にメニューが表示されるよう設定
   }
 
   //show.blade.php
@@ -19,8 +14,8 @@
 
 }
 @media (max-width: 992px){
-  //show.blade.php
+  //show.blade.php　近くのスポットカードのリスト表示に関して
   .lg-nav{
-    display: none;
+    display: none;//992px以下では非表示にする
   }
 }
