@@ -31,3 +31,5 @@ Route::get('contents/testContent', 'ContentsController@testContent')->name("cont
 //createCntent.blade.phpを表示するルーティング
 Route::get('contents/createContent', 'ContentsController@createContent')->name("contents.createContent");
 
+
+//Route::get('csv-test', 'CsvController@test')->name("csv.test");

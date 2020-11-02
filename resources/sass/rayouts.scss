@@ -319,3 +319,21 @@ p{
   background-color: #808080;
 }
 
+//スクロールバー
+
+.lg-nav{
+  height:50vw;
+  max-height: 395px;
+  overflow-y: scroll;
+}
+.md-nav{
+  height: 160px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  display: inline-block;
+  width:100%;
+}
+.md-nav li{
+  display: inline-block;
+  
+}

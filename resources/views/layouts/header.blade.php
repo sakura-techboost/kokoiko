@@ -8,11 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{-- 各ページごとにtitleタグを入れるために@yieldで空けておきます。 --}}
+    {{-- 各ページごとにtitleタグを入れるために@yieldで空けておく。 --}}
     <title>@yield('title')</title>
 
     <!-- Scripts -->
-     {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
+     {{-- Laravel標準で用意されているJavascriptを読み込む --}}
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
     {{-- 住所入力用のajaxzip3を読み込む --}}
     <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
@@ -23,10 +23,10 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    {{-- Laravel標準で用意されているCSSを読み込みます --}}
+    {{-- Laravel標準で用意されているCSSを読み込む --}}
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
-    {{-- この章の後半で作成するCSSを読み込みます --}}
+    {{-- 作成したCSSを読み込む --}}
     <link href="{{ secure_asset('css/mediaqueries.css') }}" rel="stylesheet">
     <link href="{{ secure_asset('css/rayouts.css') }}" rel="stylesheet">
     {{-- FontAwsomeAnimationを読み込む --}}
@@ -36,7 +36,7 @@
   <body>
     <div id="app">
       <div class="container">
-        <div class="navbar navbar-expand navbar-light bg-warning p-0  fixed-top">
+        <div class="navbar navbar-expand navbar-light bg-warning p-0 fixed-top">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item" id="eighth">
               
@@ -143,6 +143,9 @@
             </div>
           </div>
         </div>
+        <footer>
+    
+        </footer>
       </div>
     </div>
     @yield('js')

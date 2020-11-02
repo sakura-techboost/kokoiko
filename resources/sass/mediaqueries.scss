@@ -1,4 +1,5 @@
 @media (min-width: 992px){
+  //header.blade.php
   #sidebarMenu {
     height: 100%;
     position: fixed;
@@ -11,6 +12,15 @@
   }
   input[type="checkbox"]:not(:checked) ~ #sidebarMenu {
     transform: translateX(0);
-}
+  }
 
+  //show.blade.php
+
+
+}
+@media (max-width: 992px){
+  //show.blade.php
+  .lg-nav{
+    display: none;
+  }
 }

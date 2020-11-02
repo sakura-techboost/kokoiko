@@ -16,3 +16,9 @@
   }
 }
 
+@media (max-width: 992px) {
+  .lg-nav {
+    display: none;
+  }
+}
+
