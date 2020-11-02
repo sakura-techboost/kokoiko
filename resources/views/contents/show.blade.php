@@ -114,14 +114,14 @@
       </div>
 
       <!-- 近くのスポットを地図とともに表示 -->
-      <div class="col-lg-12">
+      <div class="col-lg-12 mb-5">
         <h3 class="mt-5">この近くのスポットを見る</h3>
         <p　class="m-3">1~20件表示/全50件</p>
         <div class="row">
           <!-- 近くのスポットのカード一覧 -->
           <div class="col-lg-4">
             <!-- 画面幅が992px以上の場合のナビゲーションバー -->
-            <ul class="nav lg-nav">
+            <ul class="nav lg-nav" style="border: thin solid #d3d3d3">
               <li class="nav-item">
                 <a class="card mb-3 mx-auto" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
@@ -220,7 +220,7 @@
               </li>
             </ul>
             <!-- 画面幅が992px以下の場合のナビゲーションバー -->
-            <ul class="nav d-lg-none md-nav">
+            <ul class="nav d-lg-none md-nav" style="border: thin solid #d3d3d3">
               <li class="nav-item">
                 <a class="card h-100 mx-2" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
@@ -279,6 +279,6 @@
       </div>
     </div>
   </div>
-  
+
 
 @endsection

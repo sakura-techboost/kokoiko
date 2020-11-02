@@ -320,14 +320,13 @@ p{
 }
 
 //スクロールバー
-
 .lg-nav{
   height:50vw;
   max-height: 395px;
   overflow-y: scroll;
 }
 .md-nav{
-  height: 160px;
+  height: 162px;
   overflow-x: scroll;
   white-space: nowrap;
   display: inline-block;
@@ -335,5 +334,4 @@ p{
 }
 .md-nav li{
   display: inline-block;
-  
 }
