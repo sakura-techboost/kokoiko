@@ -16,8 +16,8 @@
               @csrf
               {{-- メールアドレス入力欄 --}}
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
-                <div class="col-lg-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
+                <div class="col-lg-7">
                   <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                   @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -29,8 +29,8 @@
               
               {{-- パスワード入力欄 --}}
               <div class="form-group row">
-                <label class="col-lg-3 col-form-label text-lg-right" for="password">パスワード</label>
-                <div class="col-lg-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="password">パスワード</label>
+                <div class="col-lg-7">
                   <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                   @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -44,7 +44,7 @@
                 <div class="col-lg-6 offset-lg-4">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember">
+                    <label class="form-check-label d-none" for="remember">
                         {{ __('Remember Me') }}
                     </label>
                   </div>
@@ -56,7 +56,7 @@
               <!-- パスワードを忘れた時の処理 -->
               @if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                  {{ __('Forgot Your Password?') }}
+                  パスワードを忘れた方はこちら
                 </a>
               @endif
             </form>
