@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class ProfileController extends Controller
 {
-  
-
   
   //以下開発段階で使用
   //アカウント登録画面(create.blade.php)を表示する

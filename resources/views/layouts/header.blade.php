@@ -57,7 +57,7 @@
                 <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-md-inline pl-1">〇〇さん</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <a href="#" class="dropdown-item">プロフィール</a>
+                <a href="{{ action('Admin\UserController@edit') }}" class="dropdown-item">プロフィール</a>
                 <a href="#" class="dropdown-item">リスト</a>
                 <a href="#" class="dropdown-item">お問い合わせ</a>
                 <a href="#" class="dropdown-item">ログアウト</a>

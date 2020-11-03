@@ -151,21 +151,4 @@ $(function () {
       return false;
     }
   });
-  //パスワード変更
-  $('#pass-form').submit(function(){
-    var editedPass=$('#form_pass').val();
-    //入力された内容をフォームに追加
-    //データの送信
-    if(editedPass!=''){
-      //フォーム内が空でなければデータを上書き
-      $('#pass').attr('value',editedPass);
-      //モーダルを閉じる
-      $('#edit-pass').modal('hide');
-      return false;
-    }else{
-      //モーダルを閉じる
-      $('#edit-pass').modal('hide');
-      return false;
-    }
-  });
 })

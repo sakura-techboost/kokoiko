@@ -12,7 +12,7 @@
           プロフィール編集
         </div>
         <div class="card-body">
-          <form method="POST" action="{{ route('user.update', $auth->id)}}">
+          <form method="POST" action="{{ action('Admin\UserController@update') }}">
             @csrf
             {{-- 名前 --}}
             <div class="form-group row">
@@ -23,12 +23,12 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="name" name="name" value="名前" required autocomplete="name" autofocus readonly>
+                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="name" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus readonly>
                 @error('name')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
-                @enderror
+              　@enderror
               </div>
             </div>
             {{-- ふりがな --}}
@@ -40,7 +40,7 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="kana" name="kana" value="カナ" required autocomplete="kana" autofocus readonly>
+                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ $user->kana }}" required autocomplete="kana" autofocus readonly>
                 @error('name')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -57,7 +57,7 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="nickname" name="nickname" value="ニックネーム" required autocomplete="nickname" autofocus readonly>
+                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ $user->nickname }}" required autocomplete="nickname" autofocus readonly>
                 @error('name')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -74,25 +74,8 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="email" class="form-control-plaintext @error('email') is-invalid @enderror" id="email" name="email" value="a@yahoo.co.jp" required autocomplete="email" readonly>
+                <input type="email" class="form-control-plaintext @error('email') is-invalid @enderror" id="email" name="email" value="{{ $user->email }}" required autocomplete="email" readonly>
                 @error('email')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                @enderror
-              </div>
-            </div>
-            {{-- パスワード --}}
-            <div class="form-group row editpass">
-              <label class="col-lg-4 col-form-label text-lg-right" for="password">パスワード</label>
-              <label class="col-form-label col-lg-1 col-1" for="icon">
-                <a data-toggle="modal" href="#edit-pass">
-                  <i class="fas fa-edit"></i>
-                </a>
-              </label>
-              <div class="col-lg-7 col-7">
-                <input type="password" class="form-control-plaintext @error('password') is-invalid @enderror" id="password" name="password" value="********" required autocomplete="new-password" readonly>
-                @error('password')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>

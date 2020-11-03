@@ -18,8 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//mypage.blade.php(プロフィール編集画面)を表示するルーティング
-Route::get('profile/mypage', 'ProfileController@edit')->name("profile.mypage");
+
+//ログイン時のみアクセス可能
+Route::group(['middleware' => 'auth'], function() {
+  //ユーザー情報を取得・表示するルーティング
+  Route::get('profile/mypage', 'Admin\UserController@index');
+  //ユーザー情報を編集・表示するルーティング
+  Route::get('profile/mypage', 'Admin\UserController@edit');
+  //変更内容を更新し、プロフィール画面へリダイレクトするルーティング
+  Route::post('profile/mypage', 'Admin\UserController@update');
+});
 
 //content.blade.php(記事一覧画面)を表示するルーティング
 Route::get('contents/content', 'ContentsController@content')->name("contents.content");
