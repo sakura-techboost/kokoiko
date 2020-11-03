@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-  //プロフィール編集画面を表示する
-  public function edit(){
-    return view('profile.mypage');
-  }
+  
 
   
   //以下開発段階で使用

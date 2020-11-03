@@ -80,7 +80,92 @@ $(function () {
     $('.carousel-control-prev-icon').css("background-image", `url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='${encodeURIComponent(iconColor)}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")`);
     $(".carousel-control-next-icon").css("background-image", `url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='${encodeURIComponent(iconColor)}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")`);
     
-
   });
 
+  //プロフィール編集画面(mypage.blade.php)
+  //名前変更
+  $('#name-form').submit(function(){
+    var editedName=$('#form_name').val();
+    //入力された内容をフォームに追加
+    //データの送信
+    if(editedName!=''){
+      //フォーム内が空でなければデータを上書き
+      $('#name').attr('value',editedName);
+      //モーダルを閉じる
+      $('#edit-name').modal('hide');
+      return false;
+    }else{
+      //モーダルを閉じる
+      $('#edit-name').modal('hide');
+      return false;
+    }
+  });
+  //カナ変更
+  $('#kana-form').submit(function(){
+    var editedKana=$('#form_kana').val();
+    //入力された内容をフォームに追加
+    //データの送信
+    if(editedKana!=''){
+      //フォーム内が空でなければデータを上書き
+      $('#kana').attr('value',editedKana);
+      //モーダルを閉じる
+      $('#edit-kana').modal('hide');
+      return false;
+    }else{
+      //モーダルを閉じる
+      $('#edit-kana').modal('hide');
+      return false;
+    }
+  });
+  //ニックネーム変更
+  $('#nickname-form').submit(function(){
+    var editedNickname=$('#form_nickname').val();
+    //入力された内容をフォームに追加
+    //データの送信
+    if(editedNickname!=''){
+      //フォーム内が空でなければデータを上書き
+      $('#nickname').attr('value',editedNickname);
+      //モーダルを閉じる
+      $('#edit-nickname').modal('hide');
+      return false;
+    }else{
+      //モーダルを閉じる
+      $('#edit-nickname').modal('hide');
+      return false;
+    }
+  });
+  //メールアドレス変更
+  $('#email-form').submit(function(){
+    var editedEmail=$('#form_email').val();
+    //入力された内容をフォームに追加
+    //データの送信
+    if(editedEmail!=''){
+      //フォーム内が空でなければデータを上書き
+      $('#email').attr('value',editedEmail);
+      //モーダルを閉じる
+      $('#edit-email').modal('hide');
+      return false;
+    }else{
+      //モーダルを閉じる
+      $('#edit-email').modal('hide');
+      return false;
+    }
+  });
+  //パスワード変更
+  $('#pass-form').submit(function(){
+    var editedPass=$('#form_pass').val();
+    //入力された内容をフォームに追加
+    //データの送信
+    if(editedPass!=''){
+      //フォーム内が空でなければデータを上書き
+      $('#pass').attr('value',editedPass);
+      //モーダルを閉じる
+      $('#edit-pass').modal('hide');
+      return false;
+    }else{
+      //モーダルを閉じる
+      $('#edit-pass').modal('hide');
+      return false;
+    }
+  });
 })

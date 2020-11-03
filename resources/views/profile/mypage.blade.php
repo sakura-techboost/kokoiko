@@ -12,7 +12,7 @@
           プロフィール編集
         </div>
         <div class="card-body">
-          <form method="POST" action="{{ route('register') }}">
+          <form method="POST" action="{{ route('user.update', $auth->id)}}">
             @csrf
             {{-- 名前 --}}
             <div class="form-group row">
@@ -83,7 +83,7 @@
               </div>
             </div>
             {{-- パスワード --}}
-            <div class="form-group row">
+            <div class="form-group row editpass">
               <label class="col-lg-4 col-form-label text-lg-right" for="password">パスワード</label>
               <label class="col-form-label col-lg-1 col-1" for="icon">
                 <a data-toggle="modal" href="#edit-pass">
