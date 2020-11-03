@@ -18,18 +18,22 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-//content.blade.phpを表示するルーティング
-Route::get('contents/content', 'ContentsController@content')->name("contents.content");
-//create.blade.php(アカウント登録画面）を表示するルーティング
-Route::get('profile/create', 'ProfileController@create')->name("profile.create");
-//login.blade.php(ログイン画面）を表示するルーティング
-Route::get('profile/login', 'ProfileController@login')->name("profile.login");
-Route::get('contents/show', 'ContentsController@show');
+//mypage.blade.php(プロフィール編集画面)を表示するルーティング
+Route::get('profile/mypage', 'ProfileController@edit')->name("profile.mypage");
 
-//testCntent.blade.phpを表示するルーティング
-Route::get('contents/testContent', 'ContentsController@testContent')->name("contents.testContent");
-//createCntent.blade.phpを表示するルーティング
+//content.blade.php(記事一覧画面)を表示するルーティング
+Route::get('contents/content', 'ContentsController@content')->name("contents.content");
+//show.blade.php(記事詳細画面)を表示するルーティング
+Route::get('contents/show', 'ContentsController@show');
+//createCntent.blade.php(記事投稿画面)を表示するルーティング
 Route::get('contents/createContent', 'ContentsController@createContent')->name("contents.createContent");
 
+//以下開発段階で使用
 
-//Route::get('csv-test', 'CsvController@test')->name("csv.test");
+  //Route::get('csv-test', 'CsvController@test')->name("csv.test");
+//create.blade.php(アカウント登録画面）を表示するルーティング
+  //Route::get('profile/create', 'ProfileController@create')->name("profile.create");
+//login.blade.php(ログイン画面）を表示するルーティング
+  //Route::get('profile/login', 'ProfileController@login')->name("profile.login");
+//testCntent.blade.phpを表示するルーティング
+  //Route::get('contents/testContent', 'ContentsController@testContent')->name("contents.testContent");

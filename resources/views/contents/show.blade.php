@@ -133,7 +133,7 @@
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
-                        <div class="colm-4 my-auto mx-auto">
+                        <div class="col-4 my-auto mx-auto">
                           <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
                         </div>
                         <div class="col-8">
