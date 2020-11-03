@@ -58,9 +58,17 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ action('Admin\UserController@edit') }}" class="dropdown-item">プロフィール</a>
+                <a href="{{ route('password.request') }}" class="dropdown-item">パスワード変更</a>
                 <a href="#" class="dropdown-item">リスト</a>
                 <a href="#" class="dropdown-item">お問い合わせ</a>
-                <a href="#" class="dropdown-item">ログアウト</a>
+                <a href="{{ route('logout') }}" class="dropdown-item" 
+                onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                  ログアウト
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
               </div>
             </li>
           @endauth

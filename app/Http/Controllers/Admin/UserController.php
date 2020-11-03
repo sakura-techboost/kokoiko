@@ -28,4 +28,5 @@ class UserController extends Controller
         //リダイレクト
         return redirect('profile/mypage');
     }
+    public function Auth::logout()
 }
