@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth; //認証済みユーザーを取得するファサード
+use App\Http\Requests\UpdatePasswordRequest;
+
 
 class UserController extends Controller
 {
@@ -28,5 +30,22 @@ class UserController extends Controller
         //リダイレクト
         return redirect('profile/mypage');
     }
+    
+
+    //パスワード編集画面を表示
+    public function editPassword()
+    {
+        return view('profile.resetpass',['user' => Auth::user() ]);
+    }
+   
+    //パスワードの保存
+    public function updatePassword(UpdatePasswordRequest $request){
+        $user = Auth::user();
+        $user->password = bcrypt($request->get('new-password'));
+        $user->save();
+
+        return redirect()->back()->with('update_password_success', 'パスワードを変更しました。');
+    }
+   
 
 }

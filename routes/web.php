@@ -29,6 +29,14 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('profile/mypage', 'Admin\UserController@update');
 });
 
+//ログインしているユーザーがパスワードを変更する
+Route::group(['middleware' => ['auth', 'web']], function () {
+  //パスワード編集画面の表示
+  Route::get('/profile/resetpass', 'Admin\UserController@editPassword')->name('profile.resetpass');
+  //編集内容を更新し、編集画面へリダイレクトする
+  Route::post('/profile/resetpass', 'Admin\UserController@updatePassword')->name('profile.resetpass');
+});
+
 //content.blade.php(記事一覧画面)を表示するルーティング
 Route::get('contents/content', 'ContentsController@content')->name("contents.content");
 //show.blade.php(記事詳細画面)を表示するルーティング
