@@ -303,7 +303,7 @@ p{
 
 //スクロールバー
 .lg-nav{
-  max-height: 395px;//地図の最大表示時の高さに合わせる
+  height: 395px;//地図の最大表示時の高さに合わせる
   overflow-y: scroll;//y軸方向ににスクロールバーを表示
 }
 .md-nav{

@@ -298,7 +298,7 @@ p {
 }
 
 .lg-nav {
-  max-height: 395px;
+  height: 395px;
   overflow-y: scroll;
 }
 
