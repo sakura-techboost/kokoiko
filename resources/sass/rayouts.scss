@@ -224,6 +224,67 @@ p{
     0 0 25px rgba(70,130,180, .2),
     0 0 27px rgba(70,130,180, .1);
 }
+//map.blade.php
+#eighthGreen>span{
+  transition:all .5s ease-in-out;
+}
+#eighthGreen:hover span{
+  text-shadow:
+    0 0 10px rgba(144,238,144, 1),
+    0 0 13px rgba(144,238,144, .8),
+    0 0 15px rgba(144,238,144, .6),
+    0 0 17px rgba(144,238,144, .4),
+    0 0 19px rgba(144,238,144, .5),
+    0 0 21px rgba(144,238,144, .4),
+    0 0 23px rgba(144,238,144, .3),
+    0 0 25px rgba(144,238,144, .2),
+    0 0 27px rgba(144,238,144, .1);
+}
+#eighthPink>span{
+  transition:all .5s ease-in-out;
+}
+#eighthPink:hover span{
+  text-shadow:
+    0 0 10px rgba(255,105,180, 1),
+    0 0 13px rgba(255,105,180, .8),
+    0 0 15px rgba(255,105,180, .6),
+    0 0 17px rgba(255,105,180, .4),
+    0 0 19px rgba(255,105,180, .5),
+    0 0 21px rgba(255,105,180, .4),
+    0 0 23px rgba(255,105,180, .3),
+    0 0 25px rgba(255,105,180, .2),
+    0 0 27px rgba(255,105,180, .1);
+}
+#eighthYellow>span{
+  transition:all .5s ease-in-out;
+}
+#eighthYellow:hover span{
+  text-shadow:
+    0 0 10px rgba(255,215,0, 1),
+    0 0 13px rgba(255,215,0, .8),
+    0 0 15px rgba(255,215,0, .6),
+    0 0 17px rgba(255,215,0, .4),
+    0 0 19px rgba(255,215,0, .5),
+    0 0 21px rgba(255,215,0, .4),
+    0 0 23px rgba(255,215,0, .3),
+    0 0 25px rgba(255,215,0, .2),
+    0 0 27px rgba(255,215,0, .1);
+}
+#eighthBlue>span{
+  transition:all .5s ease-in-out;
+}
+#eighthBlue:hover span{
+  text-shadow:
+    0 0 10px rgba(70,130,180, 1),
+    0 0 13px rgba(70,130,180, .8),
+    0 0 15px rgba(70,130,180, .6),
+    0 0 17px rgba(70,130,180, .4),
+    0 0 19px rgba(70,130,180, .5),
+    0 0 21px rgba(70,130,180, .4),
+    0 0 23px rgba(70,130,180, .3),
+    0 0 25px rgba(70,130,180, .2),
+    0 0 27px rgba(70,130,180, .1);
+}
 //新規投稿フォームのボタン
 .btn-social-giza a {
   display: inline-block;
