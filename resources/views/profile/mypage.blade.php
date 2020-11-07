@@ -1,7 +1,7 @@
 {{-- 共通ヘッダー読み込み --}}
 @extends('layouts.header')
 {{-- ページタイトル埋め込み --}}
-@section('title','マイページ')
+@section('title','プロフィール編集画面')
 
 @section('content')
 <div class="container">

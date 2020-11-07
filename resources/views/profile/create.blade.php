@@ -6,7 +6,7 @@
 @section('content')
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-12">
+      <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
             アカウント新規登録
@@ -16,8 +16,8 @@
               @csrf
               {{-- 名前入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="name">名前</label>
-                <div class="col-md-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="name">名前</label>
+                <div class="col-lg-7">
                   <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                   @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -28,8 +28,8 @@
               </div>
               {{-- ふりがな入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="kana">ふりがな</label>
-                <div class="col-md-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="kana">ふりがな</label>
+                <div class="col-lg-7">
                   <input type="text" class="form-control @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ old('kana') }}" required autocomplete="kana" autofocus>
                   @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -40,8 +40,8 @@
               </div>
               {{-- ニックネーム入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="nickname">ニックネーム(表示名)</label>
-                <div class="col-md-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="nickname">ニックネーム(表示名)</label>
+                <div class="col-lg-7">
                   <input type="text" class="form-control @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname" autofocus>
                   @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -52,8 +52,8 @@
               </div>
               {{-- メールアドレス入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="email">メールアドレス(ID)</label>
-                <div class="col-md-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
+                <div class="col-lg-7">
                   <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email">
                   @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -64,8 +64,8 @@
               </div>
               {{-- パスワード入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="password">パスワード</label>
-                <div class="col-md-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="password">パスワード</label>
+                <div class="col-lg-7">
                   <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required autocomplete="new-password">
                   @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -76,8 +76,8 @@
               </div>
               {{-- パスワード確認入力欄 --}}
               <div class="form-group row">
-                <label class="col-md-3 col-form-label text-md-right" for="password-confirm">パスワード再入力</label>
-                <div class="col-md-5">
+                <label class="col-lg-4 col-form-label text-lg-right" for="password-confirm">パスワード再入力</label>
+                <div class="col-lg-7">
                   <input type="password" class="form-control" id="password-confirm" name="password_confirmation" required autocomplete="new-password">
                 </div>
               </div>

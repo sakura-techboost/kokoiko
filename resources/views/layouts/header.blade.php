@@ -40,8 +40,8 @@
           <ul class="navbar-nav ml-auto">
           {{-- ログインしてなければログイン画面へのリンクを表示 --}}
           @guest
-            <li class="nav-item" id="eighth"><a href="{{ route('register') }}" class="nav-link"><i class="fas fa-user-plus" title="新規登録"></i><span class="d-none d-md-inline pl-1">新規登録</span></a></li>
-            <li class="nav-item" id="eighth"><a href="{{ route('login') }}" class="nav-link"><i class="fas fa-user-circle" title="ログイン"></i><span class="d-none d-md-inline px-1">ログイン</span></a></li>
+            <li class="nav-item" id="eighth"><a href="{{ route('register') }}" class="nav-link"><i class="fas fa-user-plus" title="新規登録"></i><span class="d-none d-lg-inline pl-1">新規登録</span></a></li>
+            <li class="nav-item" id="eighth"><a href="{{ route('login') }}" class="nav-link"><i class="fas fa-user-circle" title="ログイン"></i><span class="d-none d-lg-inline px-1">ログイン</span></a></li>
           @endguest
           
           {{-- ログインしていれば登録ボタンとユーザーメニューをドロップダウンで表示 --}}
@@ -54,7 +54,7 @@
             </li>
             <li class="nav-item dropdown" id="eighth">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-md-inline pl-1">〇〇さん</span>
+                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-lg-inline pl-1">〇〇さん</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ action('Admin\UserController@edit') }}" class="dropdown-item">プロフィール</a>
@@ -77,7 +77,7 @@
       </div>
       <div class="container">
         <div class="row  justify-content-center">
-          <div class="col-md-3">
+          <div class="col-lg-2">
             {{-- ナビゲーションバー --}}
             <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
             {{-- サイドバー --}}
@@ -105,7 +105,7 @@
                 </li>
                 <li class="nav-item" id="eighth">
                   <a href="#" title="マイページへ">
-                    <i class="fas fa-home"></i><span class="d-none d-md-inline">マイページ</span>
+                    <i class="fas fa-home"></i><span class="d-none d-lg-inline">マイページ</span>
                   </a>
                 </li>
               @endauth
@@ -137,9 +137,9 @@
               </ul>
             </div>         
           </div>
-          <div class="col-md-9">
+          <div class="col-lg-10">
             <div class="row no-gutters justify-content-center">
-              <div class="col-md-10">
+              <div class="col-lg-11">
                 @include('children.modal')
                 @yield('content')
               </div>

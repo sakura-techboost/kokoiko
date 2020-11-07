@@ -86,8 +86,8 @@ class ContentsController extends Controller
     return view('contents.content', ['prefs' => self::$prefs]);
   }
   
-  public function testContent() {
-    return view('contents.testContent', ['prefs' => self::$prefs]);
+  public function mapshow() {
+    return view('contents.map', ['prefs' => self::$prefs]);
   }
   
   public function createContent() {
@@ -98,6 +98,11 @@ class ContentsController extends Controller
   public function show() {
     return view('contents.show');
   }
+  /**
+   * public function testContent() {
+   *  return view('contents.testContent', ['prefs' => self::$prefs]);
+   * }
+   */
 }
 
 class Prefecture

@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('profile/mypage', 'Admin\UserController@update');
 });
 
-//ログインしているユーザーがパスワードを変更する
+//ログインしているユーザーがパスワードを変更する(web引数はbackメソッドを有効にするため)
 Route::group(['middleware' => ['auth', 'web']], function () {
   //パスワード編集画面の表示
   Route::get('/profile/resetpass', 'Admin\UserController@editPassword')->name('profile.resetpass');
@@ -39,6 +39,8 @@ Route::group(['middleware' => ['auth', 'web']], function () {
 
 //content.blade.php(記事一覧画面)を表示するルーティング
 Route::get('contents/content', 'ContentsController@content')->name("contents.content");
+//map.blade.php(エリアマップから記事を見る画面)を表示する
+Route::get('contents/map', 'ContentsController@mapshow')->name("contents.map");
 //show.blade.php(記事詳細画面)を表示するルーティング
 Route::get('contents/show', 'ContentsController@show');
 //createCntent.blade.php(記事投稿画面)を表示するルーティング

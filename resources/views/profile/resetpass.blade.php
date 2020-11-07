@@ -1,4 +1,6 @@
 @extends('layouts.header')
+{{-- ページタイトル埋め込み --}}
+@section('title','パスワード変更')
 
 @section('content')
 <div class="container">
