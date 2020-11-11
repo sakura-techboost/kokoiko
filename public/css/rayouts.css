@@ -8,7 +8,22 @@
   content: "";
   display: block;
   padding-top: 20%;
-  /*.jumbotronのwidthに対して高さ75%に保つ*/
+}
+
+.fa-lightbulb {
+  color: #00ffff;
+}
+
+.fa-thumbs-up {
+  color: #7fff00;
+}
+
+.top-message h5 {
+  text-align: center;
+}
+
+.top-message p {
+  text-align: center;
 }
 
 .navbar {
@@ -130,19 +145,19 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   text-align: center;
 }
 
-.fa-heart:hover {
+.fa-heart {
   color: #ff1493;
 }
 
-.fa-star:hover {
+.fa-star {
   color: #ffa500;
 }
 
-.fa-heart-broken:hover {
+.fa-heart-broken {
   color: #191970;
 }
 
-.fa-user-edit:hover {
+.fa-user-edit {
   color: #00ff7f;
 }
 
