@@ -29,7 +29,7 @@ class UpdatePasswordRequest extends FormRequest
         return [
             'current-password' => [
                 'required',
-                //ここに元のパスワードとあってるか確認するバリデーションを置きたい
+                //元のパスワードとあってるか確認するバリデーション
                 function($attribute, $value, $fail){
                     $attribute='現在のパスワード';
                     if(!Hash::check($value, Auth::user()->password)){

@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+.jumbotron {
+  position: relative;
+}
+
+.jumbotron::before {
+  content: "";
+  display: block;
+  padding-top: 20%;
+  /*.jumbotronのwidthに対して高さ75%に保つ*/
+}
+
 .navbar {
   z-index: 50;
 }

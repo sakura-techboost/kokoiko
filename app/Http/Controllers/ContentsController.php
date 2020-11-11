@@ -79,22 +79,23 @@ class ContentsController extends Controller
   //  return view('contents.content', ['prefs' => self::$prefs, 'cities' => self::$cities]);
   //}
   
-
-
-  
+  //トップページを表示する
+  public function top() {
+    return view('contents.top', ['prefs' => self::$prefs]);
+  }
+  //コンテンツを表示する
   public function content() {
     return view('contents.content', ['prefs' => self::$prefs]);
   }
-  
+  //エリアで探すページを表示する
   public function mapshow() {
     return view('contents.map', ['prefs' => self::$prefs]);
   }
-  
+  //新規投稿画面を表示する
   public function createContent() {
-
     return view('contents.createContent');
   }
-  
+  //記事詳細画面を表示する
   public function show() {
     return view('contents.show');
   }
@@ -103,9 +104,4 @@ class ContentsController extends Controller
    *  return view('contents.testContent', ['prefs' => self::$prefs]);
    * }
    */
-}
-
-class Prefecture
-{
-
 }
