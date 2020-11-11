@@ -28,19 +28,19 @@
             <div class="btn-group d-flex btn-group-toggle" data-toggle="buttons">
               <label class="btn w-25 active"  id="eighthGreen">
                 <input type="radio" name="options" id="all-radio" autocomplete="off" checked>
-                <span class="radio-all"><i class="fas fa-user-edit" title="記事一覧"></i><span class="d-none d-lg-inline pl-1">記事一覧</span><span>
+                <span><i class="fas fa-user-edit" title="記事一覧"></i><span class="d-none d-lg-inline pl-1">記事一覧</span><span>
               </label>
               <label class="btn w-25" id="eighthPink">
                 <input type="radio" name="options" id="option2" autocomplete="off">
-                <i class="fas fa-heart faa-tada animated-hover"　title="お気に入り"></i><span class="d-none d-lg-inline pl-1">お気に入り</span>
+                <span><i class="fas fa-heart faa-tada animated-hover"　title="お気に入り"></i><span class="d-none d-lg-inline pl-1">お気に入り</span></span>
               </label>
               <label class="btn w-25" id="eighthYellow">
                 <input type="radio" name="options" id="option2" autocomplete="off">
-                <i class="fas fa-star faa-tada animated-hover" title="行ってみたい"></i><span class="d-none d-lg-inline pl-1">行ってみたい</span>
+                <span><i class="fas fa-star faa-tada animated-hover" title="行ってみたい"></i><span class="d-none d-lg-inline pl-1">行ってみたい</span></span>
               </label>
               <label class="btn w-25" id="eighthBlue">
                 <input type="radio" name="options" id="option2" autocomplete="off">
-                <i class="fas fa-heart-broken faa-tada animated-hover" title="いまいち"></i><span class="d-none d-lg-inline pl-1">いまいち</span>
+                <span><i class="fas fa-heart-broken faa-tada animated-hover" title="いまいち"></i><span class="d-none d-lg-inline pl-1">いまいち</span></span>
               </label>
             </div>
           </div>
@@ -147,6 +147,7 @@
                     </a>
                   </li>
                 </ul>
+                <!-- 画面幅が992px以下の場合のナビゲーションバー -->
                 <ul class="nav d-lg-none md-nav" style="border: thin solid #d3d3d3">
                   <li class="nav-item">
                     <a class="card h-100 mx-2" href="#">
