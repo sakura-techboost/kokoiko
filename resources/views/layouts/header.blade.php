@@ -91,7 +91,7 @@
                 {{-- ログインしていなければトップページへのリンクを表示 --}}
               @guest
                 <li id="eighth">
-                  <a href="#" title="トップページへ">
+                  <a href="{{ action('ContentsController@top') }}" title="トップページへ">
                     KOKOIKO<span>OUR FAVORITE PLACES</span>
                   </a>
                 </li>
