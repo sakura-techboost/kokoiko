@@ -54,6 +54,19 @@ $(function () {
     return false;
   });
   
+  //電話番号登録
+  $('#url-form').submit(function(){
+    var textUrl=$('#form_url').val();
+    //入力された内容をフォームに追加
+    //表示テキスト
+    $('.url span').text(textUrl);
+    //データの付与
+    $('.url input').attr('value',textUrl);
+    //モーダルを閉じる
+    $('#addUrl').modal('hide');
+    return false;
+  });
+
     //関心度登録
   $('#attention-form').submit(function(){
     var selectAttention=$('#form_attention_id option:selected').text();

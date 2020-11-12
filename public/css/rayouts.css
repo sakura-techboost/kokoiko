@@ -256,52 +256,12 @@ p {
   text-shadow: 0 0 10px steelblue, 0 0 13px rgba(70, 130, 180, 0.8), 0 0 15px rgba(70, 130, 180, 0.6), 0 0 17px rgba(70, 130, 180, 0.4), 0 0 19px rgba(70, 130, 180, 0.5), 0 0 21px rgba(70, 130, 180, 0.4), 0 0 23px rgba(70, 130, 180, 0.3), 0 0 25px rgba(70, 130, 180, 0.2), 0 0 27px rgba(70, 130, 180, 0.1);
 }
 
-.btn-social-giza a {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 25px;
+.create-btn {
+  background: white;
 }
 
-.btn-social-giza .fa-stack-1x {
-  color: white;
-  font-size: 18px;
-}
-
-.btn-social-giza .fa-stack-2x {
-  transition: 0.3s;
-}
-
-.btn-social-giza .btn-social-giza-map .fa-stack-2x {
-  color: #00fa9a;
-}
-
-.btn-social-giza .btn-social-giza-phone .fa-stack-2x {
-  color: #00ffff;
-}
-
-.btn-social-giza .btn-social-giza-camera .fa-stack-2x {
-  color: #ee82ee;
-}
-
-.btn-social-giza .btn-social-giza-folder .fa-stack-2x {
-  color: #ffa500;
-}
-
-.btn-social-giza .btn-social-giza-star .fa-stack-2x {
-  color: #ffff00;
-}
-
-.btn-social-giza .btn-social-giza-open .fa-stack-2x {
-  color: #9400d3;
-}
-
-.btn-social-giza .btn-social-giza-lock .fa-stack-2x {
-  color: #9400d3;
-  display: none;
-}
-
-.btn-social-giza a:hover .fa-stack-2x {
-  transform: rotate(60deg);
+.create-btn:hover {
+  background-color: #f3f2f2;
 }
 
 .cameraicon {

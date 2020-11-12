@@ -127,11 +127,11 @@
             <div class="form-group row cameraicon">
               <label for="filesend" class="col-md-3 col-form-label text-md-righit">
                 {{-- 画像アップロード(アイコン部分） --}}
-      　　    　   <div class="filelabel" title="ファイル選択">
-          　　      <i class="fas fa-camera"></i>
-              　</div>
+              <div class="filelabel" title="ファイル選択">
+                <i class="fas fa-camera"></i>
+              </div>
                 {{-- 画像アップロード(フォーム部分)※非表示 --}}
-              　<input type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
+              <input type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
               </label>
               {{-- プレビューを表示する場所 --}}
               <div class="col-md-9">
@@ -169,6 +169,32 @@
                   <option value="03">雑貨</option>
                   <option value="04">観光スポット</option>
                 </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">登録</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- URL登録フォーム -->
+  <div class="modal fade" id="addUrl" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addUrl" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addUrl">リンク登録</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="url-form">
+          <div class="modal-body">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label text-md-right" for="form_url">HPアドレス</label>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="form_url">
               </div>
             </div>
           </div>
