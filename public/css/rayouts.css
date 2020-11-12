@@ -203,8 +203,29 @@ p {
   text-shadow: 0 0 10px white, 0 0 13px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6), 0 0 17px rgba(255, 255, 255, 0.4), 0 0 19px rgba(255, 255, 255, 0.5), 0 0 21px rgba(255, 255, 255, 0.4), 0 0 23px rgba(255, 255, 255, 0.3), 0 0 25px rgba(255, 255, 255, 0.2), 0 0 27px rgba(255, 255, 255, 0.1);
 }
 
+#eighthGreen {
+  border: thin solid lightgray;
+  border-bottom: none;
+}
+
+#eighthPink {
+  border: thin solid lightgray;
+  border-bottom: none;
+}
+
+#eighthYellow {
+  border: thin solid lightgray;
+  border-bottom: none;
+}
+
+#eighthBlue {
+  border: thin solid lightgray;
+  border-bottom: none;
+}
+
 #eighthGreen > span {
   transition: all 0.5s ease-in-out;
+  border-bottom: none;
 }
 
 #eighthGreen:hover span {

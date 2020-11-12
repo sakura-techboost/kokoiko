@@ -25,21 +25,21 @@
           </div>
         </div>
         <div class="col-lg-12 my-2">
-          <div class="btn-group d-flex btn-group-toggle" data-toggle="buttons">
+          <div class="btn-group d-flex btn-group-toggle nav-btns" data-toggle="buttons">
             <label class="btn w-25 active"  id="eighthGreen">
-              <input type="radio" name="options" id="all-radio" autocomplete="off" checked>
-              <span><i class="fas fa-user-edit" title="記事一覧"></i><span class="d-none d-lg-inline pl-1">記事一覧</span><span>
+              <input type="radio" name="switchcontents" id="all-contents" autocomplete="off" checked>
+              <span><i class="fas fa-user-edit faa-tada animated-hover" title="記事一覧"></i><span class="d-none d-lg-inline pl-1">記事一覧</span><span>
             </label>
             <label class="btn w-25" id="eighthPink">
-              <input type="radio" name="options" id="option2" autocomplete="off">
+              <input type="radio" name="switchcontents" id="option2" autocomplete="off">
               <span><i class="fas fa-heart faa-tada animated-hover"　title="お気に入り"></i><span class="d-none d-lg-inline pl-1">お気に入り</span></span>
             </label>
             <label class="btn w-25" id="eighthYellow">
-              <input type="radio" name="options" id="option2" autocomplete="off">
+              <input type="radio" name="switchcontents" id="option2" autocomplete="off">
               <span><i class="fas fa-star faa-tada animated-hover" title="行ってみたい"></i><span class="d-none d-lg-inline pl-1">行ってみたい</span></span>
             </label>
             <label class="btn w-25" id="eighthBlue">
-              <input type="radio" name="options" id="option2" autocomplete="off">
+              <input type="radio" name="switchcontents" id="option2" autocomplete="off">
               <span><i class="fas fa-heart-broken faa-tada animated-hover" title="いまいち"></i><span class="d-none d-lg-inline pl-1">いまいち</span></span>
             </label>
           </div>

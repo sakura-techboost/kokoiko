@@ -188,9 +188,26 @@ p{
     0 0 27px rgba(255, 255, 255, .1);
 }
 
-//map.blade.php
+//map.blade.phpとcontent.blade.phpのラジオボタン部分
+#eighthGreen{
+  border:thin solid lightgray;
+  border-bottom:none;
+}
+#eighthPink{
+  border:thin solid lightgray;
+  border-bottom:none;
+}
+#eighthYellow{
+  border:thin solid lightgray;
+  border-bottom:none;
+}
+#eighthBlue{
+  border:thin solid lightgray;
+  border-bottom:none;
+}
 #eighthGreen>span{
   transition:all .5s ease-in-out;
+  border-bottom:none;
 }
 #eighthGreen:hover span{
   text-shadow:
