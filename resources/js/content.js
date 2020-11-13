@@ -66,22 +66,6 @@ $(function () {
     $('#addUrl').modal('hide');
     return false;
   });
-
-    //関心度登録
-  $('#attention-form').submit(function(){
-    var selectAttention=$('#form_attention_id option:selected').text();
-    var attentionId=$('#form_attention_id option:selected').val();
-    //入力された内容をフォームに追加
-    //表示テキスト
-    $('.attention span').text(selectAttention);
-    //データの付与
-    $('.attention option').val(attentionId);
-    $('.attention option').text(selectAttention);
-    //モーダルを閉じる
-    $('#addAttention').modal('hide');
-    //画面全体のリロードを止める
-    return false;
-  });
   
 
   //記事詳細画面(show.blade.php)
