@@ -14,6 +14,12 @@
           <div class="card-body">
             <form>
               @csrf
+              <div class="row no-gutters mb-2 preview-box">
+                <span class="preview col-3">
+                  <img class="card-img img-thumbnail rounded d-block" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                  <button type="submit" class="reset reset-btn">&times;</button>
+                </span>
+              </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
                 <input type="text" class="form-control" id="name" placeholder="名称">
@@ -71,17 +77,23 @@
                 <label class="col-form-label d-none" for="url">URL</label>
                 <input type="text" class="form-control d-none" id="url">
               </div>
-
               {{-- モーダルツールバー(モーダル部分はmodal.blade.phpに記述) --}}
               <div class="btn-group d-flex" role="group" aria-label="追加情報入力">
+                <button type="button" class="btn create-btn" style="flex-basis: 20%">
+                  <label for="filesend" class="col-form-label w-100">
+                      {{-- 画像アップロード(アイコン部分） --}}
+                    <div class="filelabel" title="ファイル選択">
+                      <i class="fas fa-camera"></i>
+                    </div>
+                      {{-- 画像アップロード(フォーム部分)※非表示 --}}
+                    <input class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
+                  </label>
+                </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 20%">
                   <i class="fas fa-map-marker-alt"></i>
                 </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addPhone" style="flex-basis: 20%">
                   <i class="fas fa-phone"></i>
-                </button>
-                <button type="button" class="btn create-btn"  data-toggle="modal" href="#addPictures" style="flex-basis: 20%">
-                  <i class="fas fa-camera"></i>
                 </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addCategories" style="flex-basis: 20%">
                   <i class="far fa-folder"></i>

@@ -264,31 +264,23 @@ p {
   background-color: #f3f2f2;
 }
 
-.cameraicon {
-  text-align: right;
+.preview {
+  position: relative;
 }
 
-.filelabel {
-  border: 2px solid darkgray;
-  border-radius: 10px;
-  color: midnightblue;
-  display: inline-block;
-  text-align: center;
-  height: 20px;
-  width: 20px;
-  line-height: 75px;
-  font-size: 50px;
+.reset-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
 }
 
-.filelabel:hover {
-  opacity: 0.5;
-  border: 2px solid midnightblue;
-  cursor: pointer;
-}
-
-#filesend {
-  display: none;
-  /* 本来のファイル選択フォームは非表示に */
+.reset-btn:focus,
+.reset-btn:active {
+  outline: none !important;
+  box-shadow: none;
 }
 
 /* カルーセルのインジケータのカスタマイズ */

@@ -9,6 +9,26 @@ Use Log;
 
 class ContentsController extends Controller
 {
+  //トップページを表示する
+  public function top() {
+    return view('contents.top', ['prefs' => self::$prefs]);
+  }
+  //コンテンツを表示する
+  public function content() {
+    return view('contents.content', ['prefs' => self::$prefs]);
+  }
+  //エリアで探すページを表示する
+  public function mapshow() {
+    return view('contents.map', ['prefs' => self::$prefs]);
+  }
+  //新規投稿画面を表示する
+  public function createContent() {
+    return view('contents.createContent');
+  }
+  //記事詳細画面を表示する
+  public function show() {
+    return view('contents.show');
+  }
   public static $prefs = array
     ('01'=>'北海道','02'=>'青森県','03'=>'岩手県','04'=>'宮城県','05'=>'秋田県',
     '06'=>'山形県','07'=>'福島県','08'=>'茨城県','09'=>'栃木県','10'=>'群馬県',
@@ -75,30 +95,11 @@ class ContentsController extends Controller
 
 
   //public static $cities = ['01' =>$cities01];
-//  public function content() {
+  //  public function content() {
   //  return view('contents.content', ['prefs' => self::$prefs, 'cities' => self::$cities]);
   //}
   
-  //トップページを表示する
-  public function top() {
-    return view('contents.top', ['prefs' => self::$prefs]);
-  }
-  //コンテンツを表示する
-  public function content() {
-    return view('contents.content', ['prefs' => self::$prefs]);
-  }
-  //エリアで探すページを表示する
-  public function mapshow() {
-    return view('contents.map', ['prefs' => self::$prefs]);
-  }
-  //新規投稿画面を表示する
-  public function createContent() {
-    return view('contents.createContent');
-  }
-  //記事詳細画面を表示する
-  public function show() {
-    return view('contents.show');
-  }
+  
   /**
    * public function testContent() {
    *  return view('contents.testContent', ['prefs' => self::$prefs]);

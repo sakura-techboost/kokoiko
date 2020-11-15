@@ -266,7 +266,7 @@ p{
     0 0 25px rgba(70,130,180, .2),
     0 0 27px rgba(70,130,180, .1);
 }
-//新規投稿フォームのボタン
+//新規投稿フォームのボタングループ
 .create-btn{
   background: white;
 }
@@ -274,30 +274,22 @@ p{
   background-color: rgb(243, 242, 242);
 }
 
-//画像アップロードフォーム
-.cameraicon{
-    text-align:right;
+//画像プレビュー部分
+.preview{
+  position: relative;//親要素を基準点にする
 }
-.filelabel{
-    border: 2px solid darkgray;
-    border-radius:10px;
-    color:midnightblue;
-    display:inline-block;
-    text-align:center;
-    height:20px;
-    width:20px;
-    line-height:75px;
-    font-size:50px;
+.reset-btn{
+  position: absolute;//画像の右上にリセットボタンが表示されるようにする
+  top: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.2);//ボタンの背景色を透明にする
+  border:none;
+  border-radius:5px;
 }
-.filelabel:hover{
-    opacity:0.5;
-    border: 2px solid midnightblue;
-    cursor: pointer;
+.reset-btn:focus,.reset-btn:active{
+  outline: none !important;//ボタン選択時のアウトラインを非表示にする。※bootstrapの標準のCSSを上書きするため!importantをつける
+  box-shadow: none;
 }
-#filesend {
-   display: none;  /* 本来のファイル選択フォームは非表示に */
-}
-
 
 //記事詳細画面(show.blade.php)
 /* カルーセルのインジケータのカスタマイズ */

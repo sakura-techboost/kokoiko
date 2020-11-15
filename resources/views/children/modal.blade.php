@@ -123,20 +123,20 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group row cameraicon">
-              <label for="filesend" class="col-md-3 col-form-label text-md-righit">
-                {{-- 画像アップロード(アイコン部分） --}}
-              <div class="filelabel" title="ファイル選択">
-                <i class="fas fa-camera"></i>
-              </div>
-                {{-- 画像アップロード(フォーム部分)※非表示 --}}
-              <input type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
+          <form method="POST" action="/upload" enctype="multipart/form-data">
+            <div class="form-group row no-gutters cameraicon">
+              <label for="filesend" class="col-md-3 col-form-label">
+                  {{-- 画像アップロード(アイコン部分） --}}
+                <div class="filelabel" title="ファイル選択">
+                  <i class="fas fa-camera"></i>
+                </div>
+                  {{-- 画像アップロード(フォーム部分)※非表示 --}}
+                <input type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
               </label>
               {{-- プレビューを表示する場所 --}}
               <div class="col-md-9">
                 <div class="preview">
-                  <span class="d-inline-block" id="previewbox"></span>
+                  <span class="d-inline-block" id="previewbox">aaa</span>
                 </div>
               </div>
             </div>
