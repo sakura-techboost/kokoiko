@@ -14,11 +14,8 @@
           <div class="card-body">
             <form>
               @csrf
-              <div class="row no-gutters mb-2 preview-box">
-                <span class="preview col-3">
-                  <img class="card-img img-thumbnail rounded d-block" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                  <button type="submit" class="reset reset-btn">&times;</button>
-                </span>
+              <div class="row no-gutters mb-2 preview-box d-none"> 
+
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
