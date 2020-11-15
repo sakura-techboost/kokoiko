@@ -5,16 +5,19 @@ $(function () {
   //新規登録フォーム(createContent.blade.php)内のモーダルで入力した値の貼り付け
   //住所登録
   $('#address-form').submit(function(){
+    var textCode=$('#form_postalcode').val();
     var selectPref=$('#form_pref_id option:selected').text();
     var prefId=$('#form_pref_id option:selected').val();
     var textCity=$('#form_city_id').val();
     var textAddress=$('#form_address').val();
     //入力された内容をフォームに追加
     //表示テキスト
+    $('.address .postalcode').text(textCode);
     $('.address .pref_id').text(selectPref);
     $('.address .city_id').text(textCity);
     $('.address .address').text(textAddress);
     //データの付与
+    $('.address #postalcode').val(textCode);
     $('.address option').text(selectPref);
     $('.address option').val(prefId);
     $('.address #city_id').val(textCity);

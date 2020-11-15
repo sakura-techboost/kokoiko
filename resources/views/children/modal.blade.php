@@ -14,9 +14,9 @@
           <div class="modal-body">
             <div class="form-group row"> 
               {{-- 住所入力 --}}
-              <label class="col-md-3 col-form-label text-md-right" for="inputAddress01">郵便番号</label>
+              <label class="col-md-3 col-form-label text-md-right" for="form_postalcode">郵便番号</label>
               <div class="col-md-7">
-                <input type="text" name="zip1" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /> - <input type="text" name="zip2" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');" /><br>
+                <input type="text" class="form-control" id="form_postalcode" name="postalcode"><br>
               </div>
               <label class="col-md-3 col-form-label text-md-right" for="form_pref_id form_city_id">住所</label>
               <div class="col-md-5">
@@ -109,42 +109,6 @@
             <button type="submit" class="btn btn-primary">登録</button>
           </div>
         </form>
-      </div>
-    </div>
-  </div>
-  <!-- 画像登録フォーム -->
-  <div class="modal fade" id="addPictures" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addPictures" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addPictures">画像追加</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form method="POST" action="/upload" enctype="multipart/form-data">
-            <div class="form-group row no-gutters cameraicon">
-              <label for="filesend" class="col-md-3 col-form-label">
-                  {{-- 画像アップロード(アイコン部分） --}}
-                <div class="filelabel" title="ファイル選択">
-                  <i class="fas fa-camera"></i>
-                </div>
-                  {{-- 画像アップロード(フォーム部分)※非表示 --}}
-                <input type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
-              </label>
-              {{-- プレビューを表示する場所 --}}
-              <div class="col-md-9">
-                <div class="preview">
-                  <span class="d-inline-block" id="previewbox">aaa</span>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">登録</button>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
   </div>
