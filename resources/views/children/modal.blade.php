@@ -16,7 +16,8 @@
               {{-- 住所入力 --}}
               <label class="col-md-3 col-form-label text-md-right" for="form_postalcode">郵便番号</label>
               <div class="col-md-7">
-                <input type="text" class="form-control" id="form_postalcode" name="postalcode"><br>
+                <input type="text" id="form_postalcode" name="zip1" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');"> - 
+                <input type="text" id="form_postalcode2" name="zip2" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');"><br>
               </div>
               <label class="col-md-3 col-form-label text-md-right" for="form_pref_id form_city_id">住所</label>
               <div class="col-md-5">
