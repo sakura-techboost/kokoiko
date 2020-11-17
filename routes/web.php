@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
   //変更内容を更新し、プロフィール画面へリダイレクトするルーティング
   Route::post('profile/mypage', 'Admin\UserController@update');
   //createCntent.blade.php(記事投稿画面)を表示するルーティング
-  Route::get('contents/createContent', 'ContentsController@createContent')->name("contents.createContent");
+  Route::get('contents/createContent', 'CreateContentController@showCreateForm')->name("createContent.showCreateForm");
   //記事を投稿するルーティング
   Route::post('contents/createContent','CreateContentController@createContent')->name("createContent.createContent");
 });

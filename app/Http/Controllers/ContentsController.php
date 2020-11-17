@@ -22,9 +22,8 @@ class ContentsController extends Controller
     return view('contents.map', ['prefs' => self::$prefs]);
   }
   //新規投稿画面を表示する
-  public function createContent() {
-    return view('contents.createContent');
-  }
+  //→CreateContentController.php内に記述
+  
   //記事詳細画面を表示する
   public function show() {
     return view('contents.show');

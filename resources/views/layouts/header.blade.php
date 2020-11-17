@@ -48,7 +48,7 @@
           @auth
           　<!-- 登録ボタン -->
           　<li class="nav-item" id="eighth">
-              <a href="{{ route('contents.createContent') }}" class="nav-link">
+              <a href="{{ route('createContent.showCreateForm') }}" class="nav-link">
                 <i class="fas fa-plus" title="登録"></i>登録
               </a>
             </li>

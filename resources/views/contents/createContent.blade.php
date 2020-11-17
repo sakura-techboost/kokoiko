@@ -12,6 +12,7 @@
             新規投稿
           </div>
           <div class="card-body">
+            {{-- エラーが発生したら以下に表示 --}}
             @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -93,7 +94,7 @@
                       <i class="fas fa-camera"></i>
                     </div>
                       {{-- 画像アップロード(フォーム部分)※非表示 --}}
-                    <input class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.png,image/jpeg,image/png">
+                    <input class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.png">
                   </label>
                 </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 20%">
