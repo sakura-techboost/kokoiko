@@ -6,7 +6,15 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-lg-12 mt-5">        
+    <div class="col-lg-12 mt-5">
+      {{-- 更新成功メッセージ --}}
+      @if (session('create_content_success'))
+      <div class="container mt-2">
+        <div class="alert alert-success">
+          {{session('create_content_success')}}
+        </div>
+      </div>
+      @endif
       <div class="row">
         <div class="col-lg-8 my-2">
           <p>1北海道/札幌市(的な指定されたエリアのパンくずリスト)</p>

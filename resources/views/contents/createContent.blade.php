@@ -93,7 +93,7 @@
                       <i class="fas fa-camera"></i>
                     </div>
                       {{-- 画像アップロード(フォーム部分)※非表示 --}}
-                    <input class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.gif,.png,image/gif,image/jpeg,image/png">
+                    <input class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.png,image/jpeg,image/png">
                   </label>
                 </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 20%">

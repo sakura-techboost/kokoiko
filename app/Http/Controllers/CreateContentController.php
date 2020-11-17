@@ -33,28 +33,39 @@ class CreateContentController extends Controller
         $place->category_id=$request->category_id;//カテゴリー
         $place->url=$request->url;//URL
         $place->status=$request->status;//公開非公開
-        //画像ファイル
+
+        //画像ファイルについて
+        //アップロードしたファイルをファイルメソッドで取得。nullableにしたいため、第2引数にnull
         $file = $request->file('datafile', null);
+        //もし$fileにフォームからのデータが入っていたら
         if (isset($file)) {
+            //ファイルのマイムタイプを取得
             $mime = $file->getClientMimeType();
+            //マイムタイプを/の前後で分割し、fileMimes配列に入れる
             $fileMimes = explode('/', $mime);
+            //配列の二つ目(image/jpegならjpegの部分)をファイルの拡張子としてfileExtに入れる
             $fileExt = $fileMimes[1];
+            //ここまでの処理が無事完了したらログにメッセージを残す
             Log::debug($fileExt);
+            //ファイル名の後ろに拡張子を付ける
             $file_name = 'image_01.' . $fileExt;
+            //idに投稿時間を入れる
             $place_id = time();
+            //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
             $place->datafile = $file->storeAS("public/images/{$place->user_id}/{$place_id}", $file_name);
             Log::debug('OK');
-            Log::debug($place->datafile);
         }
         else {
+            //データがなければnull
             Log::debug('null');
             $place->datafile = null;
         }
 
-        // DB保存
-
+        // 投稿内容をDBに保存
         $place->save();
-        return redirect('contents/createContent');
+
+        //処理が終わったら記事一覧画面へリダイレクト
+        return redirect('contents/content')->with('create_content_success', '投稿しました');
         //dd('stop');
 
     /*
