@@ -9,19 +9,16 @@ $(function () {
     var textCode2=$('#form_postalcode2').val();
     var selectPref=$('#form_pref_id option:selected').text();
     var prefId=$('#form_pref_id option:selected').val();
-    var textCity=$('#form_city_id').val();
     var textAddress=$('#form_address').val();
     //入力された内容をフォームに追加
     //表示テキスト
     $('.address .postalcode').text(textCode + textCode2);
     $('.address .pref_id').text(selectPref);
-    $('.address .city_id').text(textCity);
     $('.address .address').text(textAddress);
     //データの付与
     $('.address #postalcode').val(textCode + textCode2);
     $('.address option').text(selectPref);
     $('.address option').val(prefId);
-    $('.address #city_id').val(textCity);
     $('.address #address').val(textAddress);
     //モーダルを閉じる
     $('#addAddress').modal('hide');

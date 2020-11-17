@@ -52,9 +52,7 @@
                 <select class="form-control d-none" name="address1" id="pref_id">
                   <option></option>
                 </select>
-                <input type="text" name="address2" class="form-control d-none" id="city_id" placeholder="市区町村">
-                <label class="col-form-label d-none" for="address">番地等</label>
-                <input type="text" class="form-control d-none" id="address">
+                <input type="text" name="address2" class="form-control d-none" id="address" placeholder="市区町村以下">
               </div>
               <!-- 電話番号情報 -->
               <div class="form-group mb-2 phone"> 

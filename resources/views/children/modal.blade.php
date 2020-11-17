@@ -14,13 +14,13 @@
           <div class="modal-body">
             <div class="form-group row"> 
               {{-- 住所入力 --}}
-              <label class="col-md-3 col-form-label text-md-right" for="form_postalcode">郵便番号</label>
-              <div class="col-md-7">
+              <label class="col-md-12 col-form-label" for="form_postalcode">郵便番号</label>
+              <div class="col-md-12">
                 <input type="text" id="form_postalcode" name="zip1" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');"> - 
                 <input type="text" id="form_postalcode2" name="zip2" onKeyUp="AjaxZip3.zip2addr('zip1', 'zip2', 'address1', 'address2');"><br>
               </div>
-              <label class="col-md-3 col-form-label text-md-right" for="form_pref_id form_city_id">住所</label>
-              <div class="col-md-5">
+              <label class="col-md-12 col-form-label" for="form_pref_id form_city_id">住所</label>
+              <div class="col-md-9">
                 <select class="form-control" name="address1" id="form_pref_id">
                   <option value="01">北海道</option>
                   <option value="02">青森県</option>
@@ -70,15 +70,9 @@
                   <option value="46">鹿児島県</option>
                   <option value="47">沖縄県</option>
             　　　</select>
-                <input type="text" name="address2" class="form-control" id="form_city_id" placeholder="市区町村">
+                <input type="text" name="address2" class="form-control" id="form_address" placeholder="住所">
               </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-3 col-form-label text-md-right" for="form_address">番地等</label>
-              <div class="col-md-5">
-                <input type="text" class="form-control" id="form_address">
-              </div>
-          　</div>
+            </div>           
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">登録</button>
