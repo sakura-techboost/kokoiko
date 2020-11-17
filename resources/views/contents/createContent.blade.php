@@ -46,10 +46,10 @@
               <!-- 住所情報 -->
               <div class="form-group mb-2 address">
                 <span class="postalcode"></span><br>
-                <span class="pref_id"></span><span class="city_id"></span><span class="address"></span>
+                <span class="pref"></span><span class="address"></span>
                 <input type="text" name="address2" class="form-control d-none" id="postalcode" placeholder="郵便番号">
-                <label class="col-form-label d-none" for="pref_id city_id">住所</label>
-                <select class="form-control d-none" name="address1" id="pref_id">
+                <label class="col-form-label d-none" for="pref address">住所</label>
+                <select class="form-control d-none" name="address1" id="pref">
                   <option></option>
                 </select>
                 <input type="text" name="address2" class="form-control d-none" id="address" placeholder="市区町村以下">
