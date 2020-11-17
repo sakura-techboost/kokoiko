@@ -15,7 +15,7 @@
             <form>
               @csrf
               <div class="row no-gutters mb-2 preview-box d-none"> 
-
+                
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>

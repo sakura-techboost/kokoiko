@@ -264,25 +264,6 @@ p {
   background-color: #f3f2f2;
 }
 
-.preview {
-  position: relative;
-}
-
-.reset-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: none;
-  border-radius: 5px;
-}
-
-.reset-btn:focus,
-.reset-btn:active {
-  outline: none !important;
-  box-shadow: none;
-}
-
 /* カルーセルのインジケータのカスタマイズ */
 
 .carousel-indicators li {

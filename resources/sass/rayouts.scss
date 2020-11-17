@@ -274,22 +274,6 @@ p{
   background-color: rgb(243, 242, 242);
 }
 
-//画像プレビュー部分
-.preview{
-  position: relative;//親要素を基準点にする
-}
-.reset-btn{
-  position: absolute;//画像の右上にリセットボタンが表示されるようにする
-  top: 0;
-  right: 0;
-  background-color: rgba(0,0,0,0.2);//ボタンの背景色を透明にする
-  border:none;
-  border-radius:5px;
-}
-.reset-btn:focus,.reset-btn:active{
-  outline: none !important;//ボタン選択時のアウトラインを非表示にする。※bootstrapの標準のCSSを上書きするため!importantをつける
-  box-shadow: none;
-}
 
 //記事詳細画面(show.blade.php)
 /* カルーセルのインジケータのカスタマイズ */

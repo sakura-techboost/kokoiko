@@ -70,22 +70,27 @@ $(function () {
     return false;
   });
 
-  //画像のプレビューを表示
+  //画像のプレビューを表示と非表示
   $("#filesend").change(function(){
     //input type="file"の値が変わったら発火
     var file_count = $("#filesend")[0].files.length;//画像の数を取得
     var file = $("#filesend")[0].files;//すべての画像の情報を取得
     var imageList ="";
     if(file_count > 0){
+      //ファイル数が1つ以上であればプレビューボックスを表示
+      $('.preview-box').removeClass('d-none');
+      $('.reset').removeClass('d-none');
+      //ファイルの数だけ処理を行う
       for(var i = 0; i < file_count; i++){
         var filereader = new FileReader();
+        //ファイルにインデックス番号を付ける
         var file_info = file[i];
+        //ファイルがロードされたら発火
         filereader.onload = function(event){
           //画像を表示するHTMLを作成
-          imageList = `${imageList}<div class="preview col-3"><img class="card-img img-thumbnail rounded d-block" id="preview" src="${event.target.result}"><button type="submit" class="reset reset-btn">&times;</button></div>`;
+          imageList = `${imageList}<div class="preview col-3"><img class="card-img img-thumbnail rounded d-block" id="preview" src="${event.target.result}"></div>`;
           if(i == (file_count)){
             $(".preview-box").html(imageList);
-            $('.preview-box').removeClass('d-none');
           }
         }
         //filereaderを先に読み込む
@@ -95,7 +100,7 @@ $(function () {
         $(".preview-box").html("");
         $('.preview-box').addClass('d-none');
     }
-});
+  });
   
 
   //記事詳細画面(show.blade.php)
