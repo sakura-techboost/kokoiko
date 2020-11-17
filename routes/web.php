@@ -27,6 +27,10 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('profile/mypage', 'Admin\UserController@edit');
   //変更内容を更新し、プロフィール画面へリダイレクトするルーティング
   Route::post('profile/mypage', 'Admin\UserController@update');
+  //createCntent.blade.php(記事投稿画面)を表示するルーティング
+  Route::get('contents/createContent', 'ContentsController@createContent')->name("contents.createContent");
+  //記事を投稿するルーティング
+  Route::post('contents/createContent','CreateContentController@createContent')->name("createContent.createContent");
 });
 
 //ログインしているユーザーがパスワードを変更する(web引数はbackメソッドを有効にするため)
@@ -45,8 +49,7 @@ Route::get('contents/content', 'ContentsController@content')->name("contents.con
 Route::get('contents/map', 'ContentsController@mapshow')->name("contents.map");
 //show.blade.php(記事詳細画面)を表示するルーティング
 Route::get('contents/show', 'ContentsController@show');
-//createCntent.blade.php(記事投稿画面)を表示するルーティング
-Route::get('contents/createContent', 'ContentsController@createContent')->name("contents.createContent");
+
 
 //以下開発段階で使用
 

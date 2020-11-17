@@ -273,6 +273,11 @@ p{
 .create-btn:hover{
   background-color: rgb(243, 242, 242);
 }
+//関心度フォームの文字色設定
+.attention-star{
+  color:orange;
+}
+
 
 
 //記事詳細画面(show.blade.php)

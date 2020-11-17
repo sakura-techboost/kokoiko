@@ -165,38 +165,6 @@
       </div>
     </div>
   </div>
-  <!-- 関心度選択フォーム -->
-  <div class="modal fade" id="addAttention" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="attention" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="addAttention">関心度選択</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form id="attention_form">
-          <div class="modal-body">
-            <div class="form-group row">
-              <label class="col-md-3 col-form-label text-md-right" for="form_attention_id">関心度</label>
-              <div class="col-md-5">
-                <select class="form-control text-warning" id="form_attention_id">
-                  <option value="1">★★★★★</option>
-                  <option value="2">★★★★☆</option>
-                  <option value="3">★★★☆☆</option>
-                  <option value="4">★★☆☆☆</option>
-                  <option value="5">★☆☆☆☆</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">登録</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
 {{-- header.blade.php(レイアウトブレード) --}}
 <!-- モーダルダイアログに検索メニュー(#search-menu)を載せる -->

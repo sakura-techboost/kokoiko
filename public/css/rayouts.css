@@ -264,6 +264,10 @@ p {
   background-color: #f3f2f2;
 }
 
+.attention-star {
+  color: orange;
+}
+
 /* カルーセルのインジケータのカスタマイズ */
 
 .carousel-indicators li {

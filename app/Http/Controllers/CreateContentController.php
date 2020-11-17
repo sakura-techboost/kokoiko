@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Place;//Placeモデルを使う
 use Illuminate\Support\Facades\Auth; //認証済みユーザーを取得するファサード
+use App\Http\Requests\CreateContentRequest;
+use Log;
 
 class CreateContentController extends Controller
 {
@@ -13,7 +15,7 @@ class CreateContentController extends Controller
         return view('contents.createContent');
     }
     //記事を作成する
-    public function createContent(Request $request){
+    public function createContent(CreateContentRequest $request){
         //Placeモデルのインスタンスを作成
         $place=new Place();
 
@@ -25,26 +27,53 @@ class CreateContentController extends Controller
         $place->placetype_id=$request->placetype_id;//登録先
         $place->attention_id=$request->attention_id;//関心度
         $place->postalcode=$request->postalcode;//郵便番号
-        $place->pref_id=$request->pref_id;//都道府県
-        $place->city_id=$request->city_id;//市区町村
-        $place->address=$request->address;//番地以下
+        $place->pref=$request->pref;//都道府県
+        $place->address=$request->address;//市区町村以下
         $place->phone=$request->phone;//電話番号
         $place->category_id=$request->category_id;//カテゴリー
         $place->url=$request->url;//URL
-        $place->public_id=$request->public_id;//公開非公開
-        if (isset($place['image'])) {
-            $files = $request->file('file');
+        $place->status=$request->status;//公開非公開
+        //画像ファイル
+        $file = $request->file('datafile', null);
+        if (isset($file)) {
+            $mime = $file->getClientMimeType();
+            $fileMimes = explode('/', $mime);
+            $fileExt = $fileMimes[1];
+            Log::debug($fileExt);
+            $file_name = 'image_01.' . $fileExt;
+            $place_id = time();
+            $place->datafile = $file->storeAS("public/images/{$place->user_id}/{$place_id}", $file_name);
+            Log::debug('OK');
+            Log::debug($place->datafile);
+        }
+        else {
+            Log::debug('null');
+            $place->datafile = null;
+        }
+
+        // DB保存
+
+        $place->save();
+        return redirect('contents/createContent');
+        //dd('stop');
+
+    /*
+        $files = $request->file('datafile');
+        if (isset($files[0])) {
+            $files = $request->file('datafile.0');
             foreach($files as $file){
-                $file_name = $file->getClientOriginalName();
-                $file->storeAS('',$file_name);
+                //$file_name = $file->getClientOriginalName();
+                $file_name = '1.png';
+                $file->storeAS('public/post_images',$file_name);
+                //$place->datafile = $request->datafile->storeAs('public/post_images', $time.'_'.Auth::user()->id . '.jpg');
+
             }
             $path = $request->file('image')->store('public/image');
-            $news->image_path = basename($path);
+            $place->datafile = basename($path);
           } else {
-              $news->image_path = null;
+            $place->datafile = null;
           }
-        
-        $place->image_url=$request->image_url->storeAs('public/post_images', $time.'_'.Auth::user()->id . '.jpg');
+*/        
 
     }
 }

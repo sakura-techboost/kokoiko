@@ -74,6 +74,11 @@ $(function () {
     var file_count = $("#filesend")[0].files.length;//画像の数を取得
     var file = $("#filesend")[0].files;//すべての画像の情報を取得
     var imageList ="";
+    if (file_count > 1 ) {
+        alert('画像は1つだけ選択してください');
+        return false;
+    }
+
     if(file_count > 0){
       //ファイル数が1つ以上であればプレビューボックスを表示
       $('.preview-box').removeClass('d-none');
@@ -87,9 +92,7 @@ $(function () {
         filereader.onload = function(event){
           //画像を表示するHTMLを作成
           imageList = `${imageList}<div class="preview col-3"><img class="card-img img-thumbnail rounded d-block" id="preview" src="${event.target.result}"></div>`;
-          if(i == (file_count)){
-            $(".preview-box").html(imageList);
-          }
+          $(".preview-box").html(imageList);
         }
         //filereaderを先に読み込む
         filereader.readAsDataURL(file_info);//readAsDateURLメソッドでファイルを読み込む、他にあるので好きなのでいい

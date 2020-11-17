@@ -6,5 +6,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class Place extends Model
 {
-    //
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'name',
+        'overview',
+        'placetype_id',
+        'attention_id',
+        'postalcode',
+        'pref',
+        'address',
+        'phone',
+        'category_id',
+        'url',
+        'status',
+        'datafile' 
+    ];
+
+
 }
