@@ -17,6 +17,7 @@ class ContentsController extends Controller
   //コンテンツを表示する
   public function content() {
     $places = Place::all();
+    $places = Place::paginate(5);
     return view('contents.content', ['places' => $places]);
   }
   

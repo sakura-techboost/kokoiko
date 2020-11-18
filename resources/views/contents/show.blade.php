@@ -9,8 +9,8 @@
       <div class="col-lg-12">
         <div class="card mx-auto mt-5">
           <div class="row no-gutters card-header py-1 px-4">
-            <p class="d-inline-block col-6">{{ $place->name }}<br><small>{{ $place->placetype_id }}</small></p>
-            <div class="dropdown d-inline-block col-6" align="right">
+            <p class="d-inline-block col-9">{{ $place->name }}<br><small>{{ $place->placetype_id }}</small></p>
+            <div class="dropdown d-inline-block col-3" align="right">
               <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                 <i class="fas fa-ellipsis-h"></i>
               </button>
