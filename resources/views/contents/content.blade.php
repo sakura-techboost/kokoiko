@@ -53,9 +53,10 @@
           </div>
         </div>
         <div class="col-lg-12">
+          @foreach ($places as $place)
           <div class="card mb-3 mx-auto mt-3">
             <div class="row no-gutters card-header py-1 px-4">
-              <p class="d-inline-block col-6">タイトル<br><small>★★★★★</small></p>
+            <p class="d-inline-block col-6">{{ str_limit($place->name,10) }}<br><small>{{ $place->attention_id }}</small></p>
               <p class="d-inline-block col-6 align-self-center" align="right">
                 <button type="button" class="btn" data-toggle="modal" data-target="#content-menu">
                 <i class="fas fa-ellipsis-h"></i>
@@ -70,7 +71,7 @@
                   </div>
                   <div class="col-sm-8">
                     <div class="card-body p-0">
-                      <p class="card-text summary" style="border-top: thin solid #d3d3d3">概要</p>
+                    <p class="card-text summary" style="border-top: thin solid #d3d3d3">{{ str_limit($place->overview,15) }}</p>
                     </div>
                   </div>
                 </div>
@@ -89,7 +90,8 @@
                 </div>
               </li>
             </ul>
-          </div>
+          </div>                        
+          @endforeach
           <div class="card mb-3 mx-auto mt-3">
             <div class="row no-gutters card-header py-1 px-4">
               <p class="d-inline-block col-6">タイトル<br><small>★★★★★</small></p>

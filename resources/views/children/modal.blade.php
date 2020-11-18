@@ -176,10 +176,11 @@
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form action="{{ action('ContentsController@index') }}" method="get">
+            @csrf
             <div class="form-group mb-4">
               <label class="sr-only" for="kw">検索キーワード</label>
-              <input type="search" class="form-control" placeholder="キーワード" id="kw">
+              <input type="text" class="form-control" placeholder="キーワード" id="kw" name="search_name" value={{ $search_name }}>
             </div>
             <div class="form-group mb-4 city">
               <label for="receipt">都道府県</label>
