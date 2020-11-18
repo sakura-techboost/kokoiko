@@ -9,17 +9,25 @@
       <div class="col-lg-12">
         <div class="card mx-auto mt-5">
           <div class="row no-gutters card-header py-1 px-4">
-            <p class="d-inline-block col-6">タイトル<br><small>★★★★★</small></p>
-            <p class="d-inline-block col-6 align-self-center" align="right">
-              <button type="button" class="btn" data-toggle="modal" data-target="#content-menu">
-               <i class="fas fa-ellipsis-h"></i>
+            <p class="d-inline-block col-6">{{ $place->name }}<br><small>{{ $place->placetype_id }}</small></p>
+            <div class="dropdown d-inline-block col-6" align="right">
+              <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                <i class="fas fa-ellipsis-h"></i>
               </button>
-            </p>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#!">編集</a>
+                <a class="dropdown-item" href="#!">削除</a>
+              </div>
+            </div>
           </div>
           <ul class="list-group list-group-flush" >
             <li class="list-group-item w-100 p-0">
               <div class="row no-gutters">
                 <div class="col-sm-4 my-auto mx-auto">
+                  {{-- 画像がなければNOIMAGEを表示、あればその画像を表示 --}}
+                  @if($place->datafile == null)
+                  <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  @else
                 <!-- 登録した画像をカルーセル表示する -->
                   <div class="carousel slide" id="cl" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -30,7 +38,7 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="{{ asset("public/images/$place->datafile") }}">
                       </div>
                       <div class="carousel-item">
                         <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
@@ -51,10 +59,11 @@
                       <span class="sr-only">次の画像へ</span>
                     </a>
                   </div>
+                  @endif
                 </div>
                 <div class="col-sm-8">
                   <div class="card-body p-0">
-                    <p class="card-text summary" style="border-top: thin solid #d3d3d3">概要</p>
+                    <p class="card-text summary" style="border-top: thin solid #d3d3d3">{{ $place->overview }}</p>
                   </div>
                 </div>
               </div>
@@ -65,7 +74,7 @@
                   <span style="font-size: small">HP</span>
                 </p>
                 <p class="card-text d-inline-block col-9 px-1 py-0">
-                  <span style="font-size: small">URL～～～～～～～</span>
+                  <span style="font-size: small">{{ $place->url }}</span>
                 </p>
               </div>
             </li>
@@ -75,7 +84,7 @@
                   <span style="font-size: small">住所</span>
                 </p>
                 <p class="card-text d-inline-block col-9 px-1 py-0">
-                  <span style="font-size: small">北海道札幌市~</span>
+                  <span style="font-size: small">{{ $place->pref }} {{ $place->address }}</span>
                 </p>
               </div>
             </li>
@@ -85,7 +94,7 @@
                   <span style="font-size: small">電話番号</span>
                 </p>
                 <p class="card-text d-inline-block col-9 px-1 py-0">
-                  <span style="font-size: small">09009009090</span>
+                  <span style="font-size: small">{{ $place->phone }}</span>
                 </p>
               </div>
             </li>
@@ -95,7 +104,7 @@
                   <span style="font-size: small">カテゴリー</span>
                 </p>
                 <p class="card-text d-inline-block col-9 px-1 py-0">
-                  <span style="font-size: small">グルメ　スイーツ</span>
+                  <span style="font-size: small">{{ $place->category_id }}</span>
                 </p>
               </div>
             </li>

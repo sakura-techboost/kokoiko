@@ -56,12 +56,17 @@
           @foreach ($places as $place)
           <div class="card mb-3 mx-auto mt-3">
             <div class="row no-gutters card-header py-1 px-4">
-            <p class="d-inline-block col-6">{{ str_limit($place->name,10) }}<br><small>{{ $place->attention_id }}</small></p>
-              <p class="d-inline-block col-6 align-self-center" align="right">
-                <button type="button" class="btn" data-toggle="modal" data-target="#content-menu">
-                <i class="fas fa-ellipsis-h"></i>
+              <p class="d-inline-block col-6">{{ str_limit($place->name,10) }}<br><small>{{ $place->attention_id }}</small></p>
+              <div class="dropdown d-inline-block col-6" align="right">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                  <i class="fas fa-ellipsis-h"></i>
                 </button>
-              </p>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="{{ route('contents.show',[$place -> id]) }}">詳細</a>
+                  <a class="dropdown-item" href="#!">編集</a>
+                  <a class="dropdown-item" href="#!">削除</a>
+                </div>
+              </div>
             </div>
             <ul class="list-group list-group-flush" >
               <li class="list-group-item w-100 p-0">

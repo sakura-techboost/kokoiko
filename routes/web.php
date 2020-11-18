@@ -32,8 +32,13 @@ Route::group(['middleware' => 'auth'], function() {
   //記事を投稿するルーティング
   Route::post('contents/createContent','CreateContentController@createContent')->name("createContent.createContent");
   
+  //content.blade.php(記事一覧画面)を表示するルーティング
+  Route::get('contents/content', 'ContentsController@content')->name("contents.content");
   
-  Route::get('contents/content', 'SearchContentsController@index')->name('contents.index');
+  //Route::get('contents/content', 'SearchContentsController@index')->name('contents.index');
+ 
+  //show.blade.php(記事詳細画面)を表示するルーティング
+  Route::get('contents/show/{id}', 'CreateContentController@show')->name('contents.show');
 });
 
 //ログインしているユーザーがパスワードを変更する(web引数はbackメソッドを有効にするため)
@@ -47,11 +52,11 @@ Route::group(['middleware' => ['auth', 'web']], function () {
 //top.blade.php(トップページ)を表示するルーティング
 Route::get('contents/top', 'ContentsController@top')->name("contents.top");
 //content.blade.php(記事一覧画面)を表示するルーティング
-//Route::get('contents/content', 'ContentsController@content')->name("contents.content");
+Route::get('contents/content', 'ContentsController@content')->name("contents.content");
 //map.blade.php(エリアマップから記事を見る画面)を表示する
 Route::get('contents/map', 'ContentsController@mapshow')->name("contents.map");
 //show.blade.php(記事詳細画面)を表示するルーティング
-Route::get('contents/show', 'ContentsController@show');
+//Route::get('contents/show', 'ContentsController@show');
 
 
 //以下開発段階で使用

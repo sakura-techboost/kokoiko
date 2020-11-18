@@ -32,7 +32,7 @@ class CreateContentRequest extends FormRequest
             'pref' => ['nullable','string'],//都道府県：任意入力・文字列であること
             'address' => ['nullable','max:100'],//市区町村以下：任意入力・全角100文字まで
             'phone' => ['nullable','numeric','digits_between:9,12'],//電話番号：任意入力・数字・3~12桁であること
-            'category_id' => ['nullable','integer'],
+            'category_id' => ['nullable'],
             'url' => ['nullable','url'],//HP：任意入力・URLの形式であること
             'datafile' => ['nullable', 'file', 'mimes:jpeg,png', 'max:10240'],//画像：任意入力・ファイルであること・拡張子はjpegかpngであること・ファイルサイズは1MG以下であること
         ];

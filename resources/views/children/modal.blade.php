@@ -168,7 +168,7 @@
 
 {{-- header.blade.php(レイアウトブレード) --}}
 <!-- モーダルダイアログに検索メニュー(#search-menu)を載せる -->
-　<div class="modal fade" id="search-menu" tabindex="-1" role="dialog" aria-hidden="true">
+<!--　<div class="modal fade" id="search-menu" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -176,11 +176,11 @@
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <form action="{{ action('SearchContentsController@index') }}" method="get">
+          <form action="{ action('SearchContentsController@index') }}" method="get">
             @csrf
             <div class="form-group mb-4">
               <label class="sr-only" for="kw">検索キーワード</label>
-              <input type="text" class="form-control" placeholder="キーワード" id="kw" name="search_name" value={{ $search_name }}>
+              <input type="text" class="form-control" placeholder="キーワード" id="kw" name="search_name" value={ $search_name }}>
             </div>
             <div class="form-group mb-4 city">
               <label for="receipt">都道府県</label>
@@ -208,7 +208,7 @@
     　</div>
   　</div>
   </div>
-
+-->
 {{-- mypage.blade.php(プロフィール編集画面) --}}
 <!-- モーダルダイアログでプロフィールを編集する -->
 <!-- 名前 -->

@@ -16,7 +16,8 @@ class ContentsController extends Controller
   }
   //コンテンツを表示する
   public function content() {
-    return view('contents.content', ['prefs' => self::$prefs]);
+    $places = Place::all();
+    return view('contents.content', ['places' => $places]);
   }
   
   //エリアで探すページを表示する

@@ -85,7 +85,16 @@ class CreateContentController extends Controller
           } else {
             $place->datafile = null;
           }
-*/        
-
+*/
     }
+    //記事のidを取得
+    public function show(Request $request,$id,Place $place)
+   {
+       //Placeテーブルから取得したidに合致するデータを取得
+       $place = Place::find($id);
+       //記事詳細画面を表示
+       return view('contents.show', [
+        'place'=>$place
+       ]);        
+   }
 }
