@@ -20,7 +20,7 @@
                 @endforeach
               </ul>
             @endif
-            <form action="{{ action('ContentsController@update') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('contents.update', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
               @csrf
               {{-- 選択された画像のプレビュー --}}
               <div class="row no-gutters mb-2 preview-box d-none"> 

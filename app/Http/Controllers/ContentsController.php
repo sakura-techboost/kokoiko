@@ -23,16 +23,23 @@ class ContentsController extends Controller
   }
 
   //記事の編集画面を表示する
-  public function edit($id,Place $place)
-    {
-        //Placeテーブルから取得したidに合致するデータを取得
-        $place = Place::find($id);
-        return view('contents.edit', [
-          'place_form' => $place
-        ]);
+  public function edit($id,Place $place){
+    //Placeテーブルから取得したidに合致するデータを取得
+    $place = Place::find($id);
+    //idが一致しなければエラー画面を表示
+    if (null === $place) {
+      return response(redirect(url('/notfound')), 404);
     }
+//    if ($place->user_id !== Auth::user()->id) {
+//        return response(redirect(url('/notfound')), 404);
+//    }
+    return view('contents.edit', [
+      'place_form' => $place,
+      'id' => $id
+    ]);
+  }
   //記事のデータの上書をする
-  public function update(CreateContentRequest $request,Place $place) {
+  public function update(CreateContentRequest $request, $id, Place $place) {
     $place_form = $request->all();
     $place = Place::place();
     //不要な「_token」の削除
@@ -42,6 +49,15 @@ class ContentsController extends Controller
     //リダイレクト
     return redirect('contents/show', ['place'=>$place])->with('edit_content_success', '編集しました');
 }
+    //記事を削除する
+    public function delete(Request $request)
+    {
+        // 該当するNews Modelを取得
+        $place = Place::find($request->id);
+        // 削除する
+        $place->delete();
+        return redirect('contents/content')->with('delete_content_success', '削除しました');
+    }  
 
   //エリアで探すページを表示する
   public function mapshow() {
