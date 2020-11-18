@@ -63,7 +63,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                   <a class="dropdown-item" href="{{ route('contents.show',[$place -> id]) }}">詳細</a>
-                  <a class="dropdown-item" href="#!">編集</a>
+                  <a class="dropdown-item" href="{{ route('contents.edit',[$place -> id]) }}">編集</a>
                   <a class="dropdown-item" href="#!">削除</a>
                 </div>
               </div>

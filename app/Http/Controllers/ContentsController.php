@@ -7,20 +7,42 @@ use Auth;
 use Exception;
 Use Log;
 use App\Place;
+use App\Http\Requests\CreateContentRequest;
 
 class ContentsController extends Controller
 {
   //トップページを表示する
   public function top() {
-    return view('contents.top', ['prefs' => self::$prefs]);
+    return view('contents.top');
   }
-  //コンテンツを表示する
+  //記事の一覧を表示する
   public function content() {
     $places = Place::all();
     $places = Place::paginate(5);
     return view('contents.content', ['places' => $places]);
   }
-  
+
+  //記事の編集画面を表示する
+  public function edit($id,Place $place)
+    {
+        //Placeテーブルから取得したidに合致するデータを取得
+        $place = Place::find($id);
+        return view('contents.edit', [
+          'place_form' => $place
+        ]);
+    }
+  //記事のデータの上書をする
+  public function update(CreateContentRequest $request,Place $place) {
+    $place_form = $request->all();
+    $place = Place::place();
+    //不要な「_token」の削除
+    unset($place_form['_token']);
+    //保存
+    $place->fill($place_form)->save();
+    //リダイレクト
+    return redirect('contents/show', ['place'=>$place])->with('edit_content_success', '編集しました');
+}
+
   //エリアで探すページを表示する
   public function mapshow() {
     return view('contents.map', ['prefs' => self::$prefs]);

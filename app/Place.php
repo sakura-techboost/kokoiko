@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+//use Kyslik\ColumnSortable\Sortable;// 追加
 
 class Place extends Model
 {
+    //use Sortable;
+    //public $sortable = ['id', 'name', 'attention_id', 'updated_at'];// 追加
     /**
      * The attributes that are mass assignable.
      *

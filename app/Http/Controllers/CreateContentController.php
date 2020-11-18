@@ -88,7 +88,7 @@ class CreateContentController extends Controller
 */
     }
     //記事のidを取得
-    public function show(Request $request,$id,Place $place)
+    public function show($id,Place $place)
    {
        //Placeテーブルから取得したidに合致するデータを取得
        $place = Place::find($id);

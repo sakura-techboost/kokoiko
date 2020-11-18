@@ -55,14 +55,6 @@ class UpdatePasswordRequest extends FormRequest
     
 }
 
-/**
- * Rule::exits('users')->where(Hash::check($value, Auth::user()->password))
- * function ($attribute,$value, $fail) {
- * if(!(Hash::check($value, Auth::user()->password))) {
- *   return $fail('現在のパスワードを正しく入力してください');
- *  }
- * }
- * /
 
     
     

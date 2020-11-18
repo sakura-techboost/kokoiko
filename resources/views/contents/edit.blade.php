@@ -1,7 +1,7 @@
 {{-- 共通ヘッダー読み込み --}}
 @extends('layouts.header')
 {{-- ページタイトル埋め込み --}}
-@section('title','新規投稿')
+@section('title','記事編集')
 
 @section('content')
 　<div class="container">
@@ -9,7 +9,7 @@
       <div class="col-md-12">
         <div class="card mt-5">
           <div class="card-header">
-            新規投稿
+            記事を編集する
           </div>
           <div class="card-body">
             {{-- エラーが発生したら以下に表示 --}}
@@ -20,7 +20,7 @@
                 @endforeach
               </ul>
             @endif
-            <form action="{{ action('CreateContentController@createContent') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ action('ContentsController@update') }}" method="post" enctype="multipart/form-data">
               @csrf
               {{-- 選択された画像のプレビュー --}}
               <div class="row no-gutters mb-2 preview-box d-none"> 
@@ -28,11 +28,11 @@
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="名称">
+                <input value="{{ $place_form->name }}" type="text" class="form-control" id="name" name="name" placeholder="名称">
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="overview">概要</label>
-                <textarea class="form-control" id="overview" name="overview" placeholder="どんなところ？"></textarea>
+                <textarea value="{{ $place_form->overview }}" class="form-control" id="overview" name="overview" placeholder="どんなところ？"></textarea>
                 {{-- <small class="form-text">※タグ付けをすると検索できます</small> --}}
               </div>
               <div class="form-group mb-2">
@@ -63,13 +63,13 @@
                 <select class="form-control d-none" name="pref" id="pref">
                   <option></option>
                 </select>
-                <input type="text" name="address" class="form-control d-none" id="address" placeholder="市区町村以下">
+                <input value="{{ $place_form->address }}" type="text" name="address" class="form-control d-none" id="address" placeholder="市区町村以下">
               </div>
               <!-- 電話番号情報 -->
               <div class="form-group mb-2 phone"> 
                 <span></span>
                 <label class="col-form-label d-none" for="phone">電話番号</label>
-                <input type="text" class="form-control d-none" id="phone" name="phone">
+                <input value="{{ $place_form->phone }}" type="text" class="form-control d-none" id="phone" name="phone">
               </div>
               <!-- カテゴリー情報 -->
               <div class="form-group mb-2 category"> 
@@ -83,7 +83,7 @@
               <div class="form-group mb-2 url"> 
                 <span></span>
                 <label class="col-form-label d-none" for="url">URL</label>
-                <input type="text" class="form-control d-none" id="url" name="url">
+                <input value="{{ $place_form->phone }}" type="text" class="form-control d-none" id="url" name="url">
               </div>
               {{-- モーダルツールバー(モーダル部分はmodal.blade.phpに記述) --}}
               <div class="btn-group d-flex" role="group" aria-label="追加情報入力">
@@ -94,7 +94,7 @@
                       <i class="fas fa-camera"></i>
                     </div>
                       {{-- 画像アップロード(フォーム部分)※非表示 --}}
-                    <input class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.png">
+                    <input value="{{ $place_form->datafile }}" class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.png">
                   </label>
                 </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 20%">
