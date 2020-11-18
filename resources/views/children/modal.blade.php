@@ -176,7 +176,7 @@
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <form action="{{ action('ContentsController@index') }}" method="get">
+          <form action="{{ action('SearchContentsController@index') }}" method="get">
             @csrf
             <div class="form-group mb-4">
               <label class="sr-only" for="kw">検索キーワード</label>

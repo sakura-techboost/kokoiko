@@ -31,7 +31,9 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('contents/createContent', 'CreateContentController@showCreateForm')->name("createContent.showCreateForm");
   //記事を投稿するルーティング
   Route::post('contents/createContent','CreateContentController@createContent')->name("createContent.createContent");
-  Route::get('contents/content', 'ContentsController@index')->name('contents.index');
+  
+  
+  Route::get('contents/content', 'SearchContentsController@index')->name('contents.index');
 });
 
 //ログインしているユーザーがパスワードを変更する(web引数はbackメソッドを有効にするため)
