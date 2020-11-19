@@ -38,6 +38,7 @@ class ContentsController extends Controller
       'id' => $id
     ]);
   }
+  
   //記事のデータの上書をする
   public function update(CreateContentRequest $request, $id, Place $place) {
     $place_form = $request->all();
@@ -48,16 +49,21 @@ class ContentsController extends Controller
     $place->fill($place_form)->save();
     //リダイレクト
     return redirect('contents/show', ['place'=>$place])->with('edit_content_success', '編集しました');
-}
-    //記事を削除する
-    public function delete(Request $request)
-    {
-        // 該当するNews Modelを取得
-        $place = Place::find($request->id);
-        // 削除する
-        $place->delete();
-        return redirect('contents/content')->with('delete_content_success', '削除しました');
-    }  
+  }
+
+  //記事を削除する
+  public function delete($id,Place $place)
+  {
+      // 該当する記事を取得
+      $place = Place::find($id);
+      //idが一致しなければエラー画面を表示
+      if (null === $place) {
+        return response(redirect(url('/notfound')), 404);
+      }
+      // 削除する
+      $place->delete();
+      return redirect('contents/content')->with('delete_content_success', '削除しました');
+  }  
 
   //エリアで探すページを表示する
   public function mapshow() {

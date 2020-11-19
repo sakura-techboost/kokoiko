@@ -15,8 +15,8 @@
                 <i class="fas fa-ellipsis-h"></i>
               </button>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="{{ route('contents.edit',[$place -> id]) }}">編集</a>
-                <a class="dropdown-item" href="#!">削除</a>
+                <a class="dropdown-item" href="">編集</a>
+                <a class="dropdown-item" href="{{ route('contents.delete',[$place -> id]) }}">削除</a>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@
                 <div class="col-sm-4 my-auto mx-auto">
                   {{-- 画像がなければNOIMAGEを表示、あればその画像を表示 --}}
                   @if($place->datafile == null)
-                  <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  <img src="{{ asset("$place->datafile") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
                   @else
                 <!-- 登録した画像をカルーセル表示する -->
                   <div class="carousel slide" id="cl" data-ride="carousel">

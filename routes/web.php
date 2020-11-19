@@ -39,12 +39,13 @@ Route::group(['middleware' => 'auth'], function() {
  
   //show.blade.php(記事詳細画面)を表示するルーティング
   Route::get('contents/show/{id}', 'CreateContentController@show')->name('contents.show');
+  //edit.blade.php(記事編集画面)を表示するルーティング
+  Route::get('contents/edit/{id}','ContentsController@edit')->name('contents.edit');
+
   //記事の編集内容を反映させるルーティング
   Route::post('contents/edit/{id}', 'ContentsController@update')->name('contents.update');
-  //edit.blade.php(記事編集画面)を表示するルーティング
-  Route::get('contents/edit/{id}', 'ContentsController@edit')->name('contents.edit');
   //記事の内容を削除するルーティング
-  Route::get('contents/content', 'ContentsController@delete')->name('contents.delete');
+  Route::get('contents/edit/{id}', 'ContentsController@delete')->name('contents.delete');
 });
 
 //ログインしているユーザーがパスワードを変更する(web引数はbackメソッドを有効にするため)

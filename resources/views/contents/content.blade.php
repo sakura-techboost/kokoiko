@@ -15,6 +15,14 @@
         </div>
       </div>
       @endif
+      {{-- 削除成功メッセージ --}}
+      @if (session('delete_content_success'))
+      <div class="container mt-2">
+        <div class="alert alert-success">
+          {{session('delete_content_success')}}
+        </div>
+      </div>
+      @endif
       <div class="row">
         <div class="col-lg-8 my-2">
           <p>1北海道/札幌市(的な指定されたエリアのパンくずリスト)</p>
