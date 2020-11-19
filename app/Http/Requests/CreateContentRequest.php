@@ -34,7 +34,7 @@ class CreateContentRequest extends FormRequest
             'phone' => ['nullable','numeric','digits_between:9,12'],//電話番号：任意入力・数字・3~12桁であること
             'category_id' => ['nullable'],
             'url' => ['nullable','url'],//HP：任意入力・URLの形式であること
-            'datafile' => ['nullable', 'file', 'mimes:jpeg,png', 'max:10240'],//画像：任意入力・ファイルであること・拡張子はjpegかpngであること・ファイルサイズは1MG以下であること
+            'datafile.*' => ['nullable', 'file', 'mimes:jpeg,png', 'max:10240'],//画像：任意入力・ファイルであること・拡張子はjpegかpngであること・ファイルサイズは1MG以下であること
         ];
     }
     /**
