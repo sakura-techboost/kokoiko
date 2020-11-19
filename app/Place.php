@@ -26,9 +26,12 @@ class Place extends Model
         'phone',
         'category_id',
         'url',
-        'status',
-        'datafile' 
+        'status', 
     ];
 
+    public function datafile()
+    {
+        return $this->hasMany('App\UploadFile');
+    }
 
 }

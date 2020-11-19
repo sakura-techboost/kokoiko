@@ -61,21 +61,27 @@ class ContentsController extends Controller
       if (null === $place) {
         return response(redirect(url('/notfound')), 404);
       }
-      //サーバー上の画像を削除する
-      //ファイルパスからファイル名を取得
-      //storage/images/{$place->user_id}/{$place_id}/{$file_name}
-      $file_pass = $place->datafile;
-      $file_passes = explode('/', $file_pass);
-      //配列の5つ目($file_name)を取得
-      $del_file_name = $file_passes[4];
-      //配列の4つ目($Place_idに代入してあるtime()の投稿時間)を取得
-      $place_id = $file_passes[3];
-      //public/images/{$place->user_id}/{$place_id}から画像ファイルを削除する
-      Storage::delete("public/images/{$place->user_id}/{$place_id}/". $del_file_name);
-      //投稿時間フォルダも削除する
-      Storage::deleteDirectory("public/images/{$place->user_id}/". $place_id);
-      // データベースのレコードを削除する
-      $place->delete();
+      //削除する記事に画像ファイルがあったら
+      if (null !== $place->datafile){
+        //サーバー上の画像を削除する
+        //ファイルパスからファイル名を取得
+        //storage/images/{$place->user_id}/{$place_id}/{$file_name}
+        $file_pass = $place->datafile;
+        $file_passes = explode('/', $file_pass);
+        //配列の5つ目($file_name)を取得
+        $del_file_name = $file_passes[4];
+        //配列の4つ目($Place_idに代入してあるtime()の投稿時間)を取得
+        $place_id = $file_passes[3];
+        //public/images/{$place->user_id}/{$place_id}から画像ファイルを削除する
+        Storage::delete("public/images/{$place->user_id}/{$place_id}/". $del_file_name);
+        //投稿時間フォルダも削除する
+        Storage::deleteDirectory("public/images/{$place->user_id}/". $place_id);
+        // データベースのレコードを削除する
+        $place->delete();
+      }else{
+        // なければそのままデータベースのレコードを削除する
+        $place->delete();
+      }
 
       return redirect('contents/content')->with('delete_content_success', '削除しました');
   }  

@@ -74,15 +74,14 @@ $(function () {
     var file_count = $("#filesend")[0].files.length;//画像の数を取得
     var file = $("#filesend")[0].files;//すべての画像の情報を取得
     var imageList ="";
-    if (file_count > 1 ) {
-        alert('画像は1つだけ選択してください');
+    if (file_count > 4 ) {
+        alert('登録できる画像は4つまでです');
         return false;
     }
-
     if(file_count > 0){
       //ファイル数が1つ以上であればプレビューボックスを表示
       $('.preview-box').removeClass('d-none');
-      $('.reset').removeClass('d-none');
+      //$('.reset').removeClass('d-none');
       //ファイルの数だけ処理を行う
       for(var i = 0; i < file_count; i++){
         var filereader = new FileReader();
