@@ -27,7 +27,7 @@ class Place extends Model
         'category_id',
         'url',
         'status', 
-        
+
     ];
 /*
     //画像ファイルを以下のテーブルに保存
@@ -50,6 +50,6 @@ class Place extends Model
     //カテゴリー
     public function getCategoryAttribute()
     {
-        return config('place.category.' . $this->category_id);
+        return config('places.place.category.' . $this->category_id);
     }
 }
