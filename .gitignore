@@ -15,3 +15,8 @@ Untitled-1.txt.
 CsvController.php
 2020_10_30_071347_test_files_table.php
 test.csv
+.bin/
+.php_cs.cache
+.phpstorm.meta.php
+_ide_helper.php
+f

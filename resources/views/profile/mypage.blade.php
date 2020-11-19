@@ -12,7 +12,7 @@
           プロフィール編集
         </div>
         <div class="card-body">
-          {{-- 削除成功メッセージ --}}
+          {{-- 更新成功メッセージ --}}
           @if (session('update_profile_success'))
           <div class="container mt-2">
             <div class="alert alert-success">
