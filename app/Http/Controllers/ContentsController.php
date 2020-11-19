@@ -71,7 +71,9 @@ class ContentsController extends Controller
       //配列の4つ目($Place_idに代入してあるtime()の投稿時間)を取得
       $place_id = $file_passes[3];
       //public/images/{$place->user_id}/{$place_id}から画像ファイルを削除する
-      Storage::delete("public/images/{$place->user_id}/{$place_id}/".$del_file_name);
+      Storage::delete("public/images/{$place->user_id}/{$place_id}/". $del_file_name);
+      //投稿時間フォルダも削除する
+      Storage::deleteDirectory("public/images/{$place->user_id}/". $place_id);
       // データベースのレコードを削除する
       $place->delete();
 
