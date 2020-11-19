@@ -124,10 +124,10 @@
               <label class="col-md-3 col-form-label text-md-right" for="form_category_id">カテゴリー</label>
               <div class="col-md-5">
                 <select class="form-control" id="form_category_id">
-                  <option value="01">グルメ</option>
-                  <option value="02">ファッション</option>
-                  <option value="03">雑貨</option>
-                  <option value="04">観光スポット</option>
+                  <option value="1">グルメ</option>
+                  <option value="2">ファッション</option>
+                  <option value="3">雑貨</option>
+                  <option value="4">観光スポット</option>
                 </select>
               </div>
             </div>

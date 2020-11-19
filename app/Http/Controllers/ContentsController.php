@@ -9,6 +9,7 @@ Use Log;
 use App\Place;
 use App\Http\Requests\CreateContentRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class ContentsController extends Controller
 {

@@ -9,13 +9,13 @@
       <div class="col-lg-12">
         <div class="card mx-auto mt-5">
           <div class="row no-gutters card-header py-1 px-4">
-            <p class="d-inline-block col-9">{{ $place->name }}<br><small>{{ $place->placetype_id }}</small></p>
+            <p class="d-inline-block col-9">{{ $place->name }}<br><small>{{ $place->attentionStar }}</small></p>
             <div class="dropdown d-inline-block col-3" align="right">
               <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                 <i class="fas fa-ellipsis-h"></i>
               </button>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="">編集</a>
+                <a class="dropdown-item" href="{{ route('contents.edit',[$place -> id]) }}">編集</a>
                 <a class="dropdown-item" href="{{ route('contents.delete',[$place -> id]) }}">削除</a>
               </div>
             </div>
@@ -71,6 +71,16 @@
             <li class="list-group-item w-100 p-0">
               <div class="row no-gutters">
                 <p class="card-text d-inline-block col-3 px-1 py-0" style="border-right: thin solid #d3d3d3">
+                  <span style="font-size: small">登録先</span>
+                </p>
+                <p class="card-text d-inline-block col-9 px-1 py-0">
+                  <span style="font-size: small">{{ $place->placeType }}</span>
+                </p>
+              </div>
+            </li>
+            <li class="list-group-item w-100 p-0">
+              <div class="row no-gutters">
+                <p class="card-text d-inline-block col-3 px-1 py-0" style="border-right: thin solid #d3d3d3">
                   <span style="font-size: small">HP</span>
                 </p>
                 <p class="card-text d-inline-block col-9 px-1 py-0">
@@ -104,7 +114,7 @@
                   <span style="font-size: small">カテゴリー</span>
                 </p>
                 <p class="card-text d-inline-block col-9 px-1 py-0">
-                  <span style="font-size: small">{{ $place->category_id }}</span>
+                  <span style="font-size: small">{{ $place->category }}</span>
                 </p>
               </div>
             </li>

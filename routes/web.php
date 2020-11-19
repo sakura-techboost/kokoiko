@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function() {
   //記事の編集内容を反映させるルーティング
   Route::post('contents/edit/{id}', 'ContentsController@update')->name('contents.update');
   //記事の内容を削除するルーティング
-  Route::get('contents/edit/{id}', 'ContentsController@delete')->name('contents.delete');
+  Route::get('contents/delete/{id}', 'ContentsController@delete')->name('contents.delete');
 });
 
 //ログインしているユーザーがパスワードを変更する(web引数はbackメソッドを有効にするため)

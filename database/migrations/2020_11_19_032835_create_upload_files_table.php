@@ -26,11 +26,12 @@ class CreateUploadFilesTable extends Migration
              * 3.親カラムが削除されたら子カラムも削除
              * 4.親カラムが更新されたら子カラムも更新
              */
-            $table->foreign('place_id')
+/*
+             $table->foreign('place_id')
             ->references('id')->on('places')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            
+*/            
             //画像のパス
             $table->string('datafile')->nullable();
             $table->timestamps();

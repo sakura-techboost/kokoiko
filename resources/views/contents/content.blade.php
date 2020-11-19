@@ -64,14 +64,14 @@
           @foreach ($places as $place)
           <div class="card mb-3 mx-auto mt-3">
             <div class="row no-gutters card-header py-1 px-4">
-              <p class="d-inline-block col-6">{{ str_limit($place->name,10) }}<br><small>{{ $place->attention_id }}</small></p>
+              <p class="d-inline-block col-6">{{ str_limit($place->name,10) }}<br><small>{{ $place->attention }}</small></p>
               <div class="dropdown d-inline-block col-6" align="right">
                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                   <i class="fas fa-ellipsis-h"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                   <a class="dropdown-item" href="{{ route('contents.show',[$place -> id]) }}">詳細</a>
-                  <a class="dropdown-item" href="">編集</a>
+                  <a class="dropdown-item" href="{{ route('contents.edit',[$place -> id]) }}">編集</a>
                 </div>
               </div>
             </div>
@@ -79,7 +79,7 @@
               <li class="list-group-item w-100 p-0">
                 <div class="row no-gutters">
                   <div class="col-sm-4 my-auto mx-auto">
-                    {{-- 画像がなければNOIMAGEを表示、あればその画像を表示 --}}
+                    {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
                     @if($place->datafile == null)
                     <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                     @else
