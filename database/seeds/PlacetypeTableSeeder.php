@@ -12,8 +12,9 @@ class PlacetypeTableSeeder extends Seeder
     public function run()
     {
         //登録先
-        $placetypes=['お気に入り','行ってみたい','いまいち'];
-        foreach($placetypes as $placetype){
+        $placetypes = ['お気に入り', '行ってみたい', 'いまいち'];
+
+        foreach ($placetypes as $placetype) {
             DB::table('placetype')->insert('placetype');
         }
     }

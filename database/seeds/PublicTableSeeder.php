@@ -12,10 +12,10 @@ class PublicTableSeeder extends Seeder
     public function run()
     {
         //公開・非公開
-        $publics=['公開','非公開'];
-        foreach($publics as $public){
+        $publics = ['公開', '非公開'];
+
+        foreach ($publics as $public) {
             DB::table('public')->insert('public');
         }
-
     }
 }

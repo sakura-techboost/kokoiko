@@ -16,7 +16,7 @@ class TestFile extends Model
      * @var array
      */
     protected $fillable = [
-        'id','number','pref', 'city', 'address',
+        'id', 'number', 'pref', 'city', 'address',
     ];
 
     /**

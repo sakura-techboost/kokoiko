@@ -13,7 +13,7 @@ class CityTableSeeder extends Seeder
     {
         //市区町村配列
         //ajaxzip3からとってきてはどうか
-        foreach ($cities as $city){
+        foreach ($cities as $city) {
             DB::table('city')->insert('city');
         }
     }

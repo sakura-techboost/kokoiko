@@ -41,12 +41,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    
+
     //ログアウト関数
     public function logout(Request $request)
     {
         $this->performLogout($request);
+
         return redirect('contents/top');
     }
 }
-

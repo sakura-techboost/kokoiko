@@ -2,41 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Place;//Placeモデルを使う
-use Illuminate\Support\Facades\Auth; //認証済みユーザーを取得するファサード
 use App\Http\Requests\CreateContentRequest;
+use App\Place; //Placeモデルを使う
+use Illuminate\Http\Request; //認証済みユーザーを取得するファサード
+use Illuminate\Support\Facades\Auth;
 use Log;
 
 class CreateContentController extends Controller
 {
     //新規投稿画面を表示する
-    public function showCreateForm(){
+    public function showCreateForm()
+    {
         return view('contents.createContent');
     }
     //記事を作成する
-    public function createContent(CreateContentRequest $request){
+    public function createContent(CreateContentRequest $request)
+    {
         //Placeモデルのインスタンスを作成
-        $place=new Place();
+        $place = new Place();
 
         //インスタンスにフォーム内のデータを入れる
         //$place = $request->all();
-        $place->user_id = Auth::user()->id;//登録ユーザーからidを取得
-        $place->name=$request->name;//場所の名前
-        $place->overview=$request->overview;//概要
-        $place->placetype_id=$request->placetype_id;//登録先
-        $place->attention_id=$request->attention_id;//関心度
-        $place->postalcode=$request->postalcode;//郵便番号
-        $place->pref=$request->pref;//都道府県
-        $place->address=$request->address;//市区町村以下
-        $place->phone=$request->phone;//電話番号
-        $place->category_id=$request->category_id;//カテゴリー
-        $place->url=$request->url;//URL
-        $place->status=$request->status;//公開非公開
+        $place->user_id = Auth::user()->id; //登録ユーザーからidを取得
+        $place->name = $request->name; //場所の名前
+        $place->overview = $request->overview; //概要
+        $place->placetype_id = $request->placetype_id; //登録先
+        $place->attention_id = $request->attention_id; //関心度
+        $place->postalcode = $request->postalcode; //郵便番号
+        $place->pref = $request->pref; //都道府県
+        $place->address = $request->address; //市区町村以下
+        $place->phone = $request->phone; //電話番号
+        $place->category_id = $request->category_id; //カテゴリー
+        $place->url = $request->url; //URL
+        $place->status = $request->status; //公開非公開
 
         //画像ファイルについて
         //アップロードしたファイルをファイルメソッドで取得。nullableにしたいため、第2引数にnull
-        
+
         //もし$fileにフォームからのデータが入っていたら
         $file = $request->file('datafile', null);
         //もし$fileにフォームからのデータが入っていたら
@@ -58,8 +60,7 @@ class CreateContentController extends Controller
             //DBに画像のパスを保存
             $place->datafile = "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
             Log::debug('OK');
-        }
-        else {
+        } else {
             //データがなければnull
             Log::debug('null');
             $place->datafile = null;
@@ -74,14 +75,14 @@ class CreateContentController extends Controller
     }
 
     //記事のidを取得
-    public function show($id,Place $place)
+    public function show($id, Place $place)
     {
-       //Placeテーブルから取得したidに合致するデータを取得
-       $place = Place::find($id);
-       //記事詳細画面を表示
-       return view('contents.show', [
-        'place'=>$place
-       ]);        
+        //Placeテーブルから取得したidに合致するデータを取得
+        $place = Place::find($id);
+        //記事詳細画面を表示
+        return view('contents.show', [
+        'place' => $place
+       ]);
     }
 }
 /*   $files = $request->files('datafile', null);
@@ -138,8 +139,6 @@ class CreateContentController extends Controller
         }
         $place->datafile()->datafile = null;
      */
-
-
 
     /*
         $files = $request->file('datafile');

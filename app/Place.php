@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+
 //use Kyslik\ColumnSortable\Sortable;// 追加
 
 class Place extends Model
@@ -26,16 +27,16 @@ class Place extends Model
         'phone',
         'category_id',
         'url',
-        'status', 
+        'status',
 
     ];
-/*
-    //画像ファイルを以下のテーブルに保存
-    public function datafile()
-    {
-        return $this->hasMany('App\UploadFile');
-    }
-*/
+    /*
+        //画像ファイルを以下のテーブルに保存
+        public function datafile()
+        {
+            return $this->hasMany('App\UploadFile');
+        }
+    */
     //Configファイルから値を取得
     //関心度
     public function getAttentionStarAttribute()

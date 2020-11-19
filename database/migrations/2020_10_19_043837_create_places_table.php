@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePlacesTable extends Migration
 {
@@ -15,19 +15,19 @@ class CreatePlacesTable extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id');//誰が投稿したかわかるようにする
+            $table->bigInteger('user_id'); //誰が投稿したかわかるようにする
             $table->string('name');
             $table->text('overview');
-            $table->integer('placetype_id');//登録先をテーブル化してIDでとってくる
-            $table->integer('attention_id');//関心度
-            $table->string('postalcode')->nullable();//郵便番号
-            $table->string('pref')->nullable();//都道府県コード
-            $table->string('address')->nullable();//住所入力欄
-            $table->string('phone')->nullable();//電話番号
-            $table->integer('category_id')->nullable();//カテゴリ            
-            $table->text('url')->nullable();//ホームページのurl
-            $table->integer('status');//公開非公開設定
-            $table->string('datafile')->nullable();//画像のパス
+            $table->integer('placetype_id'); //登録先をテーブル化してIDでとってくる
+            $table->integer('attention_id'); //関心度
+            $table->string('postalcode')->nullable(); //郵便番号
+            $table->string('pref')->nullable(); //都道府県コード
+            $table->string('address')->nullable(); //住所入力欄
+            $table->string('phone')->nullable(); //電話番号
+            $table->integer('category_id')->nullable(); //カテゴリ
+            $table->text('url')->nullable(); //ホームページのurl
+            $table->integer('status'); //公開非公開設定
+            $table->string('datafile')->nullable(); //画像のパス
             $table->timestamps();
         });
     }

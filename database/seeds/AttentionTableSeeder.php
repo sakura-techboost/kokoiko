@@ -12,13 +12,14 @@ class AttentionTableSeeder extends Seeder
     public function run()
     {
         //関心度
-        $attentions=['★★★★★',
+        $attentions = ['★★★★★',
                      '★★★★☆',
                      '★★★☆☆',
                      '★★☆☆☆',
                      '★☆☆☆☆'
                     ];
-        foreach ($attentions as $attention){
+
+        foreach ($attentions as $attention) {
             DB::table('attention')->insert('attention');
         }
     }

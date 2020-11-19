@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth; //認証済みユーザーを取得するファサード
 use Illuminate\Support\Facades\Hash; //保存するユーザーパスワードに対しハッシュを提供
+
 //use Illuminate\Validation\Rule;
 
 class UpdatePasswordRequest extends FormRequest
@@ -30,14 +31,15 @@ class UpdatePasswordRequest extends FormRequest
             'current-password' => [
                 'required',
                 //元のパスワードとあってるか確認するバリデーション
-                function($attribute, $value, $fail){
-                    $attribute='現在のパスワード';
-                    if(!Hash::check($value, Auth::user()->password)){
-                        $fail($attribute.'が違います');
+                function ($attribute, $value, $fail) {
+                    $attribute = '現在のパスワード';
+
+                    if (!Hash::check($value, Auth::user()->password)) {
+                        $fail($attribute . 'が違います');
                     }
                 }
             ],
-            'new-password' => ['required', 'string', 'min:8', 'confirmed','different:current-password']
+            'new-password' => ['required', 'string', 'min:8', 'confirmed', 'different:current-password']
         ];
     }
     /**
@@ -49,13 +51,7 @@ class UpdatePasswordRequest extends FormRequest
     {
         return [
             'current-password' => '現在のパスワード',
-            'new-password'=>'新しいパスワード'
+            'new-password' => '新しいパスワード'
         ];
     }
-    
 }
-
-
-    
-    
-    
