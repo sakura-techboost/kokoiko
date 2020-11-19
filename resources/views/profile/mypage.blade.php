@@ -12,6 +12,13 @@
           プロフィール編集
         </div>
         <div class="card-body">
+          {{-- 削除成功メッセージ --}}
+          @if (session('update_profile_success'))
+          <div class="container mt-2">
+            <div class="alert alert-success">
+              {{session('update_profile_success')}}
+            </div>
+          </div>
           <form method="POST" action="{{ action('Admin\UserController@update') }}">
             @csrf
             {{-- 名前 --}}

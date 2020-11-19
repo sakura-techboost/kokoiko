@@ -28,7 +28,7 @@ class UserController extends Controller
         //保存
         $user->fill($user_form)->save();
         //リダイレクト
-        return redirect('profile/mypage');
+        return redirect('profile/mypage')->with('update_profile_success', 'プロフィールを変更しました。');
     }
     
 

@@ -64,7 +64,7 @@
           @foreach ($places as $place)
           <div class="card mb-3 mx-auto mt-3">
             <div class="row no-gutters card-header py-1 px-4">
-              <p class="d-inline-block col-6">{{ str_limit($place->name,10) }}<br><small>{{ $place->attentionStar }}</small></p>
+              <p class="d-inline-block col-6">{{ Str::limit($place->name,10) }}<br><small>{{ $place->attentionStar }}</small></p>
               <div class="dropdown d-inline-block col-6" align="right">
                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                   <i class="fas fa-ellipsis-h"></i>
@@ -88,7 +88,7 @@
                   </div>
                   <div class="col-sm-8">
                     <div class="card-body p-0">
-                    <p class="card-text summary" style="border-top: thin solid #d3d3d3">{{ str_limit($place->overview,15) }}</p>
+                    <p class="card-text summary" style="border-top: thin solid #d3d3d3">{{ Str::limit($place->overview,15) }}</p>
                     </div>
                   </div>
                 </div>

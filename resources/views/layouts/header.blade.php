@@ -54,7 +54,7 @@
             </li>
             <li class="nav-item dropdown" id="eighth">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-lg-inline pl-1">〇〇さん</span>
+                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-lg-inline pl-1">さん</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ action('Admin\UserController@edit') }}" class="dropdown-item">プロフィール</a>
