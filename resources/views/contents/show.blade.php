@@ -26,7 +26,7 @@
                 <div class="col-sm-4 my-auto mx-auto">
                   {{-- 画像がなければNOIMAGEを表示、あればその画像を表示 --}}
                   @if($place->datafile == null)
-                  <img src="{{ asset("$place->datafile") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  <img src="{{ asset("images/noimage.jpg") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
                   @else
                 <!-- 登録した画像をカルーセル表示する -->
                   <div class="carousel slide" id="cl" data-ride="carousel">
@@ -38,7 +38,7 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="{{ asset("public/images/$place->datafile") }}">
+                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="{{ asset("$place->datafile") }}">
                       </div>
                       <div class="carousel-item">
                         <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">

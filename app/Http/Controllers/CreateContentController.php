@@ -52,8 +52,8 @@ class CreateContentController extends Controller
             //idに投稿時間を入れる
             $place_id = time();
             //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
-            //$place->datafile = $file->storeAS("public/images/{$place->user_id}/{$place_id}", $file_name);
             $file->storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
+            //DBに画像のパスを保存
             $place->datafile = "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
             Log::debug('OK');
         }
