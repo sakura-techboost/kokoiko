@@ -108,13 +108,13 @@ class ContentsController extends Controller
     public function update(CreateContentRequest $request, $id, Place $place)
     {
         $place_form = $request->all();
-        $place = Place::place();
+        $place = Place::find($id);
         //不要な「_token」の削除
         unset($place_form['_token']);
         //保存
         $place->fill($place_form)->save();
         //リダイレクト
-        return redirect('contents/show', ['place' => $place])->with('edit_content_success', '編集しました');
+        return redirect('contents/content')->with('edit_content_success', '編集しました');
     }
 
     //記事を削除する

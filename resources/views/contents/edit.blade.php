@@ -83,7 +83,7 @@
               <div class="form-group mb-2 url"> 
                 <span></span>
                 <label class="col-form-label d-none" for="url">URL</label>
-                <input value="{{ $place_form->phone }}" type="text" class="form-control d-none" id="url" name="url">
+                <input value="{{ $place_form->url }}" type="text" class="form-control d-none" id="url" name="url">
               </div>
               {{-- モーダルツールバー(モーダル部分はmodal.blade.phpに記述) --}}
               <div class="btn-group d-flex" role="group" aria-label="追加情報入力">

@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-12 mt-5">
-      {{-- 更新成功メッセージ --}}
+      {{-- 投稿成功メッセージ --}}
       @if (session('create_content_success'))
       <div class="container mt-2">
         <div class="alert alert-success">
@@ -15,6 +15,14 @@
         </div>
       </div>
       @endif
+      {{-- 編集成功メッセージ --}}
+      @if (session('edit_content_success'))
+          <div class="container mt-2">
+            <div class="alert alert-success">
+              {{session('edit_content_success')}}
+            </div>
+          </div>
+          @endif
       {{-- 削除成功メッセージ --}}
       @if (session('delete_content_success'))
       <div class="container mt-2">

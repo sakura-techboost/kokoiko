@@ -19,6 +19,7 @@
               {{session('update_profile_success')}}
             </div>
           </div>
+          @endif
           <form method="POST" action="{{ action('Admin\UserController@update') }}">
             @csrf
             {{-- 名前 --}}
