@@ -104,13 +104,21 @@
               <li class="list-group-item w-100 p-0">
                 <div class="row no-gutters">
                   <p class="card-text city d-inline-block col-4 p-1" style="border-right: thin solid #d3d3d3">
-                    <span style="font-size: small">都道府県</span>
+                    @if($place->pref == null)
+                      <span style="font-size: small">都道府県未登録</span>
+                    @else
+                      <span style="font-size: small">{{ $place->pref }}</span>
+                    @endif
                   </p>
                   <p class="card-text city d-inline-block col-4 p-1" style="border-right: thin solid #d3d3d3">
-                    <span style="font-size: small">市区町村</span>
+                    <span style="font-size: small">{{ $place->placeType }}</span>
                   </p>
                   <p class="card-text category d-inline-block col-4 p-1">
-                    <span style="font-size: small">カテゴリ</span>
+                    @if($place->category == null)
+                      <span style="font-size: small">カテゴリー未選択</span>
+                    @else
+                      <span style="font-size: small">{{ $place->category }}</span>
+                    @endif
                   </p>
                 </div>
               </li>
