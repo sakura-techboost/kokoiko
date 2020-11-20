@@ -109,26 +109,16 @@
               </div>
               {{-- モーダルツールバー(モーダル部分はmodal.blade.phpに記述) --}}
               <div class="btn-group d-flex" role="group" aria-label="追加情報入力">
-                <button type="button" class="btn create-btn" style="flex-basis: 20%">
-                  <label for="filesend" class="col-form-label w-100">
-                      {{-- 画像アップロード(アイコン部分） --}}
-                    <div class="filelabel" title="ファイル選択">
-                      <i class="fas fa-camera"></i>
-                    </div>
-                      {{-- 画像アップロード(フォーム部分)※非表示 --}}
-                    <input value="{{ $place_form->datafile_01 }},{{ $place_form->datafile_02 }},{{ $place_form->datafile_03 }},{{ $place_form->datafile_04 }}" class="" type="file" name="datafile[]" id="filesend" multiple accept=".jpg,.png">
-                  </label>
-                </button>
-                <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 20%">
+                <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 25%">
                   <i class="fas fa-map-marker-alt"></i>
                 </button>
-                <button type="button" class="btn create-btn" data-toggle="modal" href="#addPhone" style="flex-basis: 20%">
+                <button type="button" class="btn create-btn" data-toggle="modal" href="#addPhone" style="flex-basis: 25%">
                   <i class="fas fa-phone"></i>
                 </button>
-                <button type="button" class="btn create-btn" data-toggle="modal" href="#addCategories" style="flex-basis: 20%">
+                <button type="button" class="btn create-btn" data-toggle="modal" href="#addCategories" style="flex-basis: 25%">
                   <i class="far fa-folder"></i>
                 </button>
-                <button type="button" class="btn create-btn" data-toggle="modal" href="#addUrl" style="flex-basis: 20%">
+                <button type="button" class="btn create-btn" data-toggle="modal" href="#addUrl" style="flex-basis: 25%">
                   <i class="fas fa-link"></i>
                 </button>
               </div>
