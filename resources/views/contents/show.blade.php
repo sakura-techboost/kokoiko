@@ -24,41 +24,52 @@
             <li class="list-group-item w-100 p-0">
               <div class="row no-gutters">
                 <div class="col-sm-4 my-auto mx-auto">
-                  {{-- 画像がなければNOIMAGEを表示、あればその画像を表示 --}}
-                  @if($place->datafile == null)
+                  {{-- 画像表示 --}}
+                  <!-- 画像がなければNOIMAGEを表示 -->
+                  @if($place->datafile_01 == null)
                   <img src="{{ asset("images/noimage.jpg") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
-                  @else
-                <!-- 登録した画像をカルーセル表示する -->
-                  <div class="carousel slide" id="cl" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li data-target="#cl" data-slide-to="0" class="active"></li>
-                      <li data-target="#cl" data-slide-to="1"></li>
-                      <li data-target="#cl" data-slide-to="2"></li>
-                      <li data-target="#cl" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="{{ asset("$place->datafile") }}">
+                  <!-- 一つだけならばそのまま表示 -->
+                  @elseif(isset($place->datafile_01) && $place->datafile_02 == null)
+                  <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  <!-- 2つ以上ならばカルーセル表示 -->
+                  @elseif(isset($place->datafile_02))
+                  <!-- 登録した画像をカルーセル表示する -->
+                    <div class="carousel slide" id="cl" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                        <li data-target="#cl" data-slide-to="0" class="active"></li>
+                        <li data-target="#cl" data-slide-to="1"></li>
+                        @if(isset($place->datafile_03))
+                          <li data-target="#cl" data-slide-to="2"></li>
+                        @elseif(isset($place->datafile_04))
+                          <li data-target="#cl" data-slide-to="3"></li>
+                        @endif
+                      </ol>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="{{ asset("$place->datafile_02") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                        </div>
+                        @if(isset($place->datafile_03))
+                          <div class="carousel-item">
+                            <img  src="{{ asset("$place->datafile_03") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                          </div>
+                        @elseif(isset($place->datafile_04))
+                          <div class="carousel-item">
+                            <img  src="{{ asset("$place->datafile_04") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                          </div>
+                        @endif
                       </div>
-                      <div class="carousel-item">
-                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                      </div>
+                      <a href="#cl" class="carousel-control-prev" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="sr-only">前の画像へ</span>
+                      </a>
+                      <a href="#cl" class="carousel-control-next" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="sr-only">次の画像へ</span>
+                      </a>
                     </div>
-                    <a href="#cl" class="carousel-control-prev" data-slide="prev">
-                      <span class="carousel-control-prev-icon"></span>
-                      <span class="sr-only">前の画像へ</span>
-                    </a>
-                    <a href="#cl" class="carousel-control-next" data-slide="next">
-                      <span class="carousel-control-next-icon"></span>
-                      <span class="sr-only">次の画像へ</span>
-                    </a>
-                  </div>
                   @endif
                 </div>
                 <div class="col-sm-8">
