@@ -81,6 +81,10 @@ $(function () {
     if(file_count > 0){
       //ファイル数が1つ以上であればプレビューボックスを表示
       $('.preview-box').removeClass('d-none');
+      //もしedit.blade.phpにてあらかじめ表示されているプレビューボックスがあったら非表示にする
+      if($('.edit-preview-box').length){
+        $('.edit-preview-box').remove();
+      }
       //$('.reset').removeClass('d-none');
       //ファイルの数だけ処理を行う
       for(var i = 0; i < file_count; i++){

@@ -23,60 +23,65 @@
             <form action="{{ route('contents.update', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
               @csrf
               {{-- 選択された画像のプレビュー --}}
+              @if($place_form->datafile == null)
               <div class="row no-gutters mb-2 preview-box d-none"> 
                 
               </div>
+              @elseif(isset($place_form->datafile))
+              <div class="row no-gutters mb-2 preview-box d-none"> 
+                
+              </div>
+              <div class="row no-gutters mb-2 edit-preview-box"> 
+                <div class="preview col-3">
+                  <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile") }}">
+                </div>
+              </div>
+              @endif
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
                 <input value="{{ $place_form->name }}" type="text" class="form-control" id="name" name="name" placeholder="名称">
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="overview">概要</label>
-                <textarea value="{{ $place_form->overview }}" class="form-control" id="overview" name="overview" placeholder="どんなところ？"></textarea>
+                <textarea class="form-control" id="overview" name="overview" placeholder="どんなところ？">{{ $place_form->overview }}</textarea>
                 {{-- <small class="form-text">※タグ付けをすると検索できます</small> --}}
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label" for="placetype_id">登録先</label>
-                <select class="form-control" id="placetype_id" name="placetype_id">
-                  <option value="1">お気に入り</option>
-                  <option value="2">行ってみたい</option>
-                  <option value="3">いまいち</option>
-                </select>
+                {{Form::select('placetype_id',['1'=>'お気に入り','2'=>'行ってみたい','3'=>'いまいち'], ( $place_form->placetype_id ), ['class' => 'form-control','id' => 'form-control'])}}
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label" for="attention_id">関心度</label>
                 <select class="form-control text-warning" id="attention_id" name="attention_id">
-                  <option value="1">★★★★★</option>
-                  <option value="2">★★★★☆</option>
-                  <option value="3">★★★☆☆</option>
-                  <option value="4">★★☆☆☆</option>
-                  <option value="5">★☆☆☆☆</option>
+                  @foreach(config('place.attention') as $index => $value)
+                    <option value="{{ $index }}" @if($place_form->attention_id == $index) selected @endif>{{ $value }}</option>
+                  @endforeach
                 </select>
               </div>
               <!-- オプション入力フォーム -->
               <!-- 住所情報 -->
               <div class="form-group mb-2 address">
-                <span class="postalcode"></span><br>
-                <span class="pref"></span><span class="address"></span>
+                <span class="postalcode">{{ $place_form->postalcode }}</span><br>
+                <span class="pref">{{ $place_form->pref }}</span><span class="address">{{ $place_form->address }}</span>
                 <input type="text" name="postalcode" class="form-control d-none" id="postalcode" placeholder="郵便番号">
                 <label class="col-form-label d-none" for="pref address">住所</label>
                 <select class="form-control d-none" name="pref" id="pref">
-                  <option></option>
+                  <option value="{{ $place_form->pref }}"></option>
                 </select>
                 <input value="{{ $place_form->address }}" type="text" name="address" class="form-control d-none" id="address" placeholder="市区町村以下">
               </div>
               <!-- 電話番号情報 -->
               <div class="form-group mb-2 phone"> 
-                <span></span>
+                <span>{{ $place_form->phone }}</span>
                 <label class="col-form-label d-none" for="phone">電話番号</label>
                 <input value="{{ $place_form->phone }}" type="text" class="form-control d-none" id="phone" name="phone">
               </div>
               <!-- カテゴリー情報 -->
               <div class="form-group mb-2 category"> 
-                <span></span>
+                <span>{{ $place_form->category }}</span>
                 <label class="col-form-label d-none" for="category_id">カテゴリー</label>
                 <select class="form-control d-none" id="category_id" name="category_id">
-                  <option></option>
+                  <option value="{{ $place_form->category_id }}"></option>
                 </select>
               </div>
               <!-- ホームページ情報 -->
