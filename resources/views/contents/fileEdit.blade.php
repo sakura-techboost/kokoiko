@@ -20,7 +20,7 @@
                 @endforeach
               </ul>
             @endif
-            <form action="{{ route('contents.update', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('contents.fileupdate', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
               @csrf
               {{-- 選択された画像のプレビュー --}}
               <!-- もし元データに画像がなければプレビューボックス非表示 -->
@@ -54,6 +54,14 @@
                   @endif
                 </div>
               @endif
+              <input value="{{ $place_form->name }}" type="text" name="name" class="form-control d-none" id="name">
+              <textarea class="form-control d-none" id="overview" name="overview">{{ $place_form->overview }}</textarea>
+              <select class="form-control d-none" name="placetype_id" id="pref">
+                <option value="{{ $place_form->placetype_id }}"></option>
+              </select>
+              <select class="form-control d-none" name="attention_id" id="pref">
+                <option value="{{ $place_form->attention_id }}"></option>
+              </select>
               <div class="btn-group d-flex" role="group" aria-label="追加情報入力">
                 <button type="button" class="btn btn-outline-primary w-50">
                   <label for="filesend" class="col-form-label w-100">

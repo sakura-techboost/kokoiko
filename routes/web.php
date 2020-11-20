@@ -43,6 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('contents/edit/{id}', 'ContentsController@edit')->name('contents.edit');
     //fileEdit.blade.php(画像変更画面)を表示するルーティング
     Route::get('contents/fileEdit/{id}', 'FileEditController@fileEdit')->name('contents.fileEdit');
+    //画像の変更内容を反映させるルーティング
+    Route::post('contents/fileEdit/{id}', 'FileEditController@update')->name('contents.fileupdate');
     //記事の編集内容を反映させるルーティング
     Route::post('contents/edit/{id}', 'ContentsController@update')->name('contents.update');
     //記事の内容を削除するルーティング
