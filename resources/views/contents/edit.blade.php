@@ -24,20 +24,35 @@
               @csrf
               {{-- 選択された画像のプレビュー --}}
               <!-- もし元データに画像がなければプレビューボックス非表示 -->
-              @if($place_form->datafile == null)
-              <div class="row no-gutters mb-2 preview-box d-none"> 
-                
-              </div>
-              <!-- もし元データに画像があばプレビューボックスと画像を表示 -->
-              @elseif(isset($place_form->datafile))
-              <div class="row no-gutters mb-2 preview-box d-none"> 
-                
-              </div>
-              <div class="row no-gutters mb-2 edit-preview-box"> 
-                <div class="preview col-3">
-                  <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile") }}">
+              @if($place_form->datafile_01 == null)
+                <div class="row no-gutters mb-2 preview-box d-none"> 
+                  
                 </div>
-              </div>
+              <!-- もし元データに画像があばプレビューボックスと画像を表示 -->
+              @elseif(isset($place_form->datafile_01))
+                {{-- 変更された画像のプレビュー --}}
+                <div class="row no-gutters mb-2 preview-box d-none"> 
+                  
+                </div>
+                <!-- 元データの画像のプレビュー -->
+                <div class="row no-gutters mb-2 edit-preview-box"> 
+                  <div class="preview col-3">
+                    <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_01") }}">
+                  </div>
+                  @if(isset($place_form->datafile_02))
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
+                    </div>
+                  @elseif(isset($place_form->datafile_03))
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_03") }}">
+                    </div>
+                  @elseif(isset($place_form->datafile_04))
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_04") }}">
+                    </div>
+                  @endif
+                </div>
               @endif
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
