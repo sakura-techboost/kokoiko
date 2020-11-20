@@ -68,20 +68,36 @@ class ContentsController extends Controller
         if (null === $place) {
             return response(redirect(url('/notfound')), 404);
         }
-        //削除する記事に画像ファイルがあったら
-        if (null !== $place->datafile) {
-            //サーバー上の画像を削除する
-            //ファイルパスからファイル名を取得
-            //storage/images/{$place->user_id}/{$place_id}/{$file_name}
-            $file_pass = $place->datafile;
+        //もし画像ファイルが一つでも存在したら
+        if(isset($place->datafile_01)){
+            /**
+             * 以下のファイルパスから画像が入っているディレクトリ名を取得
+             * storage/images/{$place->user_id}/{$place_id}/{$file_name}
+             */
+            $file_pass = $place->datafile_01;
             $file_passes = explode('/', $file_pass);
-            //配列の5つ目($file_name)を取得
-            $del_file_name = $file_passes[4];
             //配列の4つ目($Place_idに代入してあるtime()の投稿時間)を取得
             $place_id = $file_passes[3];
-            //public/images/{$place->user_id}/{$place_id}から画像ファイルを削除する
-            Storage::delete("public/images/{$place->user_id}/{$place_id}/" . $del_file_name);
-            //投稿時間フォルダも削除する
+            $files = [$place->datafile_01,$place->datafile_02,$place->datafile_03,$place->datafile_04];
+            //サーバー上のデータを削除
+            foreach($files as $file){
+                if (null !== $file) {
+                    //ファイルパスからファイル名を取得
+                    //storage/images/{$place->user_id}/{$place_id}/{$file_name}
+                    $file_pass = $file;
+                    $file_passes = explode('/', $file_pass);
+                    //配列の5つ目($file_name)を取得
+                    $del_file_name = $file_passes[4];
+                    //配列の4つ目($Place_idに代入してあるtime()の投稿時間)を取得
+                    $place_id = $file_passes[3];
+                    //public/images/{$place->user_id}/{$place_id}から画像ファイルを削除する
+                    Storage::delete("public/images/{$id}/{$place_id}/" . $del_file_name);
+                    
+                }else{
+                    break;
+                } 
+            }
+            //画像ファイルが入っていたディレクトリを削除
             Storage::deleteDirectory("public/images/{$place->user_id}/" . $place_id);
             // データベースのレコードを削除する
             $place->delete();
@@ -96,7 +112,7 @@ class ContentsController extends Controller
     //エリアで探すページを表示する
     public function mapshow()
     {
-        return view('contents.map', ['prefs' => self::$prefs]);
+        return view('contents.map');
     }
     //新規投稿画面を表示する
     //→CreateContentController.php内に記述
@@ -106,15 +122,6 @@ class ContentsController extends Controller
     {
         return view('contents.show');
     }
-
-    //public static $cities = ['01' =>$cities01];
-  //  public function content() {
-  //  return view('contents.content', ['prefs' => self::$prefs, 'cities' => self::$cities]);
-  //}
-
-  /**
-   * public function testContent() {
-   *  return view('contents.testContent', ['prefs' => self::$prefs]);
-   * }
-   */
 }
+
+ 

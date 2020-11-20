@@ -116,7 +116,7 @@
                       <i class="fas fa-camera"></i>
                     </div>
                       {{-- 画像アップロード(フォーム部分)※非表示 --}}
-                    <input value="{{ $place_form->datafile }}" class="d-none" type="file" name="datafile[]" id="filesend" multiple accept=".jpg,.png">
+                    <input value="{{ $place_form->datafile_01 }},{{ $place_form->datafile_02 }},{{ $place_form->datafile_03 }},{{ $place_form->datafile_04 }}" class="" type="file" name="datafile[]" id="filesend" multiple accept=".jpg,.png">
                   </label>
                 </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 20%">

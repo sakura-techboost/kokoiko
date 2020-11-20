@@ -56,4 +56,5 @@ class Place extends Model
     {
         return config('places.place.category.' . $this->category_id);
     }
+     
 }
