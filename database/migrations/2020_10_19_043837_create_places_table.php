@@ -27,7 +27,10 @@ class CreatePlacesTable extends Migration
             $table->integer('category_id')->nullable(); //カテゴリ
             $table->text('url')->nullable(); //ホームページのurl
             $table->integer('status'); //公開非公開設定
-            $table->string('datafile')->nullable(); //画像のパス
+            $table->string('datafile_01')->nullable(); //画像のパス
+            $table->string('datafile_02')->nullable(); //画像のパス
+            $table->string('datafile_03')->nullable(); //画像のパス
+            $table->string('datafile_04')->nullable(); //画像のパス
             $table->timestamps();
         });
     }

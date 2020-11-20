@@ -28,7 +28,10 @@ class Place extends Model
         'category_id',
         'url',
         'status',
-        'datafile',
+        'datafile_01',
+        'datafile_02',
+        'datafile_03',
+        'datafile_04',
     ];
     /*
         //画像ファイルを以下のテーブルに保存

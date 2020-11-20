@@ -88,10 +88,10 @@
                 <div class="row no-gutters">
                   <div class="col-sm-4 my-auto mx-auto">
                     {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
-                    @if($place->datafile == null)
+                    @if($place->datafile_01 == null)
                     <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                     @else
-                    <img src="{{ asset("$place->datafile") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                    <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                     @endif
                   </div>
                   <div class="col-sm-8">

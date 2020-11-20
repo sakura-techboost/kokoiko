@@ -23,10 +23,12 @@
             <form action="{{ route('contents.update', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
               @csrf
               {{-- 選択された画像のプレビュー --}}
+              <!-- もし元データに画像がなければプレビューボックス非表示 -->
               @if($place_form->datafile == null)
               <div class="row no-gutters mb-2 preview-box d-none"> 
                 
               </div>
+              <!-- もし元データに画像があばプレビューボックスと画像を表示 -->
               @elseif(isset($place_form->datafile))
               <div class="row no-gutters mb-2 preview-box d-none"> 
                 
@@ -99,7 +101,7 @@
                       <i class="fas fa-camera"></i>
                     </div>
                       {{-- 画像アップロード(フォーム部分)※非表示 --}}
-                    <input value="{{ $place_form->datafile }}" class="d-none" type="file" name="datafile" id="filesend" multiple accept=".jpg,.png">
+                    <input value="{{ $place_form->datafile }}" class="d-none" type="file" name="datafile[]" id="filesend" multiple accept=".jpg,.png">
                   </label>
                 </button>
                 <button type="button" class="btn create-btn" data-toggle="modal" href="#addAddress" style="flex-basis: 20%">
