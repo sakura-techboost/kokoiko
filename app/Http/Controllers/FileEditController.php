@@ -99,4 +99,11 @@ class FileEditController extends Controller
         //リダイレクト
         return redirect('contents/content')->with('edit_content_success', '編集しました');
     }
+
+    //画像の編集画面を表示する
+    public function testEditFile()
+    {
+        
+        return view('contents.testEditFile');
+    }
 }

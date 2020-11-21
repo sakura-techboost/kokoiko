@@ -68,6 +68,7 @@ Route::get('contents/map', 'ContentsController@mapshow')->name('contents.map');
 //Route::get('contents/show', 'ContentsController@show');
 
 //以下開発段階で使用
+Route::get('contents/testEditFile/', 'FileEditController@testEditFile')->name('contents.testEditFile');
 
   //Route::get('csv-test', 'CsvController@test')->name("csv.test");
 //create.blade.php(アカウント登録画面）を表示するルーティング

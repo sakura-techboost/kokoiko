@@ -56,7 +56,7 @@
             </label>
             <label class="btn w-25" id="eighthPink">
               <input type="radio" name="switchcontents" value="card-1" id="fav-contents" autocomplete="off">
-              <span><i class="fas fa-heart faa-tada animated-hover"　title="お気に入り"></i><span class="d-none d-lg-inline pl-1">お気に入り</span></span>
+              <span><i class="fas fa-heart faa-tada animated-hover" title="お気に入り"></i><span class="d-none d-lg-inline pl-1">お気に入り</span></span>
             </label>
             <label class="btn w-25" id="eighthYellow">
               <input type="radio" name="switchcontents" value="card-2" id="day-contents" autocomplete="off">

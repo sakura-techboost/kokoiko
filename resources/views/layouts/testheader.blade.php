@@ -29,6 +29,7 @@
       {{-- この章の後半で作成するCSSを読み込みます --}}
       <link href="{{ secure_asset('css/mediaqueries.css') }}" rel="stylesheet">
       <link href="{{ secure_asset('css/testrayouts.css') }}" rel="stylesheet">
+      
       {{-- FontAwsomeAnimationを読み込む --}}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
     </head>

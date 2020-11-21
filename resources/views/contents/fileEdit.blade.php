@@ -46,9 +46,18 @@
                     </div>
                   @elseif(isset($place_form->datafile_03))
                     <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
+                    </div>
+                    <div class="preview col-3">
                       <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_03") }}">
                     </div>
                   @elseif(isset($place_form->datafile_04))
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
+                    </div>
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_03") }}">
+                    </div>
                     <div class="preview col-3">
                       <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_04") }}">
                     </div>
