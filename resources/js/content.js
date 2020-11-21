@@ -1,6 +1,28 @@
 $(function () {
   //header.blade.php内のエリアから検索部分のポップオーバー
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover();
+
+  //content.blade.php
+  //ラジオボタンによる表示切替
+  $( 'input[name="switchcontents"]:radio' ).change( function() {
+    //選択されているラジオボタンのvalue値を取得(card-1)
+    var radioval = $(this).val();
+      if(radioval == 'card-1'){
+        $('.card-1').removeClass('d-none');
+        $('.card-2').addClass('d-none');
+        $('.card-3').addClass('d-none');
+      }else if(radioval == 'card-2'){
+        $('.card-2').removeClass('d-none');
+        $('.card-1').addClass('d-none');
+        $('.card-3').addClass('d-none');
+      }else if(radioval == 'card-3'){
+        $('.card-3').removeClass('d-none');
+        $('.card-1').addClass('d-none');
+        $('.card-2').addClass('d-none');
+      }else if(radioval == 'card-all'){
+        $('.card').removeClass('d-none');
+      }
+  });
   
   //新規登録フォーム(createContent.blade.php)内のモーダルで入力した値の貼り付け
   //住所登録
@@ -105,7 +127,6 @@ $(function () {
         $('.preview-box').addClass('d-none');
     }
   });
-  
 
   //記事詳細画面(show.blade.php)
 
@@ -187,4 +208,4 @@ $(function () {
       return false;
     }
   });
-})
+});
