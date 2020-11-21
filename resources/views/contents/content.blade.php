@@ -116,7 +116,7 @@
                     <span style="font-size: small">{{ $place->placeType }}</span>
                   </p>
                   <p class="card-text category d-inline-block col-4 p-1">
-                    @if($place->category == null)
+                    @if($place->category_id == null)
                       <span style="font-size: small">カテゴリー未選択</span>
                     @else
                       <span style="font-size: small">{{ $place->category }}</span>

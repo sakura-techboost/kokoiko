@@ -54,7 +54,7 @@ class Place extends Model
     //カテゴリー
     public function getCategoryAttribute()
     {
-        return config('places.place.category.' . $this->category_id);
+        return config('place.category.' . $this->category_id);
     }
      
 }

@@ -38,9 +38,10 @@
                       <ol class="carousel-indicators">
                         <li data-target="#cl" data-slide-to="0" class="active"></li>
                         <li data-target="#cl" data-slide-to="1"></li>
-                        @if(isset($place->datafile_03))
+                        @if(isset($place->datafile_03) && $place->datafile_04 == null)
                           <li data-target="#cl" data-slide-to="2"></li>
                         @elseif(isset($place->datafile_04))
+                          <li data-target="#cl" data-slide-to="2"></li>
                           <li data-target="#cl" data-slide-to="3"></li>
                         @endif
                       </ol>
@@ -51,11 +52,14 @@
                         <div class="carousel-item">
                           <img src="{{ asset("$place->datafile_02") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
                         </div>
-                        @if(isset($place->datafile_03))
+                        @if(isset($place->datafile_03) && $place->datafile_04 == null)
                           <div class="carousel-item">
                             <img  src="{{ asset("$place->datafile_03") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
                           </div>
                         @elseif(isset($place->datafile_04))
+                          <div class="carousel-item">
+                            <img  src="{{ asset("$place->datafile_03") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                          </div>
                           <div class="carousel-item">
                             <img  src="{{ asset("$place->datafile_04") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
                           </div>
