@@ -22,8 +22,7 @@ class ContentsController extends Controller
     //記事の一覧を表示する
     public function content()
     {
-        $places = Place::all();
-        $places = Place::paginate(5);
+        $places = Place::orderBy('created_at', 'desc')->paginate(5);
 
         return view('contents.content', ['places' => $places]);
     }
