@@ -25,6 +25,7 @@
               {{-- 選択された画像のプレビュー --}}
               <!-- もし元データに画像がなければプレビューボックス非表示 -->
               @if($place_form->datafile_01 == null)
+              　<p class="prvmessage">画像を登録してみましょう</p>
                 <div class="row no-gutters mb-2 preview-box d-none"> 
                   
                 </div>
@@ -54,6 +55,7 @@
                   @endif
                 </div>
               @endif
+              <!-- 入力必須データの送信 -->
               <input value="{{ $place_form->name }}" type="text" name="name" class="form-control d-none" id="name">
               <textarea class="form-control d-none" id="overview" name="overview">{{ $place_form->overview }}</textarea>
               <select class="form-control d-none" name="placetype_id" id="pref">
@@ -62,7 +64,7 @@
               <select class="form-control d-none" name="attention_id" id="pref">
                 <option value="{{ $place_form->attention_id }}"></option>
               </select>
-              <div class="btn-group d-flex" role="group" aria-label="追加情報入力">
+              <div class="btn-group d-flex" role="group" aria-label="画像フォーム">
                 <button type="button" class="btn btn-outline-primary w-50">
                   <label for="filesend" class="col-form-label w-100">
                       {{-- 画像アップロード(アイコン部分） --}}

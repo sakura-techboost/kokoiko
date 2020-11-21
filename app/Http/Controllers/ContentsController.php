@@ -54,7 +54,7 @@ class ContentsController extends Controller
         //不要な「_token」の削除
         unset($place_form['_token']);
         //保存
-        $place->fill($place_form)->save();
+        $place->fill($place_form)->update();
         //リダイレクト
         return redirect('contents/content')->with('edit_content_success', '編集しました');
     }
@@ -94,11 +94,10 @@ class ContentsController extends Controller
                     Storage::delete("public/images/{$id}/{$place_id}/" . $del_file_name);
                     
                 }else{
-                    break;
+                    //画像ファイルが入っていたディレクトリを削除
+                    Storage::deleteDirectory("public/images/{$place->user_id}/" . $place_id);                    
                 } 
             }
-            //画像ファイルが入っていたディレクトリを削除
-            Storage::deleteDirectory("public/images/{$place->user_id}/" . $place_id);
             // データベースのレコードを削除する
             $place->delete();
         } else {

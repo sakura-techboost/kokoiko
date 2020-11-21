@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateContentRequest;
 use App\Place;
-use Auth;
-use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class FileEditController extends Controller
@@ -27,7 +23,7 @@ class FileEditController extends Controller
             'id' => $id
         ]);
     }
-    //記事のデータの上書をする
+    //画像のデータの上書をする
     public function update(CreateContentRequest $request, $id, Place $place)
     {
         $place_form = $request->all();
@@ -57,33 +53,38 @@ class FileEditController extends Controller
                     //public/images/{$place->user_id}/{$place_id}から画像ファイルを削除する
                     Storage::delete("public/images/{$id}/{$place_id}/" . $del_file_name);
                 }else{
-                    break;
+                    //画像ファイルが入っていたディレクトリを削除
+                    Storage::deleteDirectory("public/images/{$place->user_id}/" . $place_id);                    
                 } 
             }
-            //画像ファイルが入っていたディレクトリを削除
-            Storage::deleteDirectory("public/images/{$place->user_id}/" . $place_id);
         }
         //アップロードしたファイルをファイルメソッドで取得。nullableにしたいため、第2引数にnull
         $files = $request->file('datafile', null);
         //idに投稿時間を入れる
         $place_id = time();
         if (isset($files)) {
-            for($i = 0; $i < count($files); $i++) {
+            for($i = 0; $i < 4; $i++) {
                 //ファイルのマイムタイプを取得
-                $mime = $files[$i] ->getClientMimeType();
-                //マイムタイプを/の前後で分割し、fileMimes配列に入れる
-                $fileMimes = explode('/', $mime);
-                //配列の二つ目(image/jpegならjpegの部分)をファイルの拡張子としてfileExtに入れる
-                $fileExt = $fileMimes[1];
-                //ファイル名の後ろに拡張子を付ける
-                $file_name = 'image_'.($i+1) . '.' . $fileExt;
-                //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
-                $files[$i] -> storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
-                //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~
-                $fileColmunName = sprintf('datafile_%02d', ($i+1));
-                //DBに画像のパスを保存
-                $place->$fileColmunName =  "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
+                if(isset($files[$i])){
+                    $mime = $files[$i] ->getClientMimeType();
+                    //マイムタイプを/の前後で分割し、fileMimes配列に入れる
+                    $fileMimes = explode('/', $mime);
+                    //配列の二つ目(image/jpegならjpegの部分)をファイルの拡張子としてfileExtに入れる
+                    $fileExt = $fileMimes[1];
+                    //ファイル名の後ろに拡張子を付ける
+                    $file_name = 'image_'.($i+1) . '.' . $fileExt;
+                    //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
+                    $files[$i] -> storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
+                    //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~
+                    $fileColmunName = sprintf('datafile_%02d', ($i+1));
+                    //DBに画像のパスを保存
+                    $place->$fileColmunName =  "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
+                }else{
+                    //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~
+                    $fileColmunName = sprintf('datafile_%02d', ($i+1));
+                    $place->$fileColmunName = null;
                 }
+            }
         } else {
             //データがなければnull
             $place->datafile_01 = null;
@@ -94,7 +95,7 @@ class FileEditController extends Controller
         //保存
         //不要な「_token」の削除
         unset($place_form['_token']);        
-        $place->fill($place_form)->save();
+        $place->fill($place_form)->update();
         //リダイレクト
         return redirect('contents/content')->with('edit_content_success', '編集しました');
     }
