@@ -55,11 +55,11 @@ class CreateContentController extends Controller
                 Log::debug($fileExt);
                 //ファイル名の後ろに拡張子を付ける
                 $file_name = 'image_'.($i+1) . '.' . $fileExt;
-                
+
                 // 縦横、1000pxに収まるように縮小したい
                 $width = 1000;
                 $height = 1000;
-                $image = new Imagick($files[$i]);
+                $image = new Imagick($files[$i]->getPathname());
                 // オリジナルのサイズ取得
                 $width_org = $image->getImageWidth();
                 $height_org = $image->getImageHeight();
@@ -73,13 +73,29 @@ class CreateContentController extends Controller
                     $height = $width / $ratio;
                 }
                 // 縮小実行
-                $files[$i] = $image->scaleImage($width, $height);
+                
+                $isSuccess = $image->scaleImage($width, $height);
+                if($isSuccess !== true) {
+                    dd('error');
+                }
+
+                //$files[$i]->storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
+                $result = \File::makeDirectory(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}", 0770, true);
+                if($result !== true) {
+                    dd('error');
+                }
+                $isSuccess = $image->writeImage(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}/{$file_name}");
+                if($isSuccess !== true) {
+                    dd('error');
+                }
                 //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
-                $files[$i] -> storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
+                //$file_name->storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
                 //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~
                 $fileColmunName = sprintf('datafile_%02d', ($i+1));
                 //DBに画像のパスを保存
                 $place->$fileColmunName =  "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
+
+                $image->clear();
                 Log::debug('OK');
                 }
         } else {
@@ -119,15 +135,22 @@ class CreateContentController extends Controller
             ]);
         }
     }
+
+
+
+
+   
+
 }
 /*   
-        }
-        else {
-            $place->datafile = null;
-        }
-        }
+                      $this->iiiiii();
+                       private function iiiiii() {
+
+
+    }
+
 */
-        // save
+     
 
     /*//files[][datafile]
         $files = $request->files('datafile', null);
