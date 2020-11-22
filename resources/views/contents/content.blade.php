@@ -76,7 +76,7 @@
           @foreach ($places as $place)
           <div class="card mb-3 mx-auto mt-3 card-{{ $place->placetype_id }} contents-item">
             <div class="row no-gutters card-header py-1 px-4">
-              <p class="d-inline-block col-6">{{ Str::limit($place->name,10) }}<br><small>{{ $place->attentionStar }}</small></p>
+              <p class="d-inline-block col-6">{{ Str::limit($place->name,20) }}<br><small>{{ $place->attentionStar }}</small></p>
               <div class="dropdown d-inline-block col-6" align="right">
                 <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                   <i class="fas fa-ellipsis-h"></i>

@@ -103,10 +103,21 @@ class CreateContentController extends Controller
     {
         //Placeテーブルから取得したidに合致するデータを取得
         $place = Place::find($id);
-        //記事詳細画面を表示
-        return view('contents.show', [
-        'place' => $place
-       ]);
+        //もし都道府県が登録されていたら同じ都道府県を登録されているカードを取得して表示
+        if(isset($place->pref)){
+            $query = Place::query();
+            $places = $query->where('pref',$place->pref)->get();   
+            //記事詳細画面を表示
+            return view('contents.show', [
+            'place' => $place,
+            'places' => $places
+            ]);
+        }else{
+            //記事詳細画面を表示
+            return view('contents.show', [
+                'place' => $place,
+            ]);
+        }
     }
 }
 /*   

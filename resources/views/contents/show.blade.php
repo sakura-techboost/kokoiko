@@ -16,6 +16,7 @@
               </button>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="{{ route('contents.edit',[$place -> id]) }}">編集</a>
+                <a class="dropdown-item" href="{{ route('contents.fileEdit',[$place -> id]) }}">画像の変更</a>
                 <a class="dropdown-item" href="{{ route('contents.delete',[$place -> id]) }}">削除</a>
               </div>
             </div>
@@ -138,8 +139,28 @@
                 <p class="card-text d-inline-block col-3 px-1 py-0" style="border-right: thin solid #d3d3d3">
                   <span style="font-size: small">地図</span>
                 </p>
-                <div class="col-9 px-1 py-0" style="background: #BFA; height: 75vw; max-height: 395px;">
-                  Googlemap
+                <div class="col-9 px-0 py-0" style="height: 75vw; max-height: 395px;">
+                  @if( $place->pref == null && $place->address == null)
+                  <iframe 
+                    src="https://maps.google.co.jp/maps?output=embed&q=日本&z=5"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    style="border:0"
+                    allowfullscreen
+                  >
+                  </iframe>
+                  @else
+                  <iframe 
+                    src="https://maps.google.co.jp/maps?output=embed&q={{ $place->pref }}{{ $place->address }}"
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    style="border:0"
+                    allowfullscreen
+                  >
+                  </iframe>
+                  @endif
                 </div>
               </div>
             </li>
@@ -147,32 +168,39 @@
         </div> 
       </div>
 
+      @if(isset($places[0]))
         <!-- 近くのスポットを地図とともに表示 -->
       <div class="col-lg-12 mb-5">
         <h3 class="mt-5">この近くのスポットを見る</h3>
         <p　class="m-3">1~20件表示/全50件</p>
-        <div class="row">
+        <div class="row no-gutters">
           <!-- 近くのスポットのカード一覧 -->
           <div class="col-lg-4">
             <!-- 画面幅が992px以上の場合のナビゲーションバー -->
             <ul class="nav lg-nav" style="border: thin solid #d3d3d3">
+              @foreach ($places as $place)
               <li class="nav-item">
                 <a class="card mb-3 mx-auto" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">タイトル</p>
+                    <p class="d-inline-block col-6">{{ Str::limit($place->name,10) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
-                      <small>★★★★★</small>
+                      <small>{{ $place->attentionStar }}</small>
                     </p>
                   </div>
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
                         <div class="col-4 my-auto mx-auto">
-                          <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                          {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
+                        @if($place->datafile_01 == null)
+                        <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                        @else
+                        <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                        @endif
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary">概要</p>
+                            <p class="card-text summary">{{ Str::limit($place->overview,10) }}</p>
                           </div>
                         </div>
                       </div>
@@ -180,98 +208,33 @@
                   </ul>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="card mb-3 mx-auto" href="#">
-                  <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">タイトル</p>
-                    <p class="d-inline-block col-6 align-self-center" align="right">
-                      <small>★★★★★</small>
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush" >
-                    <li class="list-group-item w-100 p-0">
-                      <div class="row no-gutters">
-                        <div class="col-4 my-auto mx-auto">
-                          <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                        </div>
-                        <div class="col-8">
-                          <div class="card-body p-0">
-                            <p class="card-text summary">概要</p>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="card mb-3 mx-auto" href="#">
-                  <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">タイトル</p>
-                    <p class="d-inline-block col-6 align-self-center" align="right">
-                      <small>★★★★★</small>
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush" >
-                    <li class="list-group-item w-100 p-0">
-                      <div class="row no-gutters">
-                        <div class="col-4 my-auto mx-auto">
-                          <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                        </div>
-                        <div class="col-8">
-                          <div class="card-body p-0">
-                            <p class="card-text summary">概要</p>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="card mb-3 mx-auto" href="#">
-                  <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">タイトル</p>
-                    <p class="d-inline-block col-6 align-self-center" align="right">
-                      <small>★★★★★</small>
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush" >
-                    <li class="list-group-item w-100 p-0">
-                      <div class="row no-gutters">
-                        <div class="col-4 my-auto mx-auto">
-                          <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                        </div>
-                        <div class="col-8">
-                          <div class="card-body p-0">
-                            <p class="card-text summary">概要</p>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </a>
-              </li>
+              @endforeach
             </ul>
             <!-- 画面幅が992px以下の場合のナビゲーションバー -->
             <ul class="nav d-lg-none md-nav" style="border: thin solid #d3d3d3">
+              @foreach ($places as $place)
               <li class="nav-item">
                 <a class="card h-100 mx-2" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">タイトル</p>
+                    <p class="d-inline-block col-6">{{ Str::limit($place->name,10) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
-                      <small>★★★★★</small>
+                      <small>{{ $place->attentionStar }}</small>
                     </p>
                   </div>
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
                         <div class="col-4 my-auto mx-auto">
-                          <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                          {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
+                          @if($place->datafile_01 == null)
+                          <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                          @else
+                          <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                          @endif
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary">概要</p>
+                            <p class="card-text summary">{{ Str::limit($place->overview,15) }}</p>
                           </div>
                         </div>
                       </div>
@@ -279,40 +242,30 @@
                   </ul>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="card h-100 mx-2" href="#">
-                  <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">タイトル</p>
-                    <p class="d-inline-block col-6 align-self-center" align="right">
-                      <small>★★★★★</small>
-                    </p>
-                  </div>
-                  <ul class="list-group list-group-flush" >
-                    <li class="list-group-item w-100 p-0">
-                      <div class="row no-gutters">
-                        <div class="col-4 my-auto mx-auto">
-                          <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
-                        </div>
-                        <div class="col-8">
-                          <div class="card-body p-0">
-                            <p class="card-text summary" style="border-top: thin solid #d3d3d3">概要</p>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </a>
-              </li>
+              @endforeach
             </ul>
           </div>
           <!-- Googlemap表示位置を指定 -->
-          <div class="col-lg-8" style="background: #BFA; height: 66vw; max-height: 395px;">
-            Googlemap
-            XHTML
-<iframe width="100%" height="100%" src="https://maps.google.co.jp/maps?output=embed&q=0650023"></iframe>
+          <div class="col-lg-8" style="height: 66vw; max-height: 395px;">
+            <iframe 
+              src="https://maps.google.co.jp/maps?output=embed&q={{ $place->pref }}"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="border:0"
+              allowfullscreen
+            >
+            </iframe>
           </div>
         </div>
       </div>
+      @else
+      <div class="container mt-2">
+        <div class="alert alert-success pref-null-message">
+          住所を登録して付近のスポットを表示しよう！
+        </div>
+      </div>
+      @endif
     </div>
   </div>
 
