@@ -182,7 +182,7 @@
               <li class="nav-item">
                 <a class="card mb-3 mx-auto" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">{{ Str::limit($place->name,10) }}</p>
+                    <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,10) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
                       <small>{{ $place->attentionStar }}</small>
                     </p>
@@ -200,7 +200,7 @@
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary">{{ Str::limit($place->overview,10) }}</p>
+                            <p class="card-text summary small-card">{{ Str::limit($place->overview,10) }}</p>
                           </div>
                         </div>
                       </div>
@@ -211,12 +211,14 @@
               @endforeach
             </ul>
             <!-- 画面幅が992px以下の場合のナビゲーションバー -->
-            <ul class="nav d-lg-none md-nav" style="border: thin solid #d3d3d3">
+            <ul class="nav d-lg-none md-nav w-100" style="border: thin solid #d3d3d3">
               @foreach ($places as $place)
-              <li class="nav-item">
-                <a class="card h-100 mx-2" href="#">
+              <li class="nav-item md-item">
+                <div class="card md-card h-100 mx-2" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6">{{ Str::limit($place->name,10) }}</p>
+                    <a href="#" class="d-inline-block col-6 small-card">
+                      {{ Str::limit($place->name,20) }}
+                    </a>
                     <p class="d-inline-block col-6 align-self-center" align="right">
                       <small>{{ $place->attentionStar }}</small>
                     </p>
@@ -227,20 +229,20 @@
                         <div class="col-4 my-auto mx-auto">
                           {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
                           @if($place->datafile_01 == null)
-                          <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                          <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto h-100 d-block" loading="lazy">
                           @else
                           <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                           @endif
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary">{{ Str::limit($place->overview,15) }}</p>
+                            <p class="card-text summary small-card">{{ Str::limit($place->overview,100) }}</p>
                           </div>
                         </div>
                       </div>
                     </li>
                   </ul>
-                </a>
+                </div>
               </li>
               @endforeach
             </ul>

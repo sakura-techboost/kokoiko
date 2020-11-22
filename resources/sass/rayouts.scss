@@ -9,7 +9,6 @@
   max-height: 300px;
   height:100%;
 //  position: absolute;
-  top:50px;
 }
 
 //top.blade.php
@@ -309,11 +308,22 @@ p{
   overflow-y: scroll;//y軸方向ににスクロールバーを表示
 }
 .md-nav{
-  height: 162px;//カードの縦サイズに合わせる
+  max-height: 162px;//カードの縦サイズに合わせる
   overflow-x: scroll;//x軸方向にスクロールバーを表示
   white-space: nowrap;//折り返し・改行を無くす
   display: inline-block;//カードが横に並ぶようにする
 }
-.md-nav li{
+.md-item{
   display: inline-block;//カードが横に並ぶようにする
+  max-height:140px;
+  height:100%;
+}
+.md-card{
+  max-height:140px;
+  height:100%;
+}
+
+//近くのスポットのカードの文字サイズ
+.small-card{
+  font-size:10px;
 }
