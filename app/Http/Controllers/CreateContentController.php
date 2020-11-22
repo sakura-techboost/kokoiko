@@ -6,6 +6,7 @@ use App\Http\Requests\CreateContentRequest;
 use App\Place; //Placeモデルを使う
 use Illuminate\Http\Request; //認証済みユーザーを取得するファサード
 use Illuminate\Support\Facades\Auth;
+use Imagick;
 use Log;
 
 class CreateContentController extends Controller
@@ -54,6 +55,25 @@ class CreateContentController extends Controller
                 Log::debug($fileExt);
                 //ファイル名の後ろに拡張子を付ける
                 $file_name = 'image_'.($i+1) . '.' . $fileExt;
+                
+                // 縦横、1000pxに収まるように縮小したい
+                $width = 1000;
+                $height = 1000;
+                $image = new Imagick($files[$i]);
+                // オリジナルのサイズ取得
+                $width_org = $image->getImageWidth();
+                $height_org = $image->getImageHeight();
+                // 縮小比率を計算
+                $ratio = $width_org / $height_org;
+                //縦長だったら縦の長さを基準に横幅を縮小
+                if ($width / $height > $ratio) {
+                    $width = $height * $ratio;
+                } else {
+                //横長だったら横の長さを基準に
+                    $height = $width / $ratio;
+                }
+                // 縮小実行
+                $files[$i] = $image->scaleImage($width, $height);
                 //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
                 $files[$i] -> storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
                 //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~

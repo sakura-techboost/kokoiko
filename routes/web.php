@@ -34,7 +34,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     //content.blade.php(記事一覧画面)を表示するルーティング
     Route::get('contents/content', 'ContentsController@content')->name('contents.content');
-
     Route::get('contents/search/content', 'SearchContentsController@index')->name('contents.index');
 
     //show.blade.php(記事詳細画面)を表示するルーティング

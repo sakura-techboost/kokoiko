@@ -183,7 +183,7 @@
             </div>
             <div class="form-group mb-4 city">
               {!! Form::label('pref', '都道府県:') !!}
-              {!! Form::select('pref', ['指定なし' => '指定なし'] + Config::get('place.prefs') ,'指定なし',['class' => 'form-control']) !!}              
+              {!! Form::select('pref', ['指定なし' => '指定なし'] + Config::get('place.prefs') ,'指定なし',['class' => 'form-control']) !!}
             </div>
             <div class="form-group mb-4">
               {!! Form::label('category', 'カテゴリー:') !!}

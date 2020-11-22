@@ -308,6 +308,8 @@
           <!-- Googlemap表示位置を指定 -->
           <div class="col-lg-8" style="background: #BFA; height: 66vw; max-height: 395px;">
             Googlemap
+            XHTML
+<iframe width="100%" height="100%" src="https://maps.google.co.jp/maps?output=embed&q=0650023"></iframe>
           </div>
         </div>
       </div>
