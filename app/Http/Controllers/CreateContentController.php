@@ -6,6 +6,7 @@ use Illuminate\Http\Request; //認証済みユーザーを取得するファサ�
 use Illuminate\Support\Facades\Auth;
 use Imagick;
 use Log;
+
 class CreateContentController extends Controller
 {
     //新規投稿画面を表示する
@@ -77,8 +78,8 @@ class CreateContentController extends Controller
                  * Imagickを使用せずそのままのデータをLaravelでディレクトリに保存する場合は以下
                  * $files[$i]->storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
                  */
-                $mkdir = \File::makeDirectory(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}", 0770, true);
-                if($mkdir !== true) {
+                $makeDir = \File::makeDirectory(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}", 0770, true);
+                if($makeDir !== true) {
                     dd('error');
                 }
                 $saveImg = $image->writeImage(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}/{$file_name}");
@@ -87,7 +88,6 @@ class CreateContentController extends Controller
                 }
                 $image->clear();             
                 //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
-                //$file_name->storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
                 //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~
                 $fileColmunName = sprintf('datafile_%02d', ($i+1));
                 //DBに画像のパスを保存
