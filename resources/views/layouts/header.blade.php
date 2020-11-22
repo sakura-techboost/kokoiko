@@ -131,9 +131,10 @@
                     </div>
                   </div>
                 </li>
-                <li id="eighth">
-                  <a href=# data-toggle="modal" data-target="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>
+<!--                <li id="eighth">
+                  <a href=# data-toggle="modal" data-taret="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>
                 </li>
+              -->
               </ul>
             </div>         
           </div>

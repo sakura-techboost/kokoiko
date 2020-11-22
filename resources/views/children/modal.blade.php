@@ -168,7 +168,7 @@
 
 {{-- header.blade.php(レイアウトブレード) --}}
 <!-- モーダルダイアログに検索メニュー(#search-menu)を載せる -->
-<!--　<div class="modal fade" id="search-menu" tabindex="-1" role="dialog" aria-hidden="true">
+　<div class="modal fade" id="search-menu" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -176,29 +176,18 @@
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-          <form action="{ action('SearchContentsController@index') }}" method="get">
-            @csrf
+          <form action="{{ route('contents.index') }}" method="get">
             <div class="form-group mb-4">
-              <label class="sr-only" for="kw">検索キーワード</label>
-              <input type="text" class="form-control" placeholder="キーワード" id="kw" name="search_name" value={ $search_name }}>
+              {!! Form::label('kw', '検索キーワード:') !!}
+              {!! Form::text('kw' ,'', ['class' => 'form-control', 'placeholder' => '指定なし'] ) !!}
             </div>
             <div class="form-group mb-4 city">
-              <label for="receipt">都道府県</label>
-              <select class="form-control" id="city">
-                <option>未選択</option>
-                <option>北海道</option>
-                <option>青森</option>
-                <option>東京</option>
-              </select>
+              {!! Form::label('pref', '都道府県:') !!}
+              {!! Form::select('pref', ['指定なし' => '指定なし'] + Config::get('place.prefs') ,'指定なし',['class' => 'form-control']) !!}              
             </div>
             <div class="form-group mb-4">
-              <label for="receipt">カテゴリ</label>
-              <select class="form-control" id="category">
-                <option>未選択</option>
-                <option>グルメ</option>
-                <option>ファッション</option>
-                <option>雑貨</option>
-              </select>
+              {!! Form::label('category', 'カテゴリー:') !!}
+              {!! Form::select('category', ['指定なし' => '指定なし'] + Config::get('place.category') ,'指定なし',['class' => 'form-control']) !!}
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary">検索</button>
@@ -208,7 +197,7 @@
     　</div>
   　</div>
   </div>
--->
+
 {{-- mypage.blade.php(プロフィール編集画面) --}}
 <!-- モーダルダイアログでプロフィールを編集する -->
 <!-- 名前 -->

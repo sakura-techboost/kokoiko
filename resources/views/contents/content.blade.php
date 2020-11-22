@@ -37,7 +37,7 @@
           <p>全10件</p>
         </div>
         <div class="col-lg-4 my-2">
-          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+<!--          <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-outline-secondary active">
               <input type="radio" name="options" id="option1" autocomplete="off" checked>
               全記事
@@ -46,7 +46,10 @@
               <input type="radio" name="options" id="option2" autocomplete="off">
               マイ記事
             </label>
-          </div>
+          </div> 
+-->
+<a href=# data-toggle="modal" data-target="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>       
+
         </div>
         <div class="col-lg-12 my-2">
           <div class="btn-group d-flex btn-group-toggle nav-btns" data-toggle="buttons">
