@@ -6,14 +6,21 @@
 }
 
 .card-img{
-  max-width: 300px;
-  max-height: 300px;
   height:100%;
   width:100%;
   object-fit: contain;
 //  position: absolute;
 }
-
+.preview-box{
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+}
+.preview{
+  overflow: hidden;
+  width: 15vw;
+  height: 15vw;
+}
 //top.blade.php
 .jumbotron {
   position: relative;
