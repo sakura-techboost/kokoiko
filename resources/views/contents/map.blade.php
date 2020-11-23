@@ -64,7 +64,12 @@
                         <li class="list-group-item w-100 p-0">
                           <div class="row no-gutters">
                             <div class="col-4 my-auto mx-auto">
-                              <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                              {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
+                              @if($place->datafile_01 == null)
+                              <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                              @else
+                              <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                              @endif
                             </div>
                             <div class="col-8">
                               <div class="card-body p-0">
@@ -93,7 +98,12 @@
                         <li class="list-group-item w-100 p-0">
                           <div class="row no-gutters">
                             <div class="col-4 my-auto mx-auto">
-                              <img class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy" src="https://1.bp.blogspot.com/-mT0SI1MDrK4/XwkxgFf5MHI/AAAAAAABaBY/q6p_E_edBKYDE8NHITw8pZOhGboGpkGOwCNcBGAsYHQ/s1600/food_pork_chup.png">
+                              {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
+                              @if($place->datafile_01 == null)
+                              <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                              @else
+                              <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                              @endif
                             </div>
                             <div class="col-8">
                               <div class="card-body p-0">

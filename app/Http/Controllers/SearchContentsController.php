@@ -56,7 +56,7 @@ class SearchContentsController extends Controller
         $query = Place::query();
 
         $search_pref = $request->input('pref');
-         // 指定なし以外を選択した場合、$query->whereで選択した都道府県と一致するカラムを取得
+         // $query->whereで選択した都道府県と一致するカラムを取得
          if ($request->has('pref')) {
             $places = $query->where('pref', $search_pref)->get();
             return view('contents.map',[
