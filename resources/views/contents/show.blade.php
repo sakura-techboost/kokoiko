@@ -179,7 +179,7 @@
             <!-- 画面幅が992px以上の場合のナビゲーションバー -->
             <ul class="nav lg-nav" style="border: thin solid #d3d3d3">
               @foreach ($places as $place)
-              <li class="nav-item">
+              <li class="nav-item map-card" value="{{ $place->pref }}{{ $place->address }}">
                 <a class="card mb-3 mx-auto" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
                     <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,10) }}</p>
@@ -213,7 +213,7 @@
             <!-- 画面幅が992px以下の場合のナビゲーションバー -->
             <ul class="nav d-lg-none md-nav w-100" style="border: thin solid #d3d3d3">
               @foreach ($places as $place)
-              <li class="nav-item md-item">
+              <li class="nav-item md-item map-card" value="{{ $place->pref }}{{ $place->address }}">
                 <div class="card md-card h-100 mx-2" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
                     <a href="#" class="d-inline-block col-6 small-card">
@@ -250,6 +250,7 @@
           <!-- Googlemap表示位置を指定 -->
           <div class="col-lg-8" style="height: 66vw; max-height: 395px;">
             <iframe 
+              class="other"
               src="https://maps.google.co.jp/maps?output=embed&q={{ $place->pref }}"
               width="100%"
               height="100%"
