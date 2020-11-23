@@ -113,19 +113,18 @@
                 <li id="eighth">
                   <div class="card">
                     <h6 class="card-header">エリアから探す</h6>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-sm btn-info"
-                      　data-toggle="popover" 
-                      　title="タイトル" 
-                      　data-content="なんかそういうbladeを書くかもしれない">
-                        都道府県
-                      </button>
-                      <div class="media">
-                        <img src="{{ asset('images/日本地図のアイコン (1).jpeg') }}" class="align-self-center mr-3" alt="...">
-                        <div class="media-body">
-                          <a href="#">地図で見る</a>
-                        </div>
-                      </div>
+                    <div class="card-body px-0">
+                      <form action="{{ route('contents.mapindex') }}" method="get">
+                        {!! Form::select('pref',Config::get('place.prefs') ,'指定なし',['class' => 'form-control']) !!}
+                        <button type="submit w-100" class="btn create-btn">
+                          <div class="media">
+                            <img src="{{ asset('images/日本地図のアイコン (1).jpeg') }}" class="align-self-center mr-3" alt="...">
+                            <div class="media-body">
+                              <p class="d-inline" style="font-size:13px;">地図で見る</a>
+                            </div>
+                          </div>
+                        </button>
+                      </form>
                     </div>
                   </div>
                 </li>

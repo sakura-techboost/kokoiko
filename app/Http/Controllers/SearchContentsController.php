@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Place;
 use Illuminate\Http\Request;
+use Auth;
 
 class SearchContentsController extends Controller
 {
 
     public function index(Request $request){
+        $user = Auth::user();
         $query = Place::query();
         //$request->input()で検索時に入力した項目を取得します。
         $search1 = $request->input('pref');
@@ -42,10 +44,26 @@ class SearchContentsController extends Controller
         $places = $query->orderBy('created_at', 'desc')->paginate(5);
 
         return view('contents.content',[
+            'user' => $user,
             'places' => $places,
             'search1' => $search1,
             'search2' => $search2,
             'search3' => $search3
         ]);
+    }
+    public function mapindex(Request $request){
+        $user = Auth::user();
+        $query = Place::query();
+
+        $search_pref = $request->input('pref');
+         // 指定なし以外を選択した場合、$query->whereで選択した都道府県と一致するカラムを取得
+         if ($request->has('pref')) {
+            $places = $query->where('pref', $search_pref)->get();
+            return view('contents.map',[
+                'user' => $user,
+                'places' => $places,
+            ]);
+        }
+        
     }
 }
