@@ -1,8 +1,18 @@
 @charset "UTF-8";
 
-.carousel-inner {
-  height: 200px;
-  width: 200px;
+.carousel-item {
+  height: 30vw;
+  width: 30vw;
+}
+
+.thumb-lg-img {
+  width: 5vw;
+  height: 5vw;
+}
+
+.thumb-img {
+  width: 15vw;
+  height: 15vw;
 }
 
 .card-img {
@@ -12,14 +22,7 @@
      object-fit: contain;
 }
 
-.preview-box {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 0;
-}
-
 .preview {
-  overflow: hidden;
   width: 15vw;
   height: 15vw;
 }

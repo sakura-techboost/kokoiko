@@ -1,23 +1,27 @@
 //サムネイル画像の設定
-.carousel-inner{
-  height:200px;
-  width:200px;
-//  position: relative;
+.carousel-item{
+  height:30vw;
+  width:30vw;
 }
-
+//.show-img{
+//  height:21vw;
+//  width:21vw;
+//}
+.thumb-lg-img{
+  width: 5vw;
+  height: 5vw;
+}
+.thumb-img{
+  width: 15vw;
+  height: 15vw;
+}
 .card-img{
   height:100%;
   width:100%;
   object-fit: contain;
-//  position: absolute;
 }
-.preview-box{
-  display: flex;
-  flex-flow: row wrap;
-  margin: 0;
-}
+
 .preview{
-  overflow: hidden;
   width: 15vw;
   height: 15vw;
 }

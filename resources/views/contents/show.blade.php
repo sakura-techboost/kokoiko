@@ -28,10 +28,14 @@
                   {{-- 画像表示 --}}
                   <!-- 画像がなければNOIMAGEを表示 -->
                   @if($place->datafile_01 == null)
-                  <img src="{{ asset("images/noimage.jpg") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  <div class="show-img">
+                    <img src="{{ asset("images/noimage.jpg") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  </div>                 
                   <!-- 一つだけならばそのまま表示 -->
                   @elseif(isset($place->datafile_01) && $place->datafile_02 == null)
-                  <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  <div class="show-img">
+                    <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                  </div>
                   <!-- 2つ以上ならばカルーセル表示 -->
                   @elseif(isset($place->datafile_02))
                   <!-- 登録した画像をカルーセル表示する -->
@@ -48,21 +52,21 @@
                       </ol>
                       <div class="carousel-inner">
                         <div class="carousel-item active">
-                          <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                          <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                         </div>
                         <div class="carousel-item">
-                          <img src="{{ asset("$place->datafile_02") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                          <img src="{{ asset("$place->datafile_02") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                         </div>
                         @if(isset($place->datafile_03) && $place->datafile_04 == null)
                           <div class="carousel-item">
-                            <img  src="{{ asset("$place->datafile_03") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                            <img  src="{{ asset("$place->datafile_03") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                           </div>
                         @elseif(isset($place->datafile_04))
                           <div class="carousel-item">
-                            <img  src="{{ asset("$place->datafile_03") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                            <img  src="{{ asset("$place->datafile_03") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                           </div>
                           <div class="carousel-item">
-                            <img  src="{{ asset("$place->datafile_04") }}" class="card-img img-thumbnail rounded mx-auto d-block w-100" loading="lazy">
+                            <img  src="{{ asset("$place->datafile_04") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
                           </div>
                         @endif
                       </div>
@@ -190,13 +194,13 @@
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
-                        <div class="col-4 my-auto mx-auto">
-                          {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
-                        @if($place->datafile_01 == null)
-                        <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
-                        @else
-                        <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
-                        @endif
+                        <div class="col-4 my-auto mx-auto thumb-lg-img">
+                            {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
+                          @if($place->datafile_01 == null)
+                          <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                          @else
+                          <img src="{{ asset("$place->datafile_01") }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
+                          @endif
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
@@ -224,7 +228,7 @@
                   <ul class="list-group list-group-flush" >
                     <li class="list-group-item w-100 p-0">
                       <div class="row no-gutters">
-                        <div class="col-4 my-auto mx-auto">
+                        <div class="col-4 my-auto mx-auto thumb-img">
                           {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
                           @if($place->datafile_01 == null)
                           <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto h-100 d-block" loading="lazy">
