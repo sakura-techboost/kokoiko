@@ -180,7 +180,7 @@
             <ul class="nav lg-nav" style="border: thin solid #d3d3d3">
               @foreach ($places as $place)
               <li class="nav-item map-card" value="{{ $place->pref }}{{ $place->address }}">
-                <a class="card mb-3 mx-auto" href="#">
+                <a class="card mb-3 mx-auto" href="{{ route('contents.show',[$place->id]) }}">
                   <div class="row no-gutters card-header py-1 px-4">
                     <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,10) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
@@ -216,7 +216,7 @@
               <li class="nav-item md-item map-card" value="{{ $place->pref }}{{ $place->address }}">
                 <div class="card md-card h-100 mx-2" href="#">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <a href="#" class="d-inline-block col-6 small-card">
+                    <a href="{{ route('contents.show',[$place->id]) }}" class="d-inline-block col-6 small-card">
                       {{ Str::limit($place->name,20) }}
                     </a>
                     <p class="d-inline-block col-6 align-self-center" align="right">
