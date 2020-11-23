@@ -13,6 +13,7 @@ class FileEditController extends Controller
     //画像の編集画面を表示する
     public function fileEdit($id, Place $place)
     {
+        $user = Auth::user();
         //Placeテーブルから取得したidに合致するデータを取得
         $place = Place::find($id);
         //idが一致しなければエラー画面を表示
@@ -21,7 +22,8 @@ class FileEditController extends Controller
         }
         return view('contents.fileEdit', [
             'place_form' => $place,
-            'id' => $id
+            'id' => $id,
+            'user' => $user
         ]);
     }
     //画像のデータの上書をする

@@ -54,13 +54,11 @@
             </li>
             <li class="nav-item dropdown" id="eighth">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-none d-lg-inline pl-1">さん</span>
+                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-inline pl-1">{{ $user->name }}さん</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ action('Admin\UserController@edit') }}" class="dropdown-item">プロフィール</a>
                 <a href="{{ action('Admin\UserController@editPassword') }}" class="dropdown-item">パスワード変更</a>
-                <a href="#" class="dropdown-item">リスト</a>
-                <a href="#" class="dropdown-item">お問い合わせ</a>
                 <a href="{{ route('logout') }}" class="dropdown-item" 
                 onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
@@ -99,13 +97,13 @@
   　　        {{-- ログインしていればトップページとマイページへのリンクを表示 --}}
               @auth
                 <li id="eighth">
-                  <a href="#" title="トップページへ">
+                  <a href="" title="トップページへ">
                     KOKOIKO<span>OUR FAVORITE PLACES</span>
                   </a>
                 </li>
                 <li class="nav-item" id="eighth">
-                  <a href="#" title="マイページへ">
-                    <i class="fas fa-home"></i><span class="d-none d-lg-inline">マイページ</span>
+                  <a href="{{ route('contents.content') }}" title="マイページへ">
+                    <i class="fas fa-home"></i>マイページ
                   </a>
                 </li>
               @endauth

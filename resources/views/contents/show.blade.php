@@ -182,7 +182,7 @@
               <li class="nav-item map-card" value="{{ $place->pref }}{{ $place->address }}">
                 <a class="card mb-3 mx-auto" href="{{ route('contents.show',[$place->id]) }}">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,10) }}</p>
+                    <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,15) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
                       <small>{{ $place->attentionStar }}</small>
                     </p>
@@ -200,7 +200,7 @@
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary small-card">{{ Str::limit($place->overview,10) }}</p>
+                            <p class="card-text summary small-card d-inline-block">{{ Str::limit($place->overview,100) }}</p>
                           </div>
                         </div>
                       </div>
@@ -214,11 +214,9 @@
             <ul class="nav d-lg-none md-nav w-100" style="border: thin solid #d3d3d3">
               @foreach ($places as $place)
               <li class="nav-item md-item map-card" value="{{ $place->pref }}{{ $place->address }}">
-                <div class="card md-card h-100 mx-2" href="#">
+                <a class="card md-card mx-2" href="{{ route('contents.show',[$place->id]) }}">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <a href="{{ route('contents.show',[$place->id]) }}" class="d-inline-block col-6 small-card">
-                      {{ Str::limit($place->name,20) }}
-                    </a>
+                    <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,20) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
                       <small>{{ $place->attentionStar }}</small>
                     </p>
@@ -236,13 +234,13 @@
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary small-card">{{ Str::limit($place->overview,100) }}</p>
+                            <p class="card-text summary small-card d-inline-block">{{ Str::limit($place->overview,100) }}</p>
                           </div>
                         </div>
                       </div>
                     </li>
                   </ul>
-                </div>
+                </a>
               </li>
               @endforeach
             </ul>

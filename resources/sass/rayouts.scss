@@ -1,6 +1,7 @@
 //サムネイル画像の設定
 .carousel-inner{
   height:200px;
+  width:200px;
 //  position: relative;
 }
 
@@ -8,6 +9,8 @@
   max-width: 300px;
   max-height: 300px;
   height:100%;
+  width:100%;
+  object-fit: contain;
 //  position: absolute;
 }
 
@@ -315,15 +318,16 @@ p{
 }
 .md-item{
   display: inline-block;//カードが横に並ぶようにする
-  max-height:140px;
-  height:100%;
+//  max-height:140px;
+//  height:100%;
 }
 .md-card{
-  max-height:140px;
-  height:100%;
+//  max-height:140px;
+//  height:100%;
 }
 
 //近くのスポットのカードの文字サイズ
 .small-card{
   font-size:10px;
+  word-wrap:break-all;
 }

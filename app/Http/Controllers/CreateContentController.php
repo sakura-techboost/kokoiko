@@ -12,7 +12,8 @@ class CreateContentController extends Controller
     //新規投稿画面を表示する
     public function showCreateForm()
     {
-        return view('contents.createContent');
+        $user = Auth::user();
+        return view('contents.createContent',['user' => $user]);
         dd("show");
     }
     //記事を作成する
@@ -111,6 +112,7 @@ class CreateContentController extends Controller
     //記事のidを取得
     public function show($id, Place $place)
     {
+        $user = Auth::user();
         //Placeテーブルから取得したidに合致するデータを取得
         $place = Place::find($id);
         //もし都道府県が登録されていたら同じ都道府県を登録されているカードを取得して表示
@@ -120,12 +122,14 @@ class CreateContentController extends Controller
             //記事詳細画面を表示
             return view('contents.show', [
             'place' => $place,
-            'places' => $places
+            'places' => $places,
+            'user' => $user
             ]);
         }else{
             //記事詳細画面を表示
             return view('contents.show', [
                 'place' => $place,
+                'user' => $user
             ]);
         }
     }

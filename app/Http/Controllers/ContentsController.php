@@ -22,14 +22,16 @@ class ContentsController extends Controller
     //記事の一覧を表示する
     public function content()
     {
+        $user = Auth::user();
         $places = Place::orderBy('created_at', 'desc')->paginate(5);
 
-        return view('contents.content', ['places' => $places]);
+        return view('contents.content', ['places' => $places,'user' => $user]);
     }
 
     //記事の編集画面を表示する
     public function edit($id, Place $place)
     {
+        $user = Auth::user();
         //Placeテーブルから取得したidに合致するデータを取得
         $place = Place::find($id);
         //idが一致しなければエラー画面を表示
@@ -41,7 +43,8 @@ class ContentsController extends Controller
 //    }
         return view('contents.edit', [
       'place_form' => $place,
-      'id' => $id
+      'id' => $id,
+      'user' => $user
     ]);
     }
 
@@ -110,16 +113,11 @@ class ContentsController extends Controller
     //エリアで探すページを表示する
     public function mapshow()
     {
-        return view('contents.map');
+        $user = Auth::user();
+        return view('contents.map',['user' => $user]);
     }
     //新規投稿画面を表示する
     //→CreateContentController.php内に記述
-
-    //記事詳細画面を表示する
-    public function show()
-    {
-        return view('contents.show');
-    }
 }
 
  

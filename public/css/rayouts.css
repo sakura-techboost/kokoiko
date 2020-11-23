@@ -2,12 +2,16 @@
 
 .carousel-inner {
   height: 200px;
+  width: 200px;
 }
 
 .card-img {
   max-width: 300px;
   max-height: 300px;
   height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .jumbotron {
@@ -300,16 +304,10 @@ p {
 
 .md-item {
   display: inline-block;
-  max-height: 140px;
-  height: 100%;
-}
-
-.md-card {
-  max-height: 140px;
-  height: 100%;
 }
 
 .small-card {
   font-size: 10px;
+  word-wrap: break-all;
 }
 
