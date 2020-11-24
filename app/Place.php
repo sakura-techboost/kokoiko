@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 //use Kyslik\ColumnSortable\Sortable;// 追加
 
+/**
+ * Class Place
+ * @package App
+ * @method static find(int $id)
+ * @method static orderBy(string $string, string $string1)
+ */
 class Place extends Model
 {
     //use Sortable;
@@ -56,5 +62,5 @@ class Place extends Model
     {
         return config('place.category.' . $this->category_id);
     }
-     
+
 }

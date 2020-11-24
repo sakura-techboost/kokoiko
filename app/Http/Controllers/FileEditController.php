@@ -6,6 +6,7 @@ use App\Http\Requests\CreateContentRequest;
 use App\Place;
 use Illuminate\Support\Facades\Storage;
 use Imagick;
+use Auth;
 
 class FileEditController extends Controller
 {
@@ -99,6 +100,7 @@ class FileEditController extends Controller
                     if($resize !== true) {
                         dd('error');
                     }
+                    
                     /**
                      * public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
                      * 画像を保存するディレクトリを作成し、そこへ縮小した画像を保存する
@@ -109,6 +111,7 @@ class FileEditController extends Controller
                     if($makeDir !== true) {
                         dd('error');
                     }
+                    
                     $saveImg = $image->writeImage(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}/{$file_name}");
                     if($saveImg !== true) {
                         dd('error');

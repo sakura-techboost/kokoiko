@@ -16,6 +16,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/rayouts.scss','public/css')
     //.sass('resources/sass/testrayouts.scss','public/css')
     .sass('resources/sass/mediaqueries.scss','public/css')
-    .js('resources/js/content.js', 'public/js') //←追加 10月7日
+//    .js('resources/js/content.js', 'public/js') //←追加 10月7日
     //.js('resources/js/testcontent.js', 'public/js') //←追加 10月13日
     .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps();

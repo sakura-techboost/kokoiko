@@ -31,3 +31,51 @@
     display: none;//992px以下では非表示にする
   }
 }
+@media (min-width: 576px){
+  .carousel-item{
+    height:160px;
+    width:160px;
+    object-fit: contain;
+  }
+  .content-img{
+    height:160px;
+    width:160px;
+    object-fit: contain;
+  }
+}
+@media (min-width: 768px){
+  .carousel-item{
+    height:220px;
+    width:220px;
+    object-fit: contain;
+  }
+  .content-img{
+    height:220px;
+    width:220px;
+    object-fit: contain;
+  }
+}
+@media (min-width: 992px){
+  .carousel-item{
+    height:225px;
+    width:225px;
+    object-fit: contain;
+  }
+  .content-img{
+    height:225px;
+    width:225px;
+    object-fit: contain;
+  }
+}
+@media (min-width: 1200px){
+  .carousel-item{
+    height:270px;
+    width:270px;
+    object-fit: contain;
+  }
+  .content-img{
+    height:270px;
+    width:270px;
+    object-fit: contain;
+  }
+}

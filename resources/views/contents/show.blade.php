@@ -175,7 +175,7 @@
       @if(isset($places[0]))
         <!-- 近くのスポットを地図とともに表示 -->
       <div class="col-lg-12 mb-5">
-        <h3 class="mt-5">この近くのスポットを見る</h3>
+        <h3 class="mt-5">この近くのスポット</h3>
         <p　class="m-3">1~20件表示/全50件</p>
         <div class="row no-gutters">
           <!-- 近くのスポットのカード一覧 -->
@@ -183,8 +183,8 @@
             <!-- 画面幅が992px以上の場合のナビゲーションバー -->
             <ul class="nav lg-nav" style="border: thin solid #d3d3d3">
               @foreach ($places as $place)
-              <li class="nav-item map-card" value="{{ $place->pref }}{{ $place->address }}">
-                <a class="card mb-3 mx-auto" href="{{ route('contents.show',[$place->id]) }}">
+              <li class="nav-item map-card w-100" value="{{ $place->pref }}{{ $place->address }}">
+                <a class="card mb-3 mx-auto lg-card" href="{{ route('contents.show',[$place->id]) }}">
                   <div class="row no-gutters card-header py-1 px-4">
                     <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,15) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
@@ -220,7 +220,7 @@
               <li class="nav-item md-item map-card" value="{{ $place->pref }}{{ $place->address }}">
                 <a class="card md-card mx-2" href="{{ route('contents.show',[$place->id]) }}">
                   <div class="row no-gutters card-header py-1 px-4">
-                    <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,20) }}</p>
+                    <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,18) }}</p>
                     <p class="d-inline-block col-6 align-self-center" align="right">
                       <small>{{ $place->attentionStar }}</small>
                     </p>
@@ -238,7 +238,7 @@
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary small-card d-inline-block">{{ Str::limit($place->overview,100) }}</p>
+                            <p class="card-text summary">{{ Str::limit($place->overview,50) }}</p>
                           </div>
                         </div>
                       </div>

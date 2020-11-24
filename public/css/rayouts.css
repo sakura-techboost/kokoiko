@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-.carousel-item {
-  height: 30vw;
-  width: 30vw;
-}
-
 .thumb-lg-img {
   width: 5vw;
   height: 5vw;
@@ -16,6 +11,8 @@
 }
 
 .card-img {
+  max-height: 270px;
+  max-width: 270px;
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
@@ -317,10 +314,13 @@ p {
 
 .md-item {
   display: inline-block;
+  width: 100%;
+  max-width: 313px;
 }
 
-.small-card {
+.md-item p {
   font-size: 10px;
-  word-wrap: break-all;
+  white-space: pre-line;
+  overflow: hidden;
 }
 

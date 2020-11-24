@@ -54,8 +54,8 @@
                   @foreach ($places as $place)
                   <li class="nav-item" value="{{ $place->pref }}{{ $place->address }}">
                     <a class="card mb-3 mx-auto card-{{ $place->placetype_id }}" href="{{ route('contents.show',[$place->id]) }}">
-                      <div class="row no-gutters card-header py-1 px-4">
-                        <p class="d-inline-block col-6">{{ Str::limit($place->name,20) }}</p>
+                      <div class="row no-gutters card-header py-1 px-2">
+                        <p class="d-inline-block col-6" style="font-size:11px;">{{ Str::limit($place->name,14) }}</p>
                         <p class="d-inline-block col-6 align-self-center" align="right">
                           <small>{{ $place->attentionStar }}</small>
                         </p>
@@ -84,12 +84,12 @@
                   @endforeach
                 </ul>
                 <!-- 画面幅が992px以下の場合のナビゲーションバー -->
-                <ul class="nav d-lg-none md-nav" style="border: thin solid #d3d3d3">
+                <ul class="nav d-lg-none md-nav w-100" style="border: thin solid #d3d3d3">
                   @foreach ($places as $place)
-                  <li class="nav-item" value="{{ $place->pref }}{{ $place->address }}">
+                  <li class="nav-item md-item map-card" value="{{ $place->pref }}{{ $place->address }}">
                     <a class="card h-100 mx-2 card-{{ $place->placetype_id }}" href="{{ route('contents.show',[$place->id]) }}">
                       <div class="row no-gutters card-header py-1 px-4">
-                        <p class="d-inline-block col-6">{{ Str::limit($place->name,16) }}</p>
+                        <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,16) }}</p>
                         <p class="d-inline-block col-6 align-self-center" align="right">
                           <small>{{ $place->attentionStar }}</small>
                         </p>
@@ -97,7 +97,7 @@
                       <ul class="list-group list-group-flush" >
                         <li class="list-group-item w-100 p-0">
                           <div class="row no-gutters">
-                            <div class="col-4 my-auto mx-auto">
+                            <div class="col-4 my-auto mx-auto thumb-img">
                               {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
                               @if($place->datafile_01 == null)
                               <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
@@ -145,8 +145,5 @@
     </div>
   </div>
 
-@endsection
-@section('js')
-  <script src="{{ secure_asset('js/content.js') }}" defer></script>
 @endsection
 

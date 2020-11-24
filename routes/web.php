@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ContentsController@top');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 //ログイン時のみアクセス可能
 Route::group(['middleware' => 'auth'], function () {

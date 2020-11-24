@@ -107,9 +107,11 @@
                   </a>
                 </li>
               @endauth
-                <li id="eighth">
+<!--
+              <li id="eighth">
                   <a href=#><i class="fas fa-users" title="他のユーザー記事"></i>みんなの投稿</a>
                 </li>
+              -->
                 <li id="eighth">
                   <div class="card">
                     <h6 class="card-header">エリアから探す</h6>
@@ -128,10 +130,9 @@
                     </div>
                   </div>
                 </li>
-<!--                <li id="eighth">
-                  <a href=# data-toggle="modal" data-taret="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>
+                <li id="eighth">
+                  <a href=# data-toggle="modal" data-target="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>
                 </li>
-              -->
               </ul>
             </div>         
           </div>
@@ -146,6 +147,5 @@
         </div>
       </div>
     </div>
-    @yield('js')
   </body>
 </html>

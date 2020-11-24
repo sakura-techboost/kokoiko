@@ -46,10 +46,9 @@
               <input type="radio" name="options" id="option2" autocomplete="off">
               マイ記事
             </label>
-          </div> 
+          </div>
+          <a href=# data-toggle="modal" data-target="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>
 -->
-<a href=# data-toggle="modal" data-target="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>       
-
         </div>
         <div class="col-lg-12 my-2">
           <div class="btn-group d-flex btn-group-toggle nav-btns" data-toggle="buttons">
@@ -92,7 +91,7 @@
             <ul class="list-group list-group-flush" >
               <li class="list-group-item w-100 p-0">
                 <div class="row no-gutters">
-                  <div class="col-sm-4 my-auto mx-auto">
+                  <div class="col-sm-4 my-auto mx-auto content-img">
                     {{-- 画像がなければNOIMAGEを表示、あればその画像の一つ目を表示 --}}
                     @if($place->datafile_01 == null)
                     <img src="{{ asset('images/noimage.jpg') }}" class="card-img img-thumbnail rounded mx-auto d-block" loading="lazy">
@@ -148,6 +147,3 @@
 
 @endsection
 
-@section('js')
-  <script src="{{ secure_asset('js/content.js') }}" defer></script>
-@endsection

@@ -142,6 +142,3 @@
 
 @endsection
 
-@section('js')
-      <script src="{{ secure_asset('js/content.js') }}" defer></script>
-@endsection

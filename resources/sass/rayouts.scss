@@ -1,8 +1,4 @@
-//サムネイル画像の設定
-.carousel-item{
-  height:30vw;
-  width:30vw;
-}
+
 //.show-img{
 //  height:21vw;
 //  width:21vw;
@@ -16,10 +12,13 @@
   height: 15vw;
 }
 .card-img{
+  max-height:270px;
+  max-width:270px;
   height:100%;
   width:100%;
   object-fit: contain;
 }
+
 
 .preview{
   width: 15vw;
@@ -329,16 +328,14 @@ p{
 }
 .md-item{
   display: inline-block;//カードが横に並ぶようにする
-//  max-height:140px;
-//  height:100%;
-}
-.md-card{
-//  max-height:140px;
-//  height:100%;
+  width:100%;
+  max-width:313px;
 }
 
+
 //近くのスポットのカードの文字サイズ
-.small-card{
+.md-item p{
   font-size:10px;
-  word-wrap:break-all;
+  white-space: pre-line;
+  overflow: hidden;
 }
