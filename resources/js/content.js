@@ -76,7 +76,25 @@ $(function () {
     //画面全体のリロードを止める
     return false;
   });
-  
+  $('.ctgr').each(function () {
+    var selected = $(this).data('selected');
+    if(selected == '1'){
+      oldText = 'グルメ';
+      $('.category span').text(oldText);
+    }else if(selected == '2'){
+      oldText = 'ファッション';
+      $('.category span').text(oldText);
+    }else if(selected == '3'){
+      oldText = '雑貨';
+      $('.category span').text(oldText);
+    }else if(selected == '4'){
+      oldText = '観光スポット';
+      $('.category span').text(oldText);
+    }else{
+      oldText = '';
+      $('.category span').text(oldText);
+    }
+});
   //電話番号登録
   $('#url-form').submit(function(){
     var textUrl=$('#form_url').val();
@@ -136,7 +154,7 @@ $(function () {
     $('.carousel-control-prev-icon').css("background-image", `url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='${encodeURIComponent(iconColor)}' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")`);
     $(".carousel-control-next-icon").css("background-image", `url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='${encodeURIComponent(iconColor)}' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")`); 
   });
-  
+
   //近くのエリアのカードをホバーすると、そのカードの住所がiframeに渡される
   $('.map-card').hover(function () {
     var address = $(this).attr('value');

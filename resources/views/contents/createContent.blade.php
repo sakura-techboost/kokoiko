@@ -28,7 +28,7 @@
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="名称" value="{{ old("name") }}">
+                <input type="text" value="{{ old('name') }}" class="form-control" id="name" name="name" placeholder="名称" value="{{ old("name") }}">
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="overview">概要</label>
@@ -37,53 +37,43 @@
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label" for="placetype_id">登録先</label>
-                <select class="form-control" id="placetype_id" name="placetype_id">
-                  <option value="1">お気に入り</option>
-                  <option value="2">行ってみたい</option>
-                  <option value="3">いまいち</option>
-                </select>
+                {{Form::select('placetype_id',Config::get('place.placetype'), old( 'placetype_id' ), ['class' => 'form-control','id' => 'placetype_id'])}}
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label" for="attention_id">関心度</label>
-                <select class="form-control text-warning" id="attention_id" name="attention_id">
-                  <option value="1">★★★★★</option>
-                  <option value="2">★★★★☆</option>
-                  <option value="3">★★★☆☆</option>
-                  <option value="4">★★☆☆☆</option>
-                  <option value="5">★☆☆☆☆</option>
-                </select>
+                {{Form::select('attention_id',Config::get('place.attention'), old( 'attention_id' ), ['class' => 'form-control text-warning','id' => 'attention_id'])}}
               </div>
               <!-- オプション入力フォーム -->
               <!-- 住所情報 -->
               <div class="form-group mb-2 address">
-                <span class="postalcode"></span><br>
-                <span class="pref"></span><span class="address"></span>
-                <input type="text" name="postalcode" class="form-control d-none" id="postalcode" placeholder="郵便番号">
+                <span class="postalcode">{{ old('postalcode') }}</span><br>
+                <span class="pref">{{ old('pref') }}</span><span class="address">{{ old('address') }}</span>
+                <input value="{{ old('postalcode') }}" type="text" name="postalcode" class="form-control d-none" id="postalcode" placeholder="郵便番号">
                 <label class="col-form-label d-none" for="pref address">住所</label>
                 <select class="form-control d-none" name="pref" id="pref">
-                  <option></option>
+                  <option value="{{ old('pref') }}"></option>
                 </select>
-                <input type="text" name="address" class="form-control d-none" id="address" placeholder="市区町村以下">
+                <input value="{{ old('address') }}" type="text" name="address" class="form-control d-none" id="address" placeholder="市区町村以下">
               </div>
               <!-- 電話番号情報 -->
               <div class="form-group mb-2 phone"> 
-                <span></span>
+                <span>{{ old('phone') }}</span>
                 <label class="col-form-label d-none" for="phone">電話番号</label>
-                <input type="text" class="form-control d-none" id="phone" name="phone">
+                <input value="{{ old('phone') }}" type="text" class="form-control d-none" id="phone" name="phone">
               </div>
               <!-- カテゴリー情報 -->
               <div class="form-group mb-2 category"> 
                 <span></span>
                 <label class="col-form-label d-none" for="category_id">カテゴリー</label>
-                <select class="form-control d-none" id="category_id" name="category_id">
-                  <option></option>
-                </select>
+                <select class="form-control d-none ctgr" id="category_id" name="category_id" data-selected="{{ old('category_id') }}">
+                  <option value="{{ old('category_id') }}"></option>
+                </select>               
               </div>
               <!-- ホームページ情報 -->
               <div class="form-group mb-2 url"> 
-                <span></span>
+                <span>{{ old('url') }}</span>
                 <label class="col-form-label d-none" for="url">URL</label>
-                <input type="text" class="form-control d-none" id="url" name="url">
+                <input value="{{ old('url') }}" type="text" class="form-control d-none" id="url" name="url">
               </div>
               {{-- モーダルツールバー(モーダル部分はmodal.blade.phpに記述) --}}
               <div class="btn-group d-flex" role="group" aria-label="追加情報入力">

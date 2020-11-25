@@ -23,17 +23,8 @@
             <form action="{{ route('contents.update', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
               @csrf
               {{-- 選択された画像のプレビュー --}}
-              <!-- もし元データに画像がなければプレビューボックス非表示 -->
-              @if($place_form->datafile_01 == null)
-                <div class="row no-gutters mb-2 preview-box d-none"> 
-                  
-                </div>
               <!-- もし元データに画像があばプレビューボックスと画像を表示 -->
-              @elseif(isset($place_form->datafile_01))
-                {{-- 変更された画像のプレビュー --}}
-                <div class="row no-gutters mb-2 preview-box d-none"> 
-                  
-                </div>
+              @if(isset($place_form->datafile_01))
                 <!-- 元データの画像のプレビュー -->
                 <div class="row no-gutters mb-2 edit-preview-box"> 
                   <div class="preview col-3">
@@ -54,58 +45,55 @@
                   @endif
                 </div>
               @endif
+
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
-                <input value="{{ $place_form->name }}" type="text" class="form-control" id="name" name="name" placeholder="名称">
+                <input value="{{ old('name',$place_form->name) }}" type="text" class="form-control" id="name" name="name" placeholder="名称">
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="overview">概要</label>
-                <textarea class="form-control" id="overview" name="overview" placeholder="どんなところ？">{{ $place_form->overview }}</textarea>
+                <textarea class="form-control" id="overview" name="overview" placeholder="どんなところ？">{{ old('overview',$place_form->overview) }}</textarea>
                 {{-- <small class="form-text">※タグ付けをすると検索できます</small> --}}
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label" for="placetype_id">登録先</label>
-                {{Form::select('placetype_id',['1'=>'お気に入り','2'=>'行ってみたい','3'=>'いまいち'], ( $place_form->placetype_id ), ['class' => 'form-control','id' => 'form-control'])}}
+                {{Form::select('placetype_id',Config::get('place.placetype'), old( 'placetype_id',$place_form->placetype_id ), ['class' => 'form-control','id' => 'placetype_id'])}}
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label" for="attention_id">関心度</label>
-                <select class="form-control text-warning" id="attention_id" name="attention_id">
-                  @foreach(config('place.attention') as $index => $value)
-                    <option value="{{ $index }}" @if($place_form->attention_id == $index) selected @endif>{{ $value }}</option>
-                  @endforeach
-                </select>
+                {{Form::select('attention_id',Config::get('place.attention'), old( 'attention_id',$place_form->attention_id ), ['class' => 'form-control text-warning','id' => 'attention_id'])}}
               </div>
               <!-- オプション入力フォーム -->
               <!-- 住所情報 -->
               <div class="form-group mb-2 address">
-                <span class="postalcode">{{ $place_form->postalcode }}</span><br>
-                <span class="pref">{{ $place_form->pref }}</span><span class="address">{{ $place_form->address }}</span>
-                <input type="text" name="postalcode" class="form-control d-none" id="postalcode" placeholder="郵便番号">
+                <span class="postalcode">{{ old('postalcode',$place_form->postalcode) }}</span><br>
+                <span class="pref">{{ old('pref',$place_form->pref) }}</span><span class="address">{{ old('address',$place_form->address) }}</span>
+                <input value="{{ old('postalcode',$place_form->postalcode) }}" type="text" name="postalcode" class="form-control d-none" id="postalcode" placeholder="郵便番号">
                 <label class="col-form-label d-none" for="pref address">住所</label>
                 <select class="form-control d-none" name="pref" id="pref">
-                  <option value="{{ $place_form->pref }}"></option>
+                  <option value="{{ old('pref',$place_form->pref) }}"></option>
                 </select>
-                <input value="{{ $place_form->address }}" type="text" name="address" class="form-control d-none" id="address" placeholder="市区町村以下">
+                <input value="{{ old('address',$place_form->address) }}" type="text" name="address" class="form-control d-none" id="address" placeholder="市区町村以下">
               </div>
               <!-- 電話番号情報 -->
               <div class="form-group mb-2 phone"> 
-                <span>{{ $place_form->phone }}</span>
+                <span>{{ old('phone',$place_form->phone) }}</span>
                 <label class="col-form-label d-none" for="phone">電話番号</label>
-                <input value="{{ $place_form->phone }}" type="text" class="form-control d-none" id="phone" name="phone">
+                <input value="{{ old('phone',$place_form->phone) }}" type="text" class="form-control d-none" id="phone" name="phone">
               </div>
               <!-- カテゴリー情報 -->
-              <div class="form-group mb-2 category"> 
-                <span>{{ $place_form->category }}</span>
+              <div class="form-group mb-2 category">
+                <span></span>
                 <label class="col-form-label d-none" for="category_id">カテゴリー</label>
-                <select class="form-control d-none" id="category_id" name="category_id">
-                  <option value="{{ $place_form->category_id }}"></option>
+                <select class="form-control d-none ctgr" id="category_id" name="category_id" data-selected="{{ old('category_id',$place_form->category_id) }}">
+                  <option value="{{ old('category_id',$place_form->category_id) }}"></option>
                 </select>
               </div>
               <!-- ホームページ情報 -->
               <div class="form-group mb-2 url"> 
-                <span></span>
+                <span>{{ old('url',$place_form->url) }}</span>
                 <label class="col-form-label d-none" for="url">URL</label>
-                <input value="{{ $place_form->url }}" type="text" class="form-control d-none" id="url" name="url">
+                <input value="{{ old('url',$place_form->url) }}" type="text" class="form-control d-none" id="url" name="url">
               </div>
               {{-- モーダルツールバー(モーダル部分はmodal.blade.phpに記述) --}}
               <div class="btn-group d-flex" role="group" aria-label="追加情報入力">
