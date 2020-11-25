@@ -1,8 +1,4 @@
 
-//.show-img{
-//  height:21vw;
-//  width:21vw;
-//}
 .thumb-lg-img{
   width: 5vw;
   height: 5vw;
@@ -153,6 +149,9 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 }
 
 //content.blade.php
+.search-words{
+  font-size:10px;
+}
 .navigation{
     margin-top:51px;
 }

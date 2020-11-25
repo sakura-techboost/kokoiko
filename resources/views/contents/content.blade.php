@@ -31,13 +31,15 @@
         </div>
       </div>
       @endif
-      <div class="row">
-        <div class="col-lg-8 my-2">
-          <p>1北海道/札幌市(的な指定されたエリアのパンくずリスト)</p>
-          <p>{{ $msg }}/5件表示</p>
+      <div class="row no-gutters">
+        <div class="col-lg-8 mt-2">
+          {{-- 検索内容・件数表示　--}}
+          <p class="search-words">{{ $kw }}</p><p class="search-words">{{ $prf }} / {{ $ctg }}</p>
+          <p class="mt-1">{{ $msg }}/ {{ $places->count() }}件表示</p>
         </div>
-        <div class="col-lg-4 my-2">
-<!--          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+<!--
+        <div class="col-lg-4 mt-2">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-outline-secondary active">
               <input type="radio" name="options" id="option1" autocomplete="off" checked>
               全記事
@@ -48,9 +50,9 @@
             </label>
           </div>
           <a href=# data-toggle="modal" data-target="#search-menu"><i class="fas fa-search" title="検索">検索</i></a>
--->
         </div>
-        <div class="col-lg-12 my-2">
+-->
+        <div class="col-lg-12 my-1">
           <div class="btn-group d-flex btn-group-toggle nav-btns" data-toggle="buttons">
             <label class="btn w-25 active"  id="eighthGreen">
               <input type="radio" name="switchcontents" value="card-all" id="all-contents" autocomplete="off" checked>

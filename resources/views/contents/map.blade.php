@@ -7,13 +7,14 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-12 mt-5">        
-        <div class="row">
-          <div class="col-lg-8 my-2">
-            <p>1北海道/札幌市(的な指定されたエリアのパンくずリスト)</p>
-            <p>{{ $msg }}表示</p>
+        <div class="row no-gutters">
+          <div class="col-7 col-md-9 my-2">
+            <p>{{ $search_pref }}</p>
+            <p>{{ $msg }} / {{ $places->count() }}件表示</p>
           </div>
-<!-- 
-          <div class="col-lg-4 my-2">
+          <div class="col-5 col-md-3 mt-3">
+              {{ $places->appends(request()->query())->links() }}
+<!--
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-outline-secondary active">
                 <input type="radio" name="options" id="option1" autocomplete="off" checked>
@@ -24,8 +25,8 @@
                 マイ記事
               </label>
             </div>
+ -->
           </div>
-        -->
           <div class="col-lg-12 my-2">
             <div class="btn-group d-flex btn-group-toggle nav-btns" data-toggle="buttons">
               <label class="btn w-25 active"  id="eighthGreen">

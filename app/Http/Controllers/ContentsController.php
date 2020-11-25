@@ -49,8 +49,18 @@ class ContentsController extends Controller
         $user = Auth::user();
         $places = Place::orderBy('created_at', 'desc')->paginate(5);
         $msg = '全'.$places->total().'件';
+        $kw = '';
+        $prf = '';
+        $ctg = '';
 
-        return view('contents.content', ['places' => $places, 'user' => $user, 'msg' => $msg]);
+        return view('contents.content', [
+            'places' => $places,
+            'user' => $user,
+            'msg' => $msg,
+            'kw' => $kw,
+            'prf' => $prf,
+            'ctg' => $ctg,
+            ]);
     }
 
 

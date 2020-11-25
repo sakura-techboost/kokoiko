@@ -43,13 +43,16 @@ class SearchContentsController extends Controller
         //該当記事を降順に1ページにつき5件ずつ表示
         $places = $query->orderBy('created_at', 'desc')->paginate(5);
         $msg = '全'.$places->total().'件';
+        $kw = 'キーワード：'.$search3;
+        $prf = '都道府県：'.$search1;
+        $ctg = 'カテゴリー：'.$search2;
 
         return view('contents.content',[
             'user' => $user,
             'places' => $places,
-            'search1' => $search1,
-            'search2' => $search2,
-            'search3' => $search3,
+            'kw' => $kw,
+            'prf' => $prf,
+            'ctg' => $ctg,
             'msg' => $msg
         ]);
     }
@@ -60,10 +63,12 @@ class SearchContentsController extends Controller
         $search_pref = $request->input('pref');
          // $query->whereで選択した都道府県と一致するカラムを取得
          if ($request->has('pref')) {
-            $places = $query->where('pref', $search_pref)->get();
-            $msg = '全'.$places->count().'件';
+            $query->where('pref', $search_pref)->get();
+            $places = $query->paginate(5);
+            $msg = '全'.$places->total().'件';
 
             return view('contents.map',[
+                'search_pref' => $search_pref,
                 'user' => $user,
                 'places' => $places,
                 'msg' => $msg

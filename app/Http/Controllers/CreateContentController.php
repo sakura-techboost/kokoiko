@@ -118,8 +118,9 @@ class CreateContentController extends Controller
         //もし都道府県が登録されていたら同じ都道府県を登録されているカードを取得して表示
         if(isset($place->pref)){
             $query = Place::query();
-            $places = $query->where('pref',$place->pref)->get();   
-            $msg = '全'.$places->count().'件';
+            $query->where('pref',$place->pref)->get();
+            $places = $query->paginate(5); 
+            $msg = '全'.$places->total().'件';
             //記事詳細画面を表示
             return view('contents.show', [
             'place' => $place,

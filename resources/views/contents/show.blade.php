@@ -174,9 +174,16 @@
 
       @if(isset($places[0]))
         <!-- 近くのスポットを地図とともに表示 -->
-      <div class="col-lg-12 mb-5">
-        <h3 class="mt-5">この近くのスポット</h3>
-        <p　class="m-3">{{ $msg }}表示</p>
+      <div class="col-lg-12 my-5">
+        <div class = "row no-gutters">
+          <div class = "col-7 col-md-9">
+            <h3>この近くのスポット</h3>
+            <p　class="m-3">{{ $msg }}/ {{ $places->count() }}件表示</p>
+          </div>
+          <div class = "col-5 col-md-3 mt-3">
+            {{ $places->appends(request()->query())->links() }}
+          </div>
+        </div>
         <div class="row no-gutters">
           <!-- 近くのスポットのカード一覧 -->
           <div class="col-lg-4">
