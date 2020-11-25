@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //content.blade.php(記事一覧画面)を表示するルーティング
     Route::get('contents/content', 'ContentsController@content')->name('contents.content');
+    //記事の検索をするルーティング
     Route::get('contents/search/content', 'SearchContentsController@index')->name('contents.index');
     //地図で見る検索のルーティング
     Route::get('contents/search/map', 'SearchContentsController@mapindex')->name('contents.mapindex');
@@ -59,18 +60,4 @@ Route::group(['middleware' => ['auth', 'web']], function () {
 //top.blade.php(トップページ)を表示するルーティング
 Route::get('contents/top', 'ContentsController@top')->name('contents.top');
 
-//map.blade.php(エリアマップから記事を見る画面)を表示する
-//Route::get('contents/map', 'ContentsController@mapshow')->name('contents.map');
-//show.blade.php(記事詳細画面)を表示するルーティング
-//Route::get('contents/show', 'ContentsController@show');
 
-//以下開発段階で使用
-Route::get('contents/testEditFile/', 'FileEditController@testEditFile')->name('contents.testEditFile');
-
-  //Route::get('csv-test', 'CsvController@test')->name("csv.test");
-//create.blade.php(アカウント登録画面）を表示するルーティング
-  //Route::get('profile/create', 'ProfileController@create')->name("profile.create");
-//login.blade.php(ログイン画面）を表示するルーティング
-  //Route::get('profile/login', 'ProfileController@login')->name("profile.login");
-//testCntent.blade.phpを表示するルーティング
-  //Route::get('contents/testContent', 'ContentsController@testContent')->name("contents.testContent");

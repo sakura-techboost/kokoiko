@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Config\Repository;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 
 //use Kyslik\ColumnSortable\Sortable;// 追加
@@ -14,8 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Place extends Model
 {
-    //use Sortable;
-    //public $sortable = ['id', 'name', 'attention_id', 'updated_at'];// 追加
+
     /**
      * The attributes that are mass assignable.
      *
@@ -46,18 +47,29 @@ class Place extends Model
             return $this->hasMany('App\UploadFile');
         }
     */
-    //Configファイルから値を取得
-    //関心度
+
+    /**
+     * Configファイルから関心度の値を取得
+     * @return Repository|Application|mixed
+     */
     public function getAttentionStarAttribute()
     {
         return config('place.attention.' . $this->attention_id);
     }
-    //保存先
+
+    /**
+     * Configファイルから保存先の値を取得
+     * @return Repository|Application|mixed
+     */
     public function getPlaceTypeAttribute()
     {
         return config('place.placetype.' . $this->placetype_id);
     }
-    //カテゴリー
+
+    /**
+     * Configファイルからカテゴリーの値を取得
+     * @return Repository|Application|mixed
+     */
     public function getCategoryAttribute()
     {
         return config('place.category.' . $this->category_id);

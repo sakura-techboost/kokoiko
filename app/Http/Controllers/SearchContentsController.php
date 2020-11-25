@@ -3,12 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Place;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\View\View;
 
+/**
+ * 検索機能に関するコントローラー
+ * Class SearchContentsController
+ * @package App\Http\Controllers
+ */
 class SearchContentsController extends Controller
 {
-
+    /**
+     * キーワードやカテゴリなどによる検索結果を取得する
+     * @param Request $request
+     * @return Application|Factory|View
+     */
     public function index(Request $request){
         $user = Auth::user();
         $query = Place::query();
@@ -56,6 +68,12 @@ class SearchContentsController extends Controller
             'msg' => $msg
         ]);
     }
+
+    /**
+     * 都道府県ごとの記事表示を行う
+     * @param Request $request
+     * @return Application|Factory|View
+     */
     public function mapindex(Request $request){
         $user = Auth::user();
         $query = Place::query();
@@ -74,6 +92,6 @@ class SearchContentsController extends Controller
                 'msg' => $msg
             ]);
         }
-        
+
     }
 }

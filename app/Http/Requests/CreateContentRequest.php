@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 投稿記事に関するバリデーション
+ * Class CreateContentRequest
+ * @package App\Http\Requests
+ */
 class CreateContentRequest extends FormRequest
 {
     /**

@@ -83,9 +83,7 @@ class ContentsController extends Controller
         if (null === $place) {
             return response(redirect(url('/notfound')), 404);
         }
-//    if ($place->user_id !== Auth::user()->id) {
-//        return response(redirect(url('/notfound')), 404);
-//    }
+
         return view('contents.edit', [
             'place_form' => $place,
             'id' => $id,

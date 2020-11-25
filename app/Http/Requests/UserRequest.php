@@ -5,6 +5,11 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+/**
+ * ユーザー情報編集時のバリデーション
+ * Class UserRequest
+ * @package App\Http\Requests
+ */
 class UserRequest extends FormRequest
 {
     /**

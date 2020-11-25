@@ -4,35 +4,65 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateContentRequest;
 use App\Place;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 use Imagick;
 use Auth;
 
+/**
+ * 画像データの上書に関するコントローラー
+ * Class FileEditController
+ * @package App\Http\Controllers
+ */
 class FileEditController extends Controller
 {
-    //
-    //画像の編集画面を表示する
+
+    /**
+     * 画像の編集画面を表示する
+     * @param $id
+     * @param Place $place
+     * @return Application|ResponseFactory|Factory|Response|View
+     */
     public function fileEdit($id, Place $place)
     {
         $user = Auth::user();
         //Placeテーブルから取得したidに合致するデータを取得
         $place = Place::find($id);
+
         //idが一致しなければエラー画面を表示
         if (null === $place) {
             return response(redirect(url('/notfound')), 404);
         }
+
         return view('contents.fileEdit', [
             'place_form' => $place,
             'id' => $id,
             'user' => $user
         ]);
     }
-    //画像のデータの上書をする
+
+    /**
+     * 画像のデータの上書をする
+     * @param CreateContentRequest $request
+     * @param $id
+     * @param Place $place
+     * @return Application|RedirectResponse|Redirector
+     * @throws \ImagickException
+     */
     public function update(CreateContentRequest $request, $id, Place $place)
     {
         $place_form = $request->all();
         $place = Place::find($id);
-        //もし元の記事に画像ファイルが一つでも存在したら
+        /**
+         * 元の記事に画像ファイルが一つでも存在した場合
+         * サーバー上から画像ファイルのデータを削除する
+         */
         if(isset($place->datafile_01)){
             /**
              * 以下のファイルパスから画像が入っているディレクトリ名を取得
@@ -40,14 +70,14 @@ class FileEditController extends Controller
              */
             $file_pass = $place->datafile_01;
             $file_passes = explode('/', $file_pass);
-            //配列の4つ目($Place_idに代入してあるtime()の投稿時間)を取得
+
             $place_id = $file_passes[3];
             $files = [$place->datafile_01,$place->datafile_02,$place->datafile_03,$place->datafile_04];
-            //サーバー上のデータを削除
+
             foreach($files as $file){
+
                 if (null !== $file) {
                     //ファイルパスからファイル名を取得
-                    //storage/images/{$place->user_id}/{$place_id}/{$file_name}
                     $file_pass = $file;
                     $file_passes = explode('/', $file_pass);
                     //配列の5つ目($file_name)を取得
@@ -58,8 +88,9 @@ class FileEditController extends Controller
                     Storage::delete("public/images/{$id}/{$place_id}/" . $del_file_name);
                 }else{
                     //画像ファイルが入っていたディレクトリを削除
-                    Storage::deleteDirectory("public/images/{$place->user_id}/" . $place_id);                    
-                } 
+                    Storage::deleteDirectory("public/images/{$place->user_id}/" . $place_id);
+                }
+
             }
         }
         //アップロードしたファイルをファイルメソッドで取得。nullableにしたいため、第2引数にnull
@@ -79,7 +110,7 @@ class FileEditController extends Controller
                     $file_name = 'image_'.($i+1) . '.' . $fileExt;
                     /**
                      * 以下Imagickを用いて画像を縮小して保存する
-                     * 
+                     *
                      * 縦横、1000pxに収まるように縮小
                      * オリジナルのサイズ取得
                      * 縮小比率を、縦横長い方の長さを基準に縮小するように計算
@@ -100,7 +131,7 @@ class FileEditController extends Controller
                     if($resize !== true) {
                         dd('error');
                     }
-                    
+
                     /**
                      * public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
                      * ファイルの一つ目の時にだけ画像を保存するディレクトリを作成し、以後そこへ縮小した画像を保存する
@@ -113,12 +144,12 @@ class FileEditController extends Controller
                             dd('error');
                         }
                     }
-                    
+
                     $saveImg = $image->writeImage(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}/{$file_name}");
                     if($saveImg !== true) {
                         dd('error');
                     }
-                    
+
                     $image->clear();
                     /**
                      * DBのカラム名を以下のように指定
@@ -126,12 +157,12 @@ class FileEditController extends Controller
                      * DBに画像のパスを保存
                      */
                     $fileColmunName = sprintf('datafile_%02d', ($i+1));
-                    
+
                     $place->$fileColmunName =  "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
                 }else{
                     //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~
                     $fileColmunName = sprintf('datafile_%02d', ($i+1));
-                    
+
                     $place->$fileColmunName = null;
                 }
             }
@@ -142,18 +173,21 @@ class FileEditController extends Controller
             $place->datafile_03 = null;
             $place->datafile_04 = null;
         }
-        
+
         //不要な「_token」の削除
-        unset($place_form['_token']);        
+        unset($place_form['_token']);
         $place->fill($place_form)->update();
         //リダイレクト
         return redirect('contents/content')->with('edit_content_success', '編集しました');
     }
 
-    //画像の編集画面を表示する
+    /**
+     * 画像の編集画面を表示する
+     * @return Application|Factory|View
+     */
     public function testEditFile()
     {
-        
+
         return view('contents.testEditFile');
     }
 }

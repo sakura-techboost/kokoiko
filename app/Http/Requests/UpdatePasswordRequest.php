@@ -6,8 +6,11 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth; //認証済みユーザーを取得するファサード
 use Illuminate\Support\Facades\Hash; //保存するユーザーパスワードに対しハッシュを提供
 
-//use Illuminate\Validation\Rule;
-
+/**
+ * パスワード変更時のバリデーション
+ * Class UpdatePasswordRequest
+ * @package App\Http\Requests
+ */
 class UpdatePasswordRequest extends FormRequest
 {
     /**
