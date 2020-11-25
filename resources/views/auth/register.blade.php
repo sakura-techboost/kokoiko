@@ -18,7 +18,7 @@
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="name">名前</label>
                 <div class="col-lg-7">
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                  <input value="{{ old('name')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                   @error('name')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="kana">ふりがな</label>
                 <div class="col-lg-7">
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ old('kana') }}" required autocomplete="kana" autofocus>
+                  <input value="{{ old('kana')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ old('kana') }}" required autocomplete="kana" autofocus>
                   @error('name')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="nickname">ニックネーム(表示名)</label>
                 <div class="col-lg-7">
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname" autofocus>
+                  <input value="{{ old('nickname')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname" autofocus>
                   @error('name')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -54,7 +54,7 @@
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
                 <div class="col-lg-7">
-                  <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                  <input value="{{ old('email')}}" type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email">
                   @error('email')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>

@@ -76,8 +76,11 @@ $(function () {
     //画面全体のリロードを止める
     return false;
   });
+  //バリデーションエラーの際・編集画面にてロードと同時にカテゴリー入力値の反映をする
   $('.ctgr').each(function () {
+    //選択されているvalue値を取得
     var selected = $(this).data('selected');
+    //入力値の反映
     if(selected == '1'){
       oldText = 'グルメ';
       $('.category span').text(oldText);

@@ -18,7 +18,7 @@
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
                 <div class="col-lg-7">
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                  <input value="{{ old('email')}}" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                   @error('email')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
