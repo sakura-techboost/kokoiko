@@ -34,7 +34,7 @@
       <div class="row no-gutters">
         <div class="col-lg-8 mt-2">
           {{-- 検索内容・件数表示　--}}
-          <p class="search-words">{{ $kw }}</p><p class="search-words">{{ $prf }} / {{ $ctg }}</p>
+          <p class="search-words">{{ $kw }}</p><p class="search-words">{{ $prf }}{{ $ctg }}</p>
           <p class="mt-1">{{ $msg }}/ {{ $places->count() }}件表示</p>
         </div>
 <!--

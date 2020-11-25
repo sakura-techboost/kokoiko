@@ -44,7 +44,7 @@ class SearchContentsController extends Controller
         $places = $query->orderBy('created_at', 'desc')->paginate(5);
         $msg = '全'.$places->total().'件';
         $kw = 'キーワード：'.$search3;
-        $prf = '都道府県：'.$search1;
+        $prf = '都道府県：'.$search1.' / ';
         $ctg = 'カテゴリー：'.$search2;
 
         return view('contents.content',[
