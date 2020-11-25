@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdatePasswordRequest;
-use Illuminate\Http\Request; //認証済みユーザーを取得するファサード
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;//認証済みユーザーを取得するファサード
+use App\Http\Requests\UserRequest;//プロフィールアップデート時のバリデーション
+
 
 class UserController extends Controller
 {
@@ -20,12 +21,13 @@ class UserController extends Controller
         return view('profile.mypage', ['user' => Auth::user()]);
     }
     //userデータの保存
-    public function update(Request $request)
+    public function update(UserRequest $request)
     {
         $user_form = $request->all();
         $user = Auth::user();
         //不要な「_token」の削除
         unset($user_form['_token']);
+
         //保存
         $user->fill($user_form)->save();
         //リダイレクト

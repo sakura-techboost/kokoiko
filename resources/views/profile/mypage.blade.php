@@ -12,6 +12,14 @@
           プロフィール編集
         </div>
         <div class="card-body">
+          {{-- エラーが発生したら以下に表示 --}}
+          @if (count($errors) > 0)
+          <ul>
+            @foreach($errors->all() as $e)
+              <li>{{ $e }}</li>
+            @endforeach
+          </ul>
+          @endif
           {{-- 更新成功メッセージ --}}
           @if (session('update_profile_success'))
           <div class="container mt-2">
@@ -31,7 +39,7 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="name" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus readonly>
+                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name',$user->name) }}" required autocomplete="name" autofocus readonly>
                 @error('name')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -48,8 +56,8 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ $user->kana }}" required autocomplete="kana" autofocus readonly>
-                @error('name')
+                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ old('kana',$user->kana) }}" required autocomplete="kana" autofocus readonly>
+                @error('kana')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -65,8 +73,8 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ $user->nickname }}" required autocomplete="nickname" autofocus readonly>
-                @error('name')
+                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ old('nickname',$user->nickname) }}" required autocomplete="nickname" autofocus readonly>
+                @error('nickname')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
@@ -82,7 +90,7 @@
                 </a>
               </label>
               <div class="col-lg-7 col-7">
-                <input type="email" class="form-control-plaintext @error('email') is-invalid @enderror" id="email" name="email" value="{{ $user->email }}" required autocomplete="email" readonly>
+                <input type="email" class="form-control-plaintext @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email',$user->email) }}" required autocomplete="email" readonly>
                 @error('email')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

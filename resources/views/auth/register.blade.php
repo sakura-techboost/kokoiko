@@ -31,7 +31,7 @@
                 <label class="col-lg-4 col-form-label text-lg-right" for="kana">ふりがな</label>
                 <div class="col-lg-7">
                   <input value="{{ old('kana')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ old('kana') }}" required autocomplete="kana" autofocus>
-                  @error('name')
+                  @error('kana')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -43,7 +43,7 @@
                 <label class="col-lg-4 col-form-label text-lg-right" for="nickname">ニックネーム(表示名)</label>
                 <div class="col-lg-7">
                   <input value="{{ old('nickname')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname" autofocus>
-                  @error('name')
+                  @error('nickname')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>

@@ -54,7 +54,7 @@
             </li>
             <li class="nav-item dropdown" id="eighth">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-inline pl-1">{{ $user->name }}さん</span>
+                <i class="fas fa-user-circle" title="ユーザーメニュー"></i><span class="d-inline pl-1">{{ $user->nickname }}さん</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a href="{{ action('Admin\UserController@edit') }}" class="dropdown-item">プロフィール</a>
@@ -94,12 +94,10 @@
                   </a>
                 </li>
               @endguest
-  　　        {{-- ログインしていればトップページとマイページへのリンクを表示 --}}
+  　　        {{-- ログインしていればロゴとマイページへのリンクを表示 --}}
               @auth
                 <li id="eighth">
-                  <a href="" title="トップページへ">
                     KOKOIKO<span>OUR FAVORITE PLACES</span>
-                  </a>
                 </li>
                 <li class="nav-item" id="eighth">
                   <a href="{{ route('contents.content') }}" title="マイページへ">
