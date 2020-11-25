@@ -48,8 +48,9 @@ class ContentsController extends Controller
     {
         $user = Auth::user();
         $places = Place::orderBy('created_at', 'desc')->paginate(5);
+        $msg = '全'.$places->total().'件';
 
-        return view('contents.content', ['places' => $places, 'user' => $user]);
+        return view('contents.content', ['places' => $places, 'user' => $user, 'msg' => $msg]);
     }
 
 
@@ -171,17 +172,5 @@ class ContentsController extends Controller
         return redirect('contents/content')->with('delete_content_success', '削除しました');
     }
 
-    /**
-     * エリアで探すページを表示する
-     *
-     * @return Application|Factory|View
-     */
-    public function mapshow()
-    {
-        $user = Auth::user();
-        return view('contents.map', ['user' => $user]);
-    }
-    //新規投稿画面を表示する
-    //→CreateContentController.php内に記述
 }
 

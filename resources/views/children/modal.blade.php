@@ -125,15 +125,15 @@
           <form action="{{ route('contents.index') }}" method="get">
             <div class="form-group mb-4">
               {!! Form::label('kw', '検索キーワード:') !!}
-              {!! Form::text('kw' ,'', ['class' => 'form-control', 'placeholder' => '指定なし'] ) !!}
+              {!! Form::text('kw' , old('kw'), ['class' => 'form-control', 'placeholder' => '指定なし'] ) !!}
             </div>
             <div class="form-group mb-4 city">
               {!! Form::label('pref', '都道府県:') !!}
-              {!! Form::select('pref', ['指定なし' => '指定なし'] + Config::get('place.prefs') ,'指定なし',['class' => 'form-control']) !!}
+              {!! Form::select('pref', ['指定なし' => '指定なし'] + Config::get('place.prefs') ,old('pref'),['class' => 'form-control']) !!}
             </div>
             <div class="form-group mb-4">
               {!! Form::label('category', 'カテゴリー:') !!}
-              {!! Form::select('category', ['指定なし' => '指定なし'] + Config::get('place.category') ,'指定なし',['class' => 'form-control']) !!}
+              {!! Form::select('category', ['指定なし' => '指定なし'] + Config::get('place.category') ,old('category'),['class' => 'form-control']) !!}
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary">検索</button>

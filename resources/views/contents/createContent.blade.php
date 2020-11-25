@@ -28,11 +28,11 @@
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="名称">
+                <input type="text" class="form-control" id="name" name="name" placeholder="名称" value="{{ old("name") }}">
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="overview">概要</label>
-                <textarea class="form-control" id="overview" name="overview" placeholder="どんなところ？"></textarea>
+                <textarea class="form-control" id="overview" name="overview" placeholder="どんなところ？" value="{{ old("overview") }}"></textarea>
                 {{-- <small class="form-text">※タグ付けをすると検索できます</small> --}}
               </div>
               <div class="form-group mb-2">

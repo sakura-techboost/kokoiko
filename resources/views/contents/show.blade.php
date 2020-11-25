@@ -176,7 +176,7 @@
         <!-- 近くのスポットを地図とともに表示 -->
       <div class="col-lg-12 mb-5">
         <h3 class="mt-5">この近くのスポット</h3>
-        <p　class="m-3">1~20件表示/全50件</p>
+        <p　class="m-3">{{ $msg }}表示</p>
         <div class="row no-gutters">
           <!-- 近くのスポットのカード一覧 -->
           <div class="col-lg-4">

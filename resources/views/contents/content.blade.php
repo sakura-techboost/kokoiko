@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-lg-8 my-2">
           <p>1北海道/札幌市(的な指定されたエリアのパンくずリスト)</p>
-          <p>全10件</p>
+          <p>{{ $msg }}/5件表示</p>
         </div>
         <div class="col-lg-4 my-2">
 <!--          <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -101,7 +101,7 @@
                   </div>
                   <div class="col-sm-8">
                     <div class="card-body p-0">
-                    <p class="card-text summary" style="border-top: thin solid #d3d3d3">{{ Str::limit($place->overview,15) }}</p>
+                    <p class="card-text summary" style="border-top: thin solid #d3d3d3">{{ Str::limit($place->overview,500) }}</p>
                     </div>
                   </div>
                 </div>
@@ -137,7 +137,7 @@
               </div>
             </div>
           @endif
-          {{ $places->links() }}
+          {{ $places->appends(request()->query())->links() }}
         </div>
       </div>
     </div>

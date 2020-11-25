@@ -66,7 +66,7 @@ class FileEditController extends Controller
         $files = $request->file('datafile', null);
         //idに投稿時間を入れる
         $place_id = time();
-        if (isset($files)) {
+        if (isset($files[0])) {
             for($i = 0; $i < 4; $i++) {
                 //ファイルのマイムタイプを取得
                 if(isset($files[$i])){
@@ -103,19 +103,22 @@ class FileEditController extends Controller
                     
                     /**
                      * public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
-                     * 画像を保存するディレクトリを作成し、そこへ縮小した画像を保存する
+                     * ファイルの一つ目の時にだけ画像を保存するディレクトリを作成し、以後そこへ縮小した画像を保存する
                      * Imagickを使用せずそのままのデータをLaravelでディレクトリに保存する場合は以下
                      * $files[$i]->storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
                      */
-                    $makeDir = \File::makeDirectory(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}", 0770, true);
-                    if($makeDir !== true) {
-                        dd('error');
+                    if($i == 0){
+                        $makeDir = \File::makeDirectory(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}", 0770, true);
+                        if($makeDir !== true) {
+                            dd('error');
+                        }
                     }
                     
                     $saveImg = $image->writeImage(storage_path() . "/app/public/images/{$place->user_id}/{$place_id}/{$file_name}");
                     if($saveImg !== true) {
                         dd('error');
                     }
+                    
                     $image->clear();
                     /**
                      * DBのカラム名を以下のように指定
@@ -123,10 +126,12 @@ class FileEditController extends Controller
                      * DBに画像のパスを保存
                      */
                     $fileColmunName = sprintf('datafile_%02d', ($i+1));
+                    
                     $place->$fileColmunName =  "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
                 }else{
                     //DBのカラム名を指定(datafile_の後ろに2桁で表される数値を代入，代入する数値は$i+1)→datafile_01~
                     $fileColmunName = sprintf('datafile_%02d', ($i+1));
+                    
                     $place->$fileColmunName = null;
                 }
             }
@@ -137,6 +142,7 @@ class FileEditController extends Controller
             $place->datafile_03 = null;
             $place->datafile_04 = null;
         }
+        
         //不要な「_token」の削除
         unset($place_form['_token']);        
         $place->fill($place_form)->update();

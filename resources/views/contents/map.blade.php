@@ -10,8 +10,9 @@
         <div class="row">
           <div class="col-lg-8 my-2">
             <p>1北海道/札幌市(的な指定されたエリアのパンくずリスト)</p>
-            <p>全10件</p>
+            <p>{{ $msg }}表示</p>
           </div>
+<!-- 
           <div class="col-lg-4 my-2">
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
               <label class="btn btn-outline-secondary active">
@@ -24,6 +25,7 @@
               </label>
             </div>
           </div>
+        -->
           <div class="col-lg-12 my-2">
             <div class="btn-group d-flex btn-group-toggle nav-btns" data-toggle="buttons">
               <label class="btn w-25 active"  id="eighthGreen">

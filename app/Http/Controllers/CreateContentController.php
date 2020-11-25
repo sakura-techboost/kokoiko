@@ -119,11 +119,13 @@ class CreateContentController extends Controller
         if(isset($place->pref)){
             $query = Place::query();
             $places = $query->where('pref',$place->pref)->get();   
+            $msg = '全'.$places->count().'件';
             //記事詳細画面を表示
             return view('contents.show', [
             'place' => $place,
             'places' => $places,
-            'user' => $user
+            'user' => $user,
+            'msg' => $msg
             ]);
         }else{
             //記事詳細画面を表示
@@ -135,57 +137,3 @@ class CreateContentController extends Controller
     }
    
 }
-/*   
-                      $this->iiiiii();
-                       private function iiiiii() {
-    }
-*/
-     
-    /*//files[][datafile]
-        $files = $request->files('datafile', null);
-    if (isset($files[0])) {
-            for($i = 0; $i < count($files); $i++) {
-                //ファイルのマイムタイプを取得
-                $mime = $files[$i] ->getClientMimeType();
-                //マイムタイプを/の前後で分割し、fileMimes配列に入れる
-                $fileMimes = explode('/', $mime);
-                //配列の二つ目(image/jpegならjpegの部分)をファイルの拡張子としてfileExtに入れる
-                $fileExt = $fileMimes[1];
-                //ここまでの処理が無事完了したらログにメッセージを残す
-                Log::debug($fileExt);
-                //ファイル名の後ろに拡張子を付ける
-                $file_name = 'image_'. $i . '.' . $fileExt;
-                //idに投稿時間を入れる
-                $place_id = time();
-                //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
-                $files[$i] -> storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
-                //DBに画像のパスを保存
-                $place->datafile()->datafile = "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
-                Log::debug('OK');
-            }
-        }
-        $place->datafile()->datafile = null;
-     */
-    /*
-        //アップロードしたファイルをファイルメソッドで取得。nullableにしたいため、第2引数にnull
-        $file = $request->file('datafile', null);
-        //もし$fileにフォームからのデータが入っていたら
-        if (isset($file)) {
-            //ファイルのマイムタイプを取得
-            $mime = $file->getClientMimeType();
-            //マイムタイプを/の前後で分割し、fileMimes配列に入れる
-            $fileMimes = explode('/', $mime);
-            //配列の二つ目(image/jpegならjpegの部分)をファイルの拡張子としてfileExtに入れる
-            $fileExt = $fileMimes[1];
-            //ここまでの処理が無事完了したらログにメッセージを残す
-            Log::debug($fileExt);
-            //ファイル名の後ろに拡張子を付ける
-            $file_name = 'image_01.' . $fileExt;
-            //idに投稿時間を入れる
-            $place_id = time();
-            //public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
-            $file->storeAs("public/images/{$place->user_id}/{$place_id}", $file_name);
-            //DBに画像のパスを保存
-            $place->datafile = "storage/images/{$place->user_id}/{$place_id}/{$file_name}";
-            Log::debug('OK');
-*/

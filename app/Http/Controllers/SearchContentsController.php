@@ -42,13 +42,15 @@ class SearchContentsController extends Controller
 */
         //該当記事を降順に1ページにつき5件ずつ表示
         $places = $query->orderBy('created_at', 'desc')->paginate(5);
+        $msg = '全'.$places->total().'件';
 
         return view('contents.content',[
             'user' => $user,
             'places' => $places,
             'search1' => $search1,
             'search2' => $search2,
-            'search3' => $search3
+            'search3' => $search3,
+            'msg' => $msg
         ]);
     }
     public function mapindex(Request $request){
@@ -59,9 +61,12 @@ class SearchContentsController extends Controller
          // $query->whereで選択した都道府県と一致するカラムを取得
          if ($request->has('pref')) {
             $places = $query->where('pref', $search_pref)->get();
+            $msg = '全'.$places->count().'件';
+
             return view('contents.map',[
                 'user' => $user,
                 'places' => $places,
+                'msg' => $msg
             ]);
         }
         
