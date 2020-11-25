@@ -55,7 +55,7 @@
               <div class="col-lg-4">
                 <ul class="nav lg-nav" style="border: thin solid #8d7e7e">
                   @foreach ($places as $place)
-                  <li class="nav-item" value="{{ $place->pref }}{{ $place->address }}">
+                  <li class="nav-item map-card w-100" value="{{ $place->pref }}{{ $place->address }}">
                     <a class="card mb-3 mx-auto card-{{ $place->placetype_id }}" href="{{ route('contents.show',[$place->id]) }}">
                       <div class="row no-gutters card-header py-1 px-2">
                         <p class="d-inline-block col-6" style="font-size:11px;">{{ Str::limit($place->name,14) }}</p>
