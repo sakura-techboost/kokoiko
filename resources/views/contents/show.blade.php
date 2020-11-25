@@ -104,7 +104,7 @@
                   <span style="font-size: small">HP</span>
                 </p>
                 <p class="card-text d-inline-block col-9 px-1 py-0">
-                  <span style="font-size: small">{{ $place->url }}</span>
+                  <span style="font-size: small"><a href="{{ $place->url }}">{{ $place->url }}</a></span>
                 </p>
               </div>
             </li>
