@@ -12,13 +12,15 @@
           プロフィール編集
         </div>
         <div class="card-body">
-          {{-- エラーが発生したら以下に表示 --}}
-          @if (count($errors) > 0)
-          <ul>
-            @foreach($errors->all() as $e)
-              <li>{{ $e }}</li>
-            @endforeach
-          </ul>
+          {{-- エラーメッセージ --}}
+          @if(count($errors) > 0)
+          <div class="container mt-2">
+            <div class="alert alert-danger">
+              @foreach ($errors->all() as $error)
+                <li class="error-alert">{{ $error }}</li>
+              @endforeach
+            </div>
+          </div>
           @endif
           {{-- 更新成功メッセージ --}}
           @if (session('update_profile_success'))
@@ -38,30 +40,13 @@
                   <i class="fas fa-edit"></i>
                 </a>
               </label>
-              <div class="col-lg-7 col-7">
+              <div class="col-lg-7 col-12">
                 <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name',$user->name) }}" required autocomplete="name" autofocus readonly>
                 @error('name')
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                   </span>
               　@enderror
-              </div>
-            </div>
-            {{-- ふりがな --}}
-            <div class="form-group row">
-              <label class="col-lg-4 col-form-label text-lg-right" for="kana">ふりがな</label>
-              <label class="col-form-label col-lg-1 col-1" for="icon">
-                <a data-toggle="modal" href="#edit-kana">
-                  <i class="fas fa-edit"></i>
-                </a>
-              </label>
-              <div class="col-lg-7 col-7">
-                <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ old('kana',$user->kana) }}" required autocomplete="kana" autofocus readonly>
-                @error('kana')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                @enderror
               </div>
             </div>
             {{-- ニックネーム --}}
@@ -72,7 +57,7 @@
                   <i class="fas fa-edit"></i>
                 </a>
               </label>
-              <div class="col-lg-7 col-7">
+              <div class="col-lg-7 col-12">
                 <input type="text" class="form-control-plaintext @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ old('nickname',$user->nickname) }}" required autocomplete="nickname" autofocus readonly>
                 @error('nickname')
                   <span class="invalid-feedback" role="alert">
@@ -89,7 +74,7 @@
                   <i class="fas fa-edit"></i>
                 </a>
               </label>
-              <div class="col-lg-7 col-7">
+              <div class="col-lg-7 col-12">
                 <input type="email" class="form-control-plaintext @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email',$user->email) }}" required autocomplete="email" readonly>
                 @error('email')
                   <span class="invalid-feedback" role="alert">

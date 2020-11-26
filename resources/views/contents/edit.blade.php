@@ -12,13 +12,15 @@
             記事を編集する
           </div>
           <div class="card-body">
-            {{-- エラーが発生したら以下に表示 --}}
-            @if (count($errors) > 0)
-              <ul>
-                @foreach($errors->all() as $e)
-                  <li>{{ $e }}</li>
+            {{-- エラーメッセージ --}}
+            @if(count($errors) > 0)
+            <div class="container mt-2">
+              <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                  <li class="error-alert">{{ $error }}</li>
                 @endforeach
-              </ul>
+              </div>
+            </div>
             @endif
             <form action="{{ route('contents.update', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
               @csrf
@@ -30,15 +32,24 @@
                   <div class="preview col-3">
                     <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_01") }}">
                   </div>
-                  @if(isset($place_form->datafile_02))
+                  @if(isset($place_form->datafile_02) && $place_form->datafile_03 == null)
                     <div class="preview col-3">
                       <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
                     </div>
-                  @elseif(isset($place_form->datafile_03))
+                  @elseif(isset($place_form->datafile_03) && $place_form->datafile_04 == null)
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
+                    </div>
                     <div class="preview col-3">
                       <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_03") }}">
                     </div>
                   @elseif(isset($place_form->datafile_04))
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
+                    </div>
+                    <div class="preview col-3">
+                      <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_03") }}">
+                    </div>
                     <div class="preview col-3">
                       <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_04") }}">
                     </div>

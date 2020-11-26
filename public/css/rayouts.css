@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.error-alert {
+  font-size: 10px;
+}
+
 .thumb-lg-img {
   width: 5vw;
   height: 5vw;

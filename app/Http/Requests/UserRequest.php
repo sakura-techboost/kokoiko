@@ -32,7 +32,6 @@ class UserRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255',  Rule::unique('users')->ignore($this->user())],
-            'kana' => ['required', 'string', 'max:15'],
             'nickname' => ['required', 'string', 'max:15'],
         ];
     }
@@ -46,8 +45,8 @@ class UserRequest extends FormRequest
         return [
             'name' => '名前',
             'email' => 'メールアドレス',
-            'kana' => 'ふりがな',
             'nickname' => 'ニックネーム',
         ];
     }
+    
 }

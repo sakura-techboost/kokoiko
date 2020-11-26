@@ -176,8 +176,10 @@
         <!-- 近くのスポットを地図とともに表示 -->
       <div class="col-lg-12 my-5">
         <div class = "row no-gutters">
-          <div class = "col-7 col-md-9">
+          <div class = "col-12">
             <h3>この近くのスポット</h3>
+          </div>
+          <div class="col-7 col-md-9">
             <p　class="m-3">{{ $msg }}/ {{ $places->count() }}件表示</p>
           </div>
           <div class = "col-5 col-md-3 mt-3">

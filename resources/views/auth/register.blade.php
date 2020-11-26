@@ -12,73 +12,51 @@
             アカウント新規登録
           </div>
           <div class="card-body">
+            {{-- エラーメッセージ --}}
+            @if(count($errors) > 0)
+            <div class="container mt-2">
+              <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                  <li class="error-alert">{{ $error }}</li>
+                @endforeach
+              </div>
+            </div>
+            @endif
             <form method="POST" action="{{ route('register') }}">
               @csrf
               {{-- 名前入力欄 --}}
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="name">名前</label>
                 <div class="col-lg-7">
-                  <input value="{{ old('name')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                  @error('name')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
-                </div>
-              </div>
-              {{-- ふりがな入力欄 --}}
-              <div class="form-group row">
-                <label class="col-lg-4 col-form-label text-lg-right" for="kana">ふりがな</label>
-                <div class="col-lg-7">
-                  <input value="{{ old('kana')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="kana" name="kana" value="{{ old('kana') }}" required autocomplete="kana" autofocus>
-                  @error('kana')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                  <input value="{{ old('name')}}" type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required autofocus>
                 </div>
               </div>
               {{-- ニックネーム入力欄 --}}
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="nickname">ニックネーム(表示名)</label>
                 <div class="col-lg-7">
-                  <input value="{{ old('nickname')}}" type="text" class="form-control @error('name') is-invalid @enderror" id="nickname" name="nickname" value="{{ old('nickname') }}" required autocomplete="nickname" autofocus>
-                  @error('nickname')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                  <input value="{{ old('nickname')}}" type="text" class="form-control" id="nickname" name="nickname" value="{{ old('nickname') }}" required autofocus>
                 </div>
               </div>
               {{-- メールアドレス入力欄 --}}
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
                 <div class="col-lg-7">
-                  <input value="{{ old('email')}}" type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required autocomplete="email">
-                  @error('email')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                  <input value="{{ old('email')}}" type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
                 </div>
               </div>
               {{-- パスワード入力欄 --}}
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="password">パスワード</label>
                 <div class="col-lg-7">
-                  <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required autocomplete="new-password">
-                  @error('password')
-                    <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                    </span>
-                  @enderror
+                  <input type="password" class="form-control" id="password" name="password" required>
                 </div>
               </div>
               {{-- パスワード確認入力欄 --}}
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="password-confirm">パスワード再入力</label>
                 <div class="col-lg-7">
-                  <input type="password" class="form-control" id="password-confirm" name="password_confirmation" required autocomplete="new-password">
+                  <input type="password" class="form-control" id="password-confirm" name="password_confirmation" required>
                 </div>
               </div>
               {{-- 登録ボタン --}}

@@ -16,7 +16,7 @@
         <div class="container mt-2">
           <div class="alert alert-danger">
             @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
+              <li class="error-alert">{{ $error }}</li>
             @endforeach
           </div>
         </div>
@@ -58,7 +58,7 @@
               </div>
             </div>
             <button type="submit" class="btn btn-primary d-block mx-auto w-50">
-              パスワードをリセットする
+              リセットする
             </button>
           </form>
         </div>

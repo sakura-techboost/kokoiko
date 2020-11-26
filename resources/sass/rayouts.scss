@@ -1,4 +1,9 @@
 
+//エラー表示の設定
+.error-alert{
+  font-size:10px;
+}
+
 .thumb-lg-img{
   width: 5vw;
   height: 5vw;
@@ -14,7 +19,6 @@
   width:100%;
   object-fit: contain;
 }
-
 .preview{
   width: 15vw;
   height: 15vw;

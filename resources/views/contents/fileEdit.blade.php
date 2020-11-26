@@ -12,13 +12,15 @@
             写真を変更する
           </div>
           <div class="card-body">
-            {{-- エラーが発生したら以下に表示 --}}
-            @if (count($errors) > 0)
-              <ul>
-                @foreach($errors->all() as $e)
-                  <li>{{ $e }}</li>
+            {{-- エラーメッセージ --}}
+            @if(count($errors) > 0)
+            <div class="container mt-2">
+              <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                  <li class="error-alert">{{ $error }}</li>
                 @endforeach
-              </ul>
+              </div>
+            </div>
             @endif
             <form action="{{ route('contents.fileupdate', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
               @csrf
