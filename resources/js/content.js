@@ -235,4 +235,22 @@ $(function () {
       return false;
     }
   });
+
+  //画像編集画面にて送信ボタンが押された時のアラート
+  // 送信ボタンクリックが送信タイミングとは限らない（Enterかもしれないし）ので、フォームのsubmitイベントを拾うようにする
+  $('#file-edit-form').on('submit', function(e, context) {
+    // 実行指示のパラメータがあれば何もしない
+    if (context === 'execute') {
+        return;
+    }
+
+    // 確認表示の為に送信を抑止する
+    e.preventDefault();
+
+    if (confirm('画像データが上書きされます。よろしいですか？(画像が選択されていなければ登録されていた画像は削除されます)')) {
+        // はいが選択されたらフォームを送信する
+        $(this).trigger('submit', ['execute']);
+    }
+
+  });
 });

@@ -22,7 +22,7 @@
               </div>
             </div>
             @endif
-            <form action="{{ route('contents.fileupdate', ['id'=> $id]) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('contents.fileupdate', ['id'=> $id]) }}" method="post" id="file-edit-form" enctype="multipart/form-data">
               @csrf
               {{-- 選択された画像のプレビュー --}}
               <!-- もし元データに画像がなければプレビューボックス非表示 -->
