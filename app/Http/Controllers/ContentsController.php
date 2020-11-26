@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateContentRequest;
 use App\Place;
 use Auth;
-use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Log;
@@ -47,7 +44,9 @@ class ContentsController extends Controller
     public function content()
     {
         $user = Auth::user();
-        $places = Place::orderBy('created_at', 'desc')->paginate(5);
+        $places = Place::where('user_id',$user->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
         $msg = '全'.$places->total().'件';
         $kw = '';
         $prf = '';

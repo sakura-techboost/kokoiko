@@ -74,5 +74,9 @@ class Place extends Model
     {
         return config('place.category.' . $this->category_id);
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 }

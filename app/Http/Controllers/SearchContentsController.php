@@ -23,7 +23,7 @@ class SearchContentsController extends Controller
      */
     public function index(Request $request){
         $user = Auth::user();
-        $query = Place::query();
+        $query = Place::query()->where('user_id',$user->id);
         //$request->input()で検索時に入力した項目を取得します。
         $search1 = $request->input('pref');
         $search2 = $request->input('category');
@@ -76,7 +76,7 @@ class SearchContentsController extends Controller
      */
     public function mapindex(Request $request){
         $user = Auth::user();
-        $query = Place::query();
+        $query = Place::query()->where('user_id',$user->id);
 
         $search_pref = $request->input('pref');
          // $query->whereで選択した都道府県と一致するカラムを取得
