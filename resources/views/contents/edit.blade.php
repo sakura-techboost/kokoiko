@@ -63,7 +63,7 @@
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="overview">概要</label>
-                <textarea class="form-control" id="overview" name="overview" placeholder="どんなところ？">{{ old('overview',$place_form->overview) }}</textarea>
+                <textarea rows="6" class="form-control" id="overview" name="overview" placeholder="どんなところ？">{{ old('overview',$place_form->overview) }}</textarea>
                 {{-- <small class="form-text">※タグ付けをすると検索できます</small> --}}
               </div>
               <div class="form-group mb-2">
