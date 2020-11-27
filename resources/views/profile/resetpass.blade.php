@@ -41,18 +41,13 @@
               </div>
             </div>
             <div class="form-group row">
-              <label for="password" class="col-lg-4 col-form-label text-lg-right">新しいパスワード</label>
+              <label for="password" class="col-lg-4 col-form-label text-lg-right">新しいパスワード<br><small class="form-text notes">※8文字以上の半角英数字</small></label>
               <div class="col-lg-7">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="new-password" required autofocus>
-                @error('password')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                @enderror
+                <input id="password" type="password" class="form-control" name="new-password" required autofocus>
               </div>
             </div>
             <div class="form-group row">
-              <label for="password-confirm" class="col-lg-4 col-form-label text-lg-right">新しいパスワード(確認)</label>
+              <label for="password-confirm" class="col-lg-4 col-form-label text-lg-right">新しいパスワード(確認)<br><small class="form-text notes">※8文字以上の半角英数字</small></label>
               <div class="col-lg-7">
                 <input id="password-confirm" type="password" class="form-control" name="new-password_confirmation" required autofocus>
               </div>

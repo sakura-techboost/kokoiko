@@ -26,35 +26,35 @@
               @csrf
               {{-- 名前入力欄 --}}
               <div class="form-group row">
-                <label class="col-lg-4 col-form-label text-lg-right" for="name">名前</label>
+                <label class="col-lg-4 col-form-label text-lg-right" for="name">名前<br><small class="form-text notes">※入力必須</small></label>
                 <div class="col-lg-7">
                   <input value="{{ old('name')}}" type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required autofocus>
                 </div>
               </div>
               {{-- ニックネーム入力欄 --}}
               <div class="form-group row">
-                <label class="col-lg-4 col-form-label text-lg-right" for="nickname">ニックネーム(表示名)</label>
+                <label class="col-lg-4 col-form-label text-lg-right" for="nickname">ニックネーム(表示名)<br><small class="form-text notes">※入力必須</small></label>
                 <div class="col-lg-7">
                   <input value="{{ old('nickname')}}" type="text" class="form-control" id="nickname" name="nickname" value="{{ old('nickname') }}" required autofocus>
                 </div>
               </div>
               {{-- メールアドレス入力欄 --}}
               <div class="form-group row">
-                <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
+                <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)<br><small class="form-text notes">※入力必須</small></label>
                 <div class="col-lg-7">
                   <input value="{{ old('email')}}" type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
                 </div>
               </div>
               {{-- パスワード入力欄 --}}
               <div class="form-group row">
-                <label class="col-lg-4 col-form-label text-lg-right" for="password">パスワード</label>
+                <label class="col-lg-4 col-form-label text-lg-right" for="password">パスワード<br><small class="form-text notes">※8文字以上の半角英数字</small></label>
                 <div class="col-lg-7">
                   <input type="password" class="form-control" id="password" name="password" required>
                 </div>
               </div>
               {{-- パスワード確認入力欄 --}}
               <div class="form-group row">
-                <label class="col-lg-4 col-form-label text-lg-right" for="password-confirm">パスワード再入力</label>
+                <label class="col-lg-4 col-form-label text-lg-right" for="password-confirm">パスワード再入力<br><small class="form-text notes">※8文字以上の半角英数字</small></label>
                 <div class="col-lg-7">
                   <input type="password" class="form-control" id="password-confirm" name="password_confirmation" required>
                 </div>

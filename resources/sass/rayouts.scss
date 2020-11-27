@@ -23,6 +23,7 @@
   width: 15vw;
   height: 15vw;
 }
+
 //top.blade.php
 .jumbotron {
   position: relative;
@@ -32,6 +33,13 @@
   display: block;
   padding-top: 20%; //.jumbotronのwidthに対して高さ20%に保つ
 }
+
+//register.blade.php(新規登録画面)の補足文字のサイズ設定
+.notes{
+  color: red;
+  font-size: 8px;
+}
+
 //新規に追加したアイコンの色の指定
 .fa-lightbulb{
   color:#00ffff;

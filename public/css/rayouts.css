@@ -38,6 +38,11 @@
   padding-top: 20%;
 }
 
+.notes {
+  color: red;
+  font-size: 8px;
+}
+
 .fa-lightbulb {
   color: #00ffff;
 }

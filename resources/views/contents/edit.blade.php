@@ -59,11 +59,11 @@
 
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
-                <input value="{{ old('name',$place_form->name) }}" type="text" class="form-control" id="name" name="name" placeholder="名称">
+                <input value="{{ old('name',$place_form->name) }}" type="text" class="form-control" id="name" name="name" placeholder="名称　※入力必須">
               </div>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="overview">概要</label>
-                <textarea rows="6" class="form-control" id="overview" name="overview" placeholder="どんなところ？">{{ old('overview',$place_form->overview) }}</textarea>
+                <textarea rows="6" class="form-control" id="overview" name="overview" placeholder="どんなところ？　※入力必須">{{ old('overview',$place_form->overview) }}</textarea>
                 {{-- <small class="form-text">※タグ付けをすると検索できます</small> --}}
               </div>
               <div class="form-group mb-2">
