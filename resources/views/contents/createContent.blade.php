@@ -28,6 +28,7 @@
               <div class="row no-gutters mb-2 preview-box d-none"> 
                 
               </div>
+              <p class="prvmessage">画像は4つまで選択できます</p>
               <div class="form-group mb-2">
                 <label class="col-form-label sr-only" for="name">名称</label>
                 <input type="text" value="{{ old('name') }}" class="form-control" id="name" name="name" placeholder="名称　※入力必須" value="{{ old("name") }}">

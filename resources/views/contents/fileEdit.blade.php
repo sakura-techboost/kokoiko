@@ -28,6 +28,7 @@
               <!-- もし元データに画像がなければプレビューボックス非表示 -->
               @if($place_form->datafile_01 == null)
               　<p class="prvmessage">画像を登録してみましょう</p>
+              　<p class="prvmessage">画像は4つまで選択できます</p>
                 <div class="row no-gutters mb-2 preview-box d-none"> 
                   
                 </div>
@@ -65,6 +66,7 @@
                     </div>
                   @endif
                 </div>
+                <p class="prvmessage">画像は4つまで選択できます</p>
               @endif
               <!-- 入力必須データの送信 -->
               <input value="{{ $place_form->name }}" type="text" name="name" class="form-control d-none" id="name">
