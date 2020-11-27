@@ -55,8 +55,8 @@
               <div class="col-lg-4">
                 <ul class="nav lg-nav" style="border: thin solid #8d7e7e">
                   @foreach ($places as $place)
-                  <li class="nav-item map-card w-100" value="{{ $place->pref }}{{ $place->address }}">
-                    <a class="card mb-3 mx-auto card-{{ $place->placetype_id }}" href="{{ route('contents.show',[$place->id]) }}">
+                  <li class="nav-item map-card w-100 card-{{ $place->placetype_id }}" value="{{ $place->pref }}{{ $place->address }}">
+                    <a class="card mb-3 mx-auto" href="{{ route('contents.show',[$place->id]) }}">
                       <div class="row no-gutters card-header py-1 px-2">
                         <p class="d-inline-block col-6" style="font-size:11px;">{{ Str::limit($place->name,14) }}</p>
                         <p class="d-inline-block col-6 align-self-center" align="right">
@@ -89,8 +89,8 @@
                 <!-- 画面幅が992px以下の場合のナビゲーションバー -->
                 <ul class="nav d-lg-none md-nav w-100" style="border: thin solid #d3d3d3">
                   @foreach ($places as $place)
-                  <li class="nav-item md-item map-card" value="{{ $place->pref }}{{ $place->address }}">
-                    <a class="card h-100 mx-2 card-{{ $place->placetype_id }}" href="{{ route('contents.show',[$place->id]) }}">
+                  <li class="nav-item md-item map-card card-{{ $place->placetype_id }}" value="{{ $place->pref }}{{ $place->address }}">
+                    <a class="card h-100 mx-2" href="{{ route('contents.show',[$place->id]) }}">
                       <div class="row no-gutters card-header py-1 px-4">
                         <p class="d-inline-block col-6 small-card">{{ Str::limit($place->name,16) }}</p>
                         <p class="d-inline-block col-6 align-self-center" align="right">

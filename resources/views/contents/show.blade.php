@@ -213,7 +213,7 @@
                         </div>
                         <div class="col-8">
                           <div class="card-body p-0">
-                            <p class="card-text summary small-card d-inline-block">{{ Str::limit($place->overview,100) }}</p>
+                            <p class="card-text summary small-card d-inline-block">{{ Str::limit($place->overview,50) }}</p>
                           </div>
                         </div>
                       </div>

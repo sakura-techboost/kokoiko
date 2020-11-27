@@ -20,7 +20,7 @@ $(function () {
         $('.card-1').addClass('d-none');
         $('.card-2').addClass('d-none');
       }else if(radioval == 'card-all'){
-        $('.card').removeClass('d-none');
+        $('.map-card').removeClass('d-none');
       }
   });
   
