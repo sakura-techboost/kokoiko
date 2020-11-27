@@ -42,11 +42,11 @@
                   <div class="preview col-3">
                     <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_01") }}">
                   </div>
-                  @if(isset($place_form->datafile_02))
+                  @if(isset($place_form->datafile_02) && $place_form->datafile_03 == null)
                     <div class="preview col-3">
                       <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
                     </div>
-                  @elseif(isset($place_form->datafile_03))
+                  @elseif(isset($place_form->datafile_03) && $place_form->datafile_04 == null)
                     <div class="preview col-3">
                       <img class="card-img img-thumbnail rounded d-block" id="preview" src="{{ asset("$place_form->datafile_02") }}">
                     </div>
