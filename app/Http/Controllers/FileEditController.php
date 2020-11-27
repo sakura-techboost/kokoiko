@@ -121,15 +121,20 @@ class FileEditController extends Controller
                     $image = new Imagick($files[$i]->getPathname());
                     $width_org = $image->getImageWidth();
                     $height_org = $image->getImageHeight();
-                    $ratio = $width_org / $height_org;
-                    if ($width / $height > $ratio) {
-                        $width = $height * $ratio;
-                    } else {
-                        $height = $width / $ratio;
-                    }
-                    $resize = $image->scaleImage($width, $height);
-                    if($resize !== true) {
-                        dd('error');
+
+                    if($width_org > 1000 || $height_org > 1000){
+                        $ratio = $width_org / $height_org;
+    
+                        if ($width / $height > $ratio) {
+                            $width = $height * $ratio;
+                        } else {
+                            $height = $width / $ratio;
+                        }
+        
+                        $isSuccess = $image->scaleImage($width, $height);
+                        if($isSuccess !== true) {
+                            dd('error');
+                        }
                     }
 
                     /**

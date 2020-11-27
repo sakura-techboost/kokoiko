@@ -88,19 +88,22 @@ class CreateContentController extends Controller
 
                 $width_org = $image->getImageWidth();
                 $height_org = $image->getImageHeight();
+                
+                if($width_org > 1000 || $height_org > 1000){
+                    $ratio = $width_org / $height_org;
 
-                $ratio = $width_org / $height_org;
-
-                if ($width / $height > $ratio) {
-                    $width = $height * $ratio;
-                } else {
-                    $height = $width / $ratio;
+                    if ($width / $height > $ratio) {
+                        $width = $height * $ratio;
+                    } else {
+                        $height = $width / $ratio;
+                    }
+    
+                    $isSuccess = $image->scaleImage($width, $height);
+                    if($isSuccess !== true) {
+                        dd('error');
+                    }
                 }
-
-                $isSuccess = $image->scaleImage($width, $height);
-                if($isSuccess !== true) {
-                    dd('error');
-                }
+                
                 /**
                  * public/images配下に投稿したユーザーのフォルダ、記事の投稿時間フォルダを作成し中に画像名を指定して保存
                  * 画像を保存するディレクトリを作成し、そこへ縮小した画像を保存する
