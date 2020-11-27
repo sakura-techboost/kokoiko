@@ -17,7 +17,7 @@ use Log;
 
 /**
  *
- * aaaaをするこんなトローラー
+ * 記事の一覧表示や編集・削除・トップページの表示などを行う
  *
  * Class ContentsController
  *
@@ -45,7 +45,7 @@ class ContentsController extends Controller
     {
         $user = Auth::user();
         $places = Place::where('user_id',$user->id)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(5);
         $msg = '全'.$places->total().'件';
         $kw = '';

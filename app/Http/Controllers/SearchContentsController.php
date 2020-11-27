@@ -53,7 +53,7 @@ class SearchContentsController extends Controller
         }
 */
         //該当記事を降順に1ページにつき5件ずつ表示
-        $places = $query->orderBy('created_at', 'desc')->paginate(5);
+        $places = $query->orderBy('id', 'desc')->paginate(5);
         $msg = '全'.$places->total().'件';
         $kw = 'キーワード：'.$search3;
         $prf = '都道府県：'.$search1.' / ';
