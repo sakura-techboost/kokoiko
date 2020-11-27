@@ -46,6 +46,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+        if ($exception instanceof \Illuminate\Http\Exceptions\PostTooLargeException) {
+
+            return \Illuminate\Support\Facades\Redirect::back()->withErrors(['post_too_large' => 'POSTサイズが大きすぎます']);
+        }
+
         return parent::render($request, $exception);
     }
 }

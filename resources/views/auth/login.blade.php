@@ -56,11 +56,13 @@
               {{-- ログインボタン --}}
               <button type="submit" class="btn btn-primary d-block mx-auto w-50">ログイン</button>
               <!-- パスワードを忘れた時の処理 -->
-              @if (Route::has('password.request'))
+<!--
+              if (Route::has('password.request'))
                 <a class="btn btn-link" href="{{ route('password.request') }}">
                   パスワードを忘れた方はこちら
                 </a>
-              @endif
+              endif
+              -->
             </form>
           </div>
         </div>
