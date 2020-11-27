@@ -172,32 +172,7 @@
     </div>
   </div>
 </div>
-<!-- ふりがな -->
-<div class="modal fade" id="edit-kana" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="edit-kana" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="edit-kana">ふりがな変更</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form id="kana-form">
-        <div class="modal-body">
-          <div class="form-group row">
-            <label class="col-md-3 col-form-label text-md-right" for="form_kana">ふりがな</label>
-            <div class="col-md-5">
-              <input type="text" class="form-control" id="form_kana">
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">変更</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+
 <!-- ニックネーム -->
 <div class="modal fade" id="edit-nickname" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="edit-nickname" aria-hidden="true">
   <div class="modal-dialog">
@@ -224,6 +199,7 @@
     </div>
   </div>
 </div>
+
 <!-- メールアドレス変更 -->
 <div class="modal fade" id="edit-email" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="edit-email" aria-hidden="true">
   <div class="modal-dialog">

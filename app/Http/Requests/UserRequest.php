@@ -24,7 +24,7 @@ class UserRequest extends FormRequest
 
     /**
      * リクエストに適用するバリデーションルールを取得
-     *
+     *　
      * @return array
      */
     public function rules()
@@ -48,5 +48,5 @@ class UserRequest extends FormRequest
             'nickname' => 'ニックネーム',
         ];
     }
-    
+
 }

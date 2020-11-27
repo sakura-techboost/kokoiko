@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 //use Kyslik\ColumnSortable\Sortable;// 追加
 
@@ -74,6 +75,11 @@ class Place extends Model
     {
         return config('place.category.' . $this->category_id);
     }
+
+    /**
+     * ユーザー情報と投稿記事の紐づけ
+     * @return BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo('App\User');

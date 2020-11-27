@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 
+/**
+ * Class UsersTableSeeder
+ */
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -11,18 +14,18 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
         DB::table('users')->insert([
-        ['name' => 'sakura',
-        'email' => 'sakura@yahoo.co.jp',
-        'nickname' => 'Sakura',
-        'password' => bcrypt('kokoiko1'),
-        ],
-        ['name' => 'test',
-        'email' => 'test@yahoo.co.jp',
-        'nickname' => 'テスト',
-        'password' => bcrypt('kokoiko2'),
-        ],
+            ['name' => 'sakura',
+                'email' => 'sakura@yahoo.co.jp',
+                'nickname' => 'Sakura',
+                'password' => bcrypt('kokoiko1'),
+            ],
+            ['name' => 'test',
+                'email' => 'test@yahoo.co.jp',
+                'nickname' => 'テスト',
+                'password' => bcrypt('kokoiko2'),
+            ],
         ]);
     }
 }

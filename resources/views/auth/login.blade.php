@@ -58,7 +58,7 @@
               <!-- パスワードを忘れた時の処理 -->
 <!--
               if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request') }}">
+                <a class="btn btn-link" href=" route('password.request') }}">
                   パスワードを忘れた方はこちら
                 </a>
               endif
