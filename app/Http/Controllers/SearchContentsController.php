@@ -57,7 +57,8 @@ class SearchContentsController extends Controller
         $msg = '全'.$places->total().'件';
         $kw = 'キーワード：'.$search3;
         $prf = '都道府県：'.$search1.' / ';
-        $ctg = 'カテゴリー：'.$search2;
+        $select_ctg = \Config::get('place.category')[$search2];
+        $ctg = 'カテゴリー：'.$select_ctg;
 
         return view('contents.content',[
             'user' => $user,
