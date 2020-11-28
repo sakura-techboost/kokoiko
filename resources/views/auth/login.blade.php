@@ -26,6 +26,7 @@
               @endif
 
               @csrf
+              
               {{-- メールアドレス入力欄 --}}
               <div class="form-group row">
                 <label class="col-lg-4 col-form-label text-lg-right" for="email">メールアドレス(ID)</label>
