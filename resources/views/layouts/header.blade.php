@@ -136,7 +136,7 @@
           </div>
           <div class="col-lg-10">
             <div class="row no-gutters justify-content-center">
-              <div class="col-lg-11">
+              <div class="col-lg-11"  ontouchstart="">
                 @include('children.modal')
                 @yield('content')
               </div>
